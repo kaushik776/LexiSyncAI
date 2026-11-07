@@ -1,0 +1,56 @@
+{
+ "summary": {
+  "dpi": 150,
+  "pages": 4,
+  "detected_as_scanned": 4,
+  "mean_char_accuracy": 0.845,
+  "mean_word_accuracy": 0.7833,
+  "mean_seconds_per_page": 11.21
+ },
+ "pages": [
+  {
+   "document": "GDPR",
+   "page": 5,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.84,
+   "char_accuracy": 0.8891,
+   "word_accuracy": 0.8422,
+   "seconds_per_page": 13.95,
+   "truth_chars": 4797
+  },
+  {
+   "document": "GDPR",
+   "page": 83,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.829,
+   "char_accuracy": 0.8608,
+   "word_accuracy": 0.7915,
+   "seconds_per_page": 13.95,
+   "truth_chars": 3404
+  },
+  {
+   "document": "EX-10.2",
+   "page": 6,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.818,
+   "char_accuracy": 0.8601,
+   "word_accuracy": 0.7794,
+   "seconds_per_page": 10.11,
+   "truth_chars": 4496
+  },
+  {
+   "document": "UK_Consumer_Rights_Act_2015",
+   "page": 21,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.871,
+   "char_accuracy": 0.7702,
+   "word_accuracy": 0.7203,
+   "seconds_per_page": 6.82,
+   "truth_chars": 2598
+  }
+ ]
+}
