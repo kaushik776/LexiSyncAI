@@ -14,6 +14,9 @@
      52
     ]
    }
+  ],
+  "key_facts": [
+   "72\\s*hours"
   ]
  },
  {
@@ -30,6 +33,10 @@
      37
     ]
    }
+  ],
+  "key_facts": [
+   "\\b16\\b",
+   "\\b13\\b"
   ]
  },
  {
@@ -46,6 +53,10 @@
      55
     ]
    }
+  ],
+  "key_facts": [
+   "public authorit",
+   "large scale"
   ]
  },
  {
@@ -62,6 +73,10 @@
      40
     ]
    }
+  ],
+  "key_facts": [
+   "one month",
+   "two (further )?months"
   ]
  },
  {
@@ -78,6 +93,9 @@
      20
     ]
    }
+  ],
+  "key_facts": [
+   "30\\s*days"
   ]
  },
  {
@@ -94,6 +112,9 @@
      55
     ]
    }
+  ],
+  "key_facts": [
+   "5,?000"
   ]
  },
  {
@@ -110,6 +131,9 @@
      22
     ]
    }
+  ],
+  "key_facts": [
+   "Delaware"
   ]
  },
  {
@@ -126,6 +150,9 @@
      25
     ]
    }
+  ],
+  "key_facts": [
+   "11,?214,?688"
   ]
  },
  {
@@ -142,6 +169,9 @@
      88
     ]
    }
+  ],
+  "key_facts": [
+   "weights and measures authorit"
   ]
  },
  {
@@ -158,6 +188,9 @@
      14
     ]
    }
+  ],
+  "key_facts": [
+   "damages"
   ]
  },
  {
@@ -174,6 +207,10 @@
      44
     ]
    }
+  ],
+  "key_facts": [
+   "freedom of expression",
+   "legal claims"
   ]
  },
  {
@@ -190,6 +227,9 @@
      22
     ]
    }
+  ],
+  "key_facts": [
+   "invalid|unenforceable"
   ]
  },
  {
@@ -206,6 +246,10 @@
      21
     ]
    }
+  ],
+  "key_facts": [
+   "impossible",
+   "disproportionate"
   ]
  },
  {
@@ -230,6 +274,12 @@
      83
     ]
    }
+  ],
+  "key_facts": [
+   "10[ ,.]?000[ ,.]?000|10\\s*(million|m)\\b",
+   "20[ ,.]?000[ ,.]?000|20\\s*(million|m)\\b",
+   "\\b2\\s*%",
+   "\\b4\\s*%"
   ]
  },
  {
@@ -254,6 +304,11 @@
      23
     ]
    }
+  ],
+  "key_facts": [
+   "one repair|one replacement",
+   "(6|six) months",
+   "deduct"
   ]
  },
  {
@@ -278,6 +333,10 @@
      20
     ]
    }
+  ],
+  "key_facts": [
+   "(6|six) months",
+   "30\\s*days"
   ]
  },
  {
@@ -302,6 +361,10 @@
      14
     ]
    }
+  ],
+  "key_facts": [
+   "tenth anniversary|ten years|10 years",
+   "damages"
   ]
  },
  {
@@ -326,6 +389,10 @@
      26
     ]
    }
+  ],
+  "key_facts": [
+   "Schedule 3\\.1\\(a\\)",
+   "5,?111,?103"
   ]
  },
  {
@@ -351,6 +418,10 @@
      20
     ]
    }
+  ],
+  "key_facts": [
+   "72\\s*hours",
+   "30\\s*days"
   ]
  },
  {
@@ -358,27 +429,31 @@
   "type": "unanswerable",
   "question": "What is the governing law of the subcontractor agreement?",
   "answer": "INSUFFICIENT EVIDENCE: no subcontractor agreement is among the documents.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U02",
   "type": "unanswerable",
   "question": "What is the maximum fine under the California Consumer Privacy Act?",
   "answer": "INSUFFICIENT EVIDENCE: the CCPA is not among the documents.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U03",
   "type": "unanswerable",
   "question": "What annual rent is payable for the Dollar General property under the Tax Protection Agreement?",
   "answer": "INSUFFICIENT EVIDENCE: the agreement lists debt and gain amounts for the property, not rent.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U04",
   "type": "unanswerable",
   "question": "How many days of paid annual leave must an employer give an employee under the Consumer Rights Act 2015?",
   "answer": "INSUFFICIENT EVIDENCE: the Act does not regulate employment leave.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  }
 ]

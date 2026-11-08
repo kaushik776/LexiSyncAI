@@ -137,7 +137,8 @@ class HybridRetriever:
         return [i for _, _, i in scored[:n]]
 
     def search(self, query: str, k: int = config.TOP_K, mode: str = "hybrid+refs",
-               n_candidates: int = config.CANDIDATES, doc_ids: list[str] | None = None) -> list[Hit]:
+               n_candidates: int = config.CANDIDATES, doc_ids: list[str] | None = None,
+               exclude_kinds: tuple[str, ...] = ()) -> list[Hit]:
         """Return the top-k chunks for the query (before reranking)."""
         if not self.chunks:
             return []
@@ -167,6 +168,8 @@ class HybridRetriever:
         order = sorted(fused, key=lambda i: -fused[i])
         if doc_ids:
             order = [i for i in order if self.chunks[i].doc_id in doc_ids]
+        if exclude_kinds:                       # e.g. ("table",) for the text-only ablation
+            order = [i for i in order if self.chunks[i].kind not in exclude_kinds]
         return [Hit(self.chunks[i], fused[i], r, sources[i]) for r, i in enumerate(order[:k], start=1)]
 
 

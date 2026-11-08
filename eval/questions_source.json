@@ -10,6 +10,9 @@
     "phrase": "not later than 72 hours after having become aware of it",
     "ref": "Article 33(1)"
    }
+  ],
+  "key_facts": [
+   "72\\s*hours"
   ]
  },
  {
@@ -23,6 +26,10 @@
     "phrase": "the child is at least 16 years old",
     "ref": "Article 8(1)"
    }
+  ],
+  "key_facts": [
+   "\\b16\\b",
+   "\\b13\\b"
   ]
  },
  {
@@ -36,6 +43,10 @@
     "phrase": "shall designate a data protection officer in any case where",
     "ref": "Article 37(1)"
    }
+  ],
+  "key_facts": [
+   "public authorit",
+   "large scale"
   ]
  },
  {
@@ -49,6 +60,10 @@
     "phrase": "That period may be extended by two further months",
     "ref": "Article 12(3)"
    }
+  ],
+  "key_facts": [
+   "one month",
+   "two (further )?months"
   ]
  },
  {
@@ -62,6 +77,9 @@
     "phrase": "is the end of 30 days beginning with the first day",
     "ref": "Section 22(3)"
    }
+  ],
+  "key_facts": [
+   "30\\s*days"
   ]
  },
  {
@@ -78,6 +96,9 @@
      55
     ]
    }
+  ],
+  "key_facts": [
+   "5,?000"
   ]
  },
  {
@@ -91,6 +112,9 @@
     "phrase": "governed by the laws of the State of Delaware",
     "ref": "Section 8.9"
    }
+  ],
+  "key_facts": [
+   "Delaware"
   ]
  },
  {
@@ -104,6 +128,9 @@
     "phrase": "11,214,688",
     "ref": "Schedule 2.1(b)"
    }
+  ],
+  "key_facts": [
+   "11,?214,?688"
   ]
  },
  {
@@ -117,6 +144,9 @@
     "phrase": "The Weights and Measures Act 1985 and regulations",
     "ref": "Schedule 5, Part 2"
    }
+  ],
+  "key_facts": [
+   "weights and measures authorit"
   ]
  },
  {
@@ -130,6 +160,9 @@
     "phrase": "sole remedy shall be to receive from the Partnership",
     "ref": "Section 4.1(a)"
    }
+  ],
+  "key_facts": [
+   "damages"
   ]
  },
  {
@@ -146,6 +179,10 @@
      44
     ]
    }
+  ],
+  "key_facts": [
+   "freedom of expression",
+   "legal claims"
   ]
  },
  {
@@ -159,6 +196,9 @@
     "phrase": "8.11 Severability",
     "ref": "Section 8.11"
    }
+  ],
+  "key_facts": [
+   "invalid|unenforceable"
   ]
  },
  {
@@ -172,6 +212,10 @@
     "phrase": "cannot require the trader to repair or replace the goods if that remedy",
     "ref": "Section 23(3)"
    }
+  ],
+  "key_facts": [
+   "impossible",
+   "disproportionate"
   ]
  },
  {
@@ -190,6 +234,12 @@
     "phrase": "fines up to 20 000 000 EUR, or in the case of an undertaking, up to 4 %",
     "ref": "Article 83(5)"
    }
+  ],
+  "key_facts": [
+   "10[ ,.]?000[ ,.]?000|10\\s*(million|m)\\b",
+   "20[ ,.]?000[ ,.]?000|20\\s*(million|m)\\b",
+   "\\b2\\s*%",
+   "\\b4\\s*%"
   ]
  },
  {
@@ -208,6 +258,11 @@
     "phrase": "No deduction may be made if the final right to reject is exercised in the first 6 months",
     "ref": "Section 24(10)"
    }
+  ],
+  "key_facts": [
+   "one repair|one replacement",
+   "(6|six) months",
+   "deduct"
   ]
  },
  {
@@ -229,6 +284,10 @@
     "phrase": "is the end of 30 days beginning with the first day",
     "ref": "Section 22(3)"
    }
+  ],
+  "key_facts": [
+   "(6|six) months",
+   "30\\s*days"
   ]
  },
  {
@@ -247,6 +306,10 @@
     "phrase": "sole remedy shall be to receive from the Partnership",
     "ref": "Section 4.1(a)"
    }
+  ],
+  "key_facts": [
+   "tenth anniversary|ten years|10 years",
+   "damages"
   ]
  },
  {
@@ -265,6 +328,10 @@
     "phrase": "5,111,103",
     "ref": "Schedule 3.1(a)"
    }
+  ],
+  "key_facts": [
+   "Schedule 3\\.1\\(a\\)",
+   "5,?111,?103"
   ]
  },
  {
@@ -283,6 +350,10 @@
     "phrase": "is the end of 30 days beginning with the first day",
     "ref": "Section 22(3)"
    }
+  ],
+  "key_facts": [
+   "72\\s*hours",
+   "30\\s*days"
   ]
  },
  {
@@ -290,27 +361,31 @@
   "type": "unanswerable",
   "question": "What is the governing law of the subcontractor agreement?",
   "answer": "INSUFFICIENT EVIDENCE: no subcontractor agreement is among the documents.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U02",
   "type": "unanswerable",
   "question": "What is the maximum fine under the California Consumer Privacy Act?",
   "answer": "INSUFFICIENT EVIDENCE: the CCPA is not among the documents.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U03",
   "type": "unanswerable",
   "question": "What annual rent is payable for the Dollar General property under the Tax Protection Agreement?",
   "answer": "INSUFFICIENT EVIDENCE: the agreement lists debt and gain amounts for the property, not rent.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  },
  {
   "id": "U04",
   "type": "unanswerable",
   "question": "How many days of paid annual leave must an employer give an employee under the Consumer Rights Act 2015?",
   "answer": "INSUFFICIENT EVIDENCE: the Act does not regulate employment leave.",
-  "evidence": []
+  "evidence": [],
+  "key_facts": []
  }
 ]

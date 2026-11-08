@@ -83,6 +83,7 @@ class Document:
     path: str
     pages: list[Page]
     body_font_size: float
+    name: str = ""            # title printed in the document, e.g. "TAX PROTECTION AGREEMENT"
 
     @property
     def n_pages(self) -> int:
@@ -96,6 +97,7 @@ class Document:
         return {
             "doc_id": self.doc_id,
             "title": self.title,
+            "name": self.name,
             "pages": self.n_pages,
             "scanned_pages": [p.number for p in self.pages if p.is_scanned],
             "ocr_pages": [p.number for p in self.pages if p.ocr_used],
@@ -553,8 +555,37 @@ def ingest_pdf(path: str | Path,
 
     _mark_toc(pages)
 
-    return Document(doc_id=make_doc_id(path), title=path.stem.replace("_", " "),
-                    path=str(path), pages=pages, body_font_size=body_size)
+    title = path.stem.replace("_", " ")
+    return Document(doc_id=make_doc_id(path), title=title, path=str(path), pages=pages,
+                    body_font_size=body_size, name=detect_name(pages) or title)
+
+
+def detect_name(pages: list[Page]) -> str:
+    """The document's own title from its first pages: the largest (then bold, then upper-case)
+    multi-word line near the top, plus following lines in the same style.
+    E.g. "TAX PROTECTION AGREEMENT", "Consumer Rights Act 2015"."""
+    first = [p for p in pages if not p.is_blank and p.blocks][:2]
+    candidates = []
+    for p in first:
+        for i, b in enumerate(p.blocks):
+            words = b.text.split()
+            if (b.kind != "text" or not 2 <= len(words) <= 30 or b.bbox[1] < 0.06 * p.height
+                    or b.bbox[1] > 0.7 * p.height or re.search(r"\.(htm|html|pdf|txt)|https?:|www\.", b.text)
+                    or sum(w.isalpha() for w in words) < 2):
+                continue
+            candidates.append(((b.size, len(words) >= 3, b.bold, -p.number, -b.bbox[1]), p, i))
+    if not candidates:
+        return ""
+    _, page, i = max(candidates, key=lambda c: c[0])
+    lead = page.blocks[i]
+    parts = [lead.text]
+    for b in page.blocks[i + 1:i + 4]:            # title continued on the next lines
+        if b.size == lead.size and b.bold == lead.bold and len(" ".join(parts + [b.text]).split()) <= 40:
+            parts.append(b.text)
+        else:
+            break
+    name = " ".join(parts)
+    return name.title() if name.isupper() and len(name.split()) <= 6 else name
 
 
 def main(paths: list[str]) -> None:

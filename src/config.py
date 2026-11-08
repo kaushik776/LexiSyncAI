@@ -1,4 +1,7 @@
-"""Central settings for LexiSyncAI. Change values here, not inside the modules."""
+"""Central settings for LexiSyncAI. Change values here, not inside the modules.
+Any setting can be overridden with an environment variable of the same name
+(e.g. LLM_BACKEND=openai), which is how Docker and cloud deployment configure it."""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -31,3 +34,36 @@ REF_WEIGHT = 1.0            # weight of the clause-reference list in the fusion
 CANDIDATES = 40             # chunks taken from each retriever before fusion / reranking
 TOP_K = 5                   # chunks passed to the LLM
 DEVICE = "auto"             # "auto" -> cuda if available, else cpu
+
+# --- Generation (LLM) ----------------------------------------------------------
+LLM_BACKEND = "ollama"      # "ollama" (local) or "openai" (any OpenAI-compatible API, e.g. Groq)
+LLM_MODEL = "qwen2.5:7b"
+OLLAMA_HOST = "http://localhost:11434"
+OPENAI_BASE_URL = "https://api.groq.com/openai/v1"   # used when LLM_BACKEND = "openai"
+OPENAI_MODEL = "llama-3.1-8b-instant"
+LLM_NUM_CTX = 8192          # context window in tokens (sources + prompt + answer)
+LLM_TEMPERATURE = 0.0       # deterministic answers
+MAX_SOURCES = 8             # chunks shown to the LLM (more for multi-part questions)
+
+# --- Abstention, confidence badge, agent loop --------------------------------------
+ABSTAIN_SCORE = 0.05        # top reranker probability below this -> abstain without calling the LLM
+LOW_SCORE = 0.30            # evidence strength below this -> at most LOW confidence
+HIGH_SCORE = 0.70           # evidence strength above this (and all claims verified) -> HIGH
+USE_PLANNER = True          # split multi-part questions into sub-questions
+USE_VERIFIER = True         # check every claim against its cited source
+MAX_RETRIES = 2             # verifier-driven redrafts (step cap)
+VERIFIER = "nli"            # "nli" (entailment model, default) or "llm" (the LLM judges support)
+NLI_MODEL = "cross-encoder/nli-deberta-v3-base"
+NLI_THRESHOLD = 0.4         # entailment probability needed for a claim to count as supported
+
+
+# --- Environment overrides -----------------------------------------------------------
+for _name, _value in list(globals().items()):
+    if _name.isupper() and _name in os.environ:
+        _raw = os.environ[_name]
+        if isinstance(_value, bool):
+            globals()[_name] = _raw.lower() in ("1", "true", "yes")
+        elif isinstance(_value, (int, float)):
+            globals()[_name] = type(_value)(_raw)
+        elif isinstance(_value, str):
+            globals()[_name] = _raw

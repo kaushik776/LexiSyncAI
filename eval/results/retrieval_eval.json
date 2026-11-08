@@ -7,7 +7,7 @@
   "MRR": 0.86,
   "multihop_all_evidence@5": 0.833,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 1.8,
+  "ms_per_query": 2.2,
   "per_question": [
    {
     "id": "F01",
@@ -259,14 +259,14 @@
   ]
  },
  "Dense only": {
-  "recall@1": 0.579,
-  "recall@3": 0.737,
-  "recall@5": 0.868,
+  "recall@1": 0.605,
+  "recall@3": 0.868,
+  "recall@5": 0.895,
   "recall@10": 0.974,
-  "MRR": 0.797,
-  "multihop_all_evidence@5": 0.5,
+  "MRR": 0.815,
+  "multihop_all_evidence@5": 0.667,
   "multihop_all_evidence@10": 0.833,
-  "ms_per_query": 19.8,
+  "ms_per_query": 21.8,
   "per_question": [
    {
     "id": "F01",
@@ -349,15 +349,15 @@
    {
     "id": "F07",
     "type": "factual",
-    "recall@1": 0.0,
-    "complete@1": 0.0,
-    "recall@3": 0.0,
-    "complete@3": 0.0,
+    "recall@1": 1.0,
+    "complete@1": 1.0,
+    "recall@3": 1.0,
+    "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.25
+    "rr": 1.0
    },
    {
     "id": "F08",
@@ -383,7 +383,7 @@
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.5
+    "rr": 0.3333333333333333
    },
    {
     "id": "F10",
@@ -416,13 +416,13 @@
     "type": "factual",
     "recall@1": 0.0,
     "complete@1": 0.0,
-    "recall@3": 0.0,
-    "complete@3": 0.0,
+    "recall@3": 1.0,
+    "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.25
+    "rr": 0.5
    },
    {
     "id": "F13",
@@ -453,7 +453,7 @@
    {
     "id": "M02",
     "type": "multihop",
-    "recall@1": 0.5,
+    "recall@1": 0.0,
     "complete@1": 0.0,
     "recall@3": 0.5,
     "complete@3": 0.0,
@@ -461,7 +461,7 @@
     "complete@5": 0.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "M03",
@@ -483,8 +483,8 @@
     "complete@1": 0.0,
     "recall@3": 0.5,
     "complete@3": 0.0,
-    "recall@5": 0.5,
-    "complete@5": 0.0,
+    "recall@5": 1.0,
+    "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
     "rr": 1.0
@@ -507,8 +507,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 0.5,
-    "complete@3": 0.0,
+    "recall@3": 1.0,
+    "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -518,14 +518,14 @@
   ]
  },
  "Hybrid (BM25 + dense, RRF)": {
-  "recall@1": 0.789,
+  "recall@1": 0.605,
   "recall@3": 0.842,
   "recall@5": 0.921,
   "recall@10": 1.0,
-  "MRR": 0.93,
+  "MRR": 0.825,
   "multihop_all_evidence@5": 0.833,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 23.1,
+  "ms_per_query": 22.6,
   "per_question": [
    {
     "id": "F01",
@@ -647,41 +647,41 @@
    {
     "id": "F10",
     "type": "factual",
-    "recall@1": 1.0,
-    "complete@1": 1.0,
+    "recall@1": 0.0,
+    "complete@1": 0.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "F11",
     "type": "factual",
-    "recall@1": 1.0,
-    "complete@1": 1.0,
+    "recall@1": 0.0,
+    "complete@1": 0.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "F12",
     "type": "factual",
-    "recall@1": 1.0,
-    "complete@1": 1.0,
+    "recall@1": 0.0,
+    "complete@1": 0.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "F13",
@@ -712,7 +712,7 @@
    {
     "id": "M02",
     "type": "multihop",
-    "recall@1": 0.5,
+    "recall@1": 0.0,
     "complete@1": 0.0,
     "recall@3": 0.5,
     "complete@3": 0.0,
@@ -720,7 +720,7 @@
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "M03",
@@ -777,14 +777,14 @@
   ]
  },
  "Hybrid + clause-reference lookup": {
-  "recall@1": 0.711,
+  "recall@1": 0.684,
   "recall@3": 0.763,
   "recall@5": 0.842,
   "recall@10": 1.0,
-  "MRR": 0.842,
+  "MRR": 0.815,
   "multihop_all_evidence@5": 0.667,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 21.2,
+  "ms_per_query": 21.4,
   "per_question": [
    {
     "id": "F01",
@@ -971,7 +971,7 @@
    {
     "id": "M02",
     "type": "multihop",
-    "recall@1": 0.5,
+    "recall@1": 0.0,
     "complete@1": 0.0,
     "recall@3": 0.5,
     "complete@3": 0.0,
@@ -979,7 +979,7 @@
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 1.0
+    "rr": 0.5
    },
    {
     "id": "M03",
@@ -1036,14 +1036,14 @@
   ]
  },
  "Dense + cross-encoder rerank": {
-  "recall@1": 0.763,
-  "recall@3": 0.974,
+  "recall@1": 0.868,
+  "recall@3": 0.921,
   "recall@5": 1.0,
   "recall@10": 1.0,
-  "MRR": 0.947,
+  "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 497.4,
+  "ms_per_query": 503.9,
   "per_question": [
    {
     "id": "F01",
@@ -1126,15 +1126,15 @@
    {
     "id": "F07",
     "type": "factual",
-    "recall@1": 0.0,
-    "complete@1": 0.0,
+    "recall@1": 1.0,
+    "complete@1": 1.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.5
+    "rr": 1.0
    },
    {
     "id": "F08",
@@ -1191,15 +1191,15 @@
    {
     "id": "F12",
     "type": "factual",
-    "recall@1": 0.0,
-    "complete@1": 0.0,
+    "recall@1": 1.0,
+    "complete@1": 1.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.5
+    "rr": 1.0
    },
    {
     "id": "F13",
@@ -1258,8 +1258,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -1284,8 +1284,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -1295,14 +1295,14 @@
   ]
  },
  "Hybrid + cross-encoder rerank": {
-  "recall@1": 0.816,
-  "recall@3": 0.974,
+  "recall@1": 0.868,
+  "recall@3": 0.921,
   "recall@5": 1.0,
   "recall@10": 1.0,
-  "MRR": 0.974,
+  "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 504.3,
+  "ms_per_query": 512.4,
   "per_question": [
    {
     "id": "F01",
@@ -1385,15 +1385,15 @@
    {
     "id": "F07",
     "type": "factual",
-    "recall@1": 0.0,
-    "complete@1": 0.0,
+    "recall@1": 1.0,
+    "complete@1": 1.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.5
+    "rr": 1.0
    },
    {
     "id": "F08",
@@ -1517,8 +1517,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -1543,8 +1543,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -1554,14 +1554,14 @@
   ]
  },
  "Hybrid + refs + rerank (final)": {
-  "recall@1": 0.816,
-  "recall@3": 0.974,
+  "recall@1": 0.868,
+  "recall@3": 0.921,
   "recall@5": 1.0,
   "recall@10": 1.0,
-  "MRR": 0.974,
+  "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 507.0,
+  "ms_per_query": 514.6,
   "per_question": [
    {
     "id": "F01",
@@ -1644,15 +1644,15 @@
    {
     "id": "F07",
     "type": "factual",
-    "recall@1": 0.0,
-    "complete@1": 0.0,
+    "recall@1": 1.0,
+    "complete@1": 1.0,
     "recall@3": 1.0,
     "complete@3": 1.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
     "complete@10": 1.0,
-    "rr": 0.5
+    "rr": 1.0
    },
    {
     "id": "F08",
@@ -1776,8 +1776,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,
@@ -1802,8 +1802,8 @@
     "type": "multihop",
     "recall@1": 0.5,
     "complete@1": 0.0,
-    "recall@3": 1.0,
-    "complete@3": 1.0,
+    "recall@3": 0.5,
+    "complete@3": 0.0,
     "recall@5": 1.0,
     "complete@5": 1.0,
     "recall@10": 1.0,

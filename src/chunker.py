@@ -77,6 +77,7 @@ class Chunk:
     n_words: int = 0
     paras: list[str] = field(default_factory=list)   # paragraph numbers covered, e.g. ["4", "5"]
     ref_style: str = "paren"       # "paren" -> Article 83(4) | "para" -> Part II, paras 12-14
+    doc_name: str = ""             # title printed in the document, e.g. "Tax Protection Agreement"
 
     @property
     def heading_path(self) -> str:
@@ -92,8 +93,10 @@ class Chunk:
 
     @property
     def context_text(self) -> str:
-        """Text used for search: the heading path gives each chunk its legal context."""
-        return f"{self.doc_title} | {self.heading_path}\n{self.text}"
+        """Text used for search: document name and heading path give each chunk its legal context."""
+        name = " ".join(self.doc_name.split()[:15])
+        title = f"{self.doc_title} ({name})" if name and name != self.doc_title else self.doc_title
+        return f"{title} | {self.heading_path}\n{self.text}"
 
     @property
     def pages_label(self) -> str:
@@ -304,7 +307,8 @@ class _Builder:
             section_id=self.s.section_id, section_title=self.s.section_title,
             parents=self._parents(), ref=ref,
             page_start=min(pages), page_end=max(pages), spans=_spans(blocks),
-            text=text, n_words=_n_words(text), paras=list(paras or []), ref_style=self.style))
+            text=text, n_words=_n_words(text), paras=list(paras or []), ref_style=self.style,
+            doc_name=self.doc.name))
 
     def flush(self) -> None:
         if self.buf:
@@ -540,7 +544,7 @@ def _combine(a: Chunk, b: Chunk) -> Chunk:
     text = f"{a.text}\n{b.text}"
     return Chunk(a.chunk_id, a.doc_id, a.doc_title, a.kind, a.section_id, a.section_title,
                  a.parents, ref, min(a.page_start, b.page_start), max(a.page_end, b.page_end),
-                 _spans(blocks), text, _n_words(text), paras, a.ref_style)
+                 _spans(blocks), text, _n_words(text), paras, a.ref_style, a.doc_name)
 
 
 def _merge_small(chunks: list[Chunk]) -> list[Chunk]:
