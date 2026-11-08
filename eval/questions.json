@@ -1,0 +1,384 @@
+[
+ {
+  "id": "F01",
+  "type": "factual",
+  "question": "Within what time must a controller notify a personal data breach to the supervisory authority under the GDPR?",
+  "answer": "Without undue delay and, where feasible, not later than 72 hours after becoming aware of it (Article 33(1)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "not later than 72 hours after having become aware of it",
+    "ref": "Article 33(1)",
+    "pages": [
+     17,
+     52
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F02",
+  "type": "factual",
+  "question": "From what age can a child give valid consent alone for information society services under the GDPR, and how low may Member States set that age?",
+  "answer": "16 years; Member States may set a lower age but not below 13 years (Article 8(1)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "the child is at least 16 years old",
+    "ref": "Article 8(1)",
+    "pages": [
+     37
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F03",
+  "type": "factual",
+  "question": "In which cases must a controller or processor designate a data protection officer?",
+  "answer": "Where processing is by a public authority (except courts in their judicial capacity), where core activities require regular and systematic monitoring of data subjects on a large scale, or where core activities consist of large-scale processing of special categories or criminal-conviction data (Article 37(1)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "shall designate a data protection officer in any case where",
+    "ref": "Article 37(1)",
+    "pages": [
+     55
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F04",
+  "type": "factual",
+  "question": "How long does a controller have to act on a data subject's request under Articles 15 to 22 of the GDPR, and can the period be extended?",
+  "answer": "Within one month of receipt; extendable by two further months where necessary, with the data subject informed within the first month (Article 12(3)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "That period may be extended by two further months",
+    "ref": "Article 12(3)",
+    "pages": [
+     40
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F05",
+  "type": "factual",
+  "question": "What is the time limit for a consumer to exercise the short-term right to reject goods under the Consumer Rights Act 2015?",
+  "answer": "The end of 30 days beginning with the first day after ownership/possession has transferred, the goods are delivered and any required installation is done (section 22(3)).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "is the end of 30 days beginning with the first day",
+    "ref": "Section 22(3)",
+    "pages": [
+     20
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F06",
+  "type": "factual",
+  "question": "What is the maximum financial penalty for a letting agent that fails to publicise its fees?",
+  "answer": "The penalty must not exceed £5,000 (section 87(7)).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "must not exceed £5,000",
+    "ref": "Section 87(7)",
+    "pages": [
+     55
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F07",
+  "type": "factual",
+  "question": "Which state's law governs the Tax Protection Agreement?",
+  "answer": "The laws of the State of Delaware, without regard to its choice-of-law provisions (Section 8.9).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "governed by the laws of the State of Delaware",
+    "ref": "Section 8.9",
+    "pages": [
+     22
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F08",
+  "type": "factual",
+  "question": "What is the total Section 704(c) value of the Gain Limitation Properties listed in the agreement?",
+  "answer": "$11,214,688 (Schedule 2.1(b) table).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "11,214,688",
+    "ref": "Schedule 2.1(b)",
+    "pages": [
+     25
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F09",
+  "type": "factual",
+  "question": "Who is the enforcer for the Weights and Measures Act 1985 under the enforcement schedule of the Consumer Rights Act?",
+  "answer": "A local weights and measures authority in Great Britain or the Department of Enterprise, Trade and Investment in Northern Ireland (Schedule 5 table).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "The Weights and Measures Act 1985 and regulations",
+    "ref": "Schedule 5, Part 2",
+    "pages": [
+     88
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F10",
+  "type": "factual",
+  "question": "What remedy does a Protected Partner have if the Partnership breaches its obligations under Article 2 or Article 3?",
+  "answer": "Monetary damages are the Protected Partner's sole remedy (Section 4.1(a)).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "sole remedy shall be to receive from the Partnership",
+    "ref": "Section 4.1(a)",
+    "pages": [
+     14
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F11",
+  "type": "factual",
+  "question": "What exceptions to the right to erasure does Article 17(3) of the GDPR set out?",
+  "answer": "Erasure does not apply where processing is necessary for freedom of expression and information; compliance with a legal obligation or a public-interest task; public health; archiving, research or statistics; or legal claims (Article 17(3)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "3. Paragraphs 1 and 2 shall not apply to the extent that processing is necessary",
+    "ref": "Article 17(3)",
+    "pages": [
+     44
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F12",
+  "type": "factual",
+  "question": "What does Section 8.11 of the Tax Protection Agreement provide?",
+  "answer": "Severability: an invalid or unenforceable part of a provision is ineffective only to the extent of the invalidity, without affecting the rest of the Agreement (Section 8.11).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "8.11 Severability",
+    "ref": "Section 8.11",
+    "pages": [
+     22
+    ]
+   }
+  ]
+ },
+ {
+  "id": "F13",
+  "type": "factual",
+  "question": "Under section 23(3) of the Consumer Rights Act 2015, when can a consumer not require the trader to repair or replace goods?",
+  "answer": "When repair or replacement is impossible, or disproportionate compared to the other remedy (section 23(3)).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "cannot require the trader to repair or replace the goods if that remedy",
+    "ref": "Section 23(3)",
+    "pages": [
+     21
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M01",
+  "type": "multihop",
+  "question": "Under the GDPR, what is the maximum fine a company can receive, and which kinds of violations trigger the higher fine?",
+  "answer": "Two tiers: up to EUR 10M or 2% of worldwide annual turnover (Article 83(4)) and up to EUR 20M or 4% (Article 83(5)), whichever is higher. The higher tier applies to the basic principles and consent (Arts 5, 6, 7, 9), data subjects' rights (Arts 12-22), international transfers (Arts 44-49), Member State law obligations and non-compliance with supervisory orders.",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "fines up to 10 000 000 EUR",
+    "ref": "Article 83(4)",
+    "pages": [
+     82
+    ]
+   },
+   {
+    "doc_id": "GDPR",
+    "phrase": "fines up to 20 000 000 EUR, or in the case of an undertaking, up to 4 %",
+    "ref": "Article 83(5)",
+    "pages": [
+     83
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M02",
+  "type": "multihop",
+  "question": "When can a consumer use the final right to reject goods, and can the trader deduct an amount for use if the consumer rejects within the first 6 months?",
+  "answer": "After one repair or one replacement fails (or repair/replacement is impossible or not done in time) (section 24(5)); no deduction for use may be made in the first 6 months unless the goods are a motor vehicle or specified goods (section 24(10)).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "after one repair or one replacement, the goods do not conform",
+    "ref": "Section 24(5)",
+    "pages": [
+     22
+    ]
+   },
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "No deduction may be made if the final right to reject is exercised in the first 6 months",
+    "ref": "Section 24(10)",
+    "pages": [
+     23
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M03",
+  "type": "multihop",
+  "question": "If goods turn out not to conform within six months of delivery, are they presumed to have been faulty on delivery, and what is the deadline for the short-term right to reject?",
+  "answer": "Yes, goods that do not conform within six months of delivery are taken not to have conformed on delivery unless shown otherwise (section 19(14)-(15)); the short-term right to reject ends 30 days after transfer, delivery and installation (section 22(3)).",
+  "evidence": [
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "within the period of six months beginning",
+    "ref": "Section 19(14)",
+    "pages": [
+     17
+    ]
+   },
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "is the end of 30 days beginning with the first day",
+    "ref": "Section 22(3)",
+    "pages": [
+     20
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M04",
+  "type": "multihop",
+  "question": "How long does the Tax Protection Period last, and what is the Protected Partner's remedy if the Partnership breaches Article 2 during that period?",
+  "answer": "From the Closing Date to its tenth anniversary (ending earlier for a partner who disposes of 60% of its units) (Article 1 definition); the sole remedy is monetary damages (Section 4.1(a)).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "ending on the tenth anniversary thereof",
+    "ref": "Article 1",
+    "pages": [
+     4
+    ]
+   },
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "sole remedy shall be to receive from the Partnership",
+    "ref": "Section 4.1(a)",
+    "pages": [
+     14
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M05",
+  "type": "multihop",
+  "question": "How is the Minimum Liability Amount defined, and what amount is listed for the Tractor Supply property?",
+  "answer": "It is the amount set next to each Protected Partner's name on Schedule 3.1(a) (Article 1); for Tractor Supply (Kernersville, NC) it is $5,111,103 (Schedule 3.1(a)).",
+  "evidence": [
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "Minimum Liability Amount” means",
+    "ref": "Article 1",
+    "pages": [
+     3
+    ]
+   },
+   {
+    "doc_id": "EX_10_2",
+    "phrase": "5,111,103",
+    "ref": "Schedule 3.1(a)",
+    "pages": [
+     26
+    ]
+   }
+  ]
+ },
+ {
+  "id": "M06",
+  "type": "multihop",
+  "question": "Which is longer: the GDPR deadline for notifying a personal data breach to the supervisory authority, or the time limit for the short-term right to reject under the UK Consumer Rights Act 2015?",
+  "answer": "The short-term right to reject (30 days, CRA section 22(3)) is far longer than the GDPR breach notification deadline (72 hours, Article 33(1)).",
+  "evidence": [
+   {
+    "doc_id": "GDPR",
+    "phrase": "not later than 72 hours after having become aware of it",
+    "ref": "Article 33(1)",
+    "pages": [
+     17,
+     52
+    ]
+   },
+   {
+    "doc_id": "UK_Consumer_Rights_Act_2015",
+    "phrase": "is the end of 30 days beginning with the first day",
+    "ref": "Section 22(3)",
+    "pages": [
+     20
+    ]
+   }
+  ]
+ },
+ {
+  "id": "U01",
+  "type": "unanswerable",
+  "question": "What is the governing law of the subcontractor agreement?",
+  "answer": "INSUFFICIENT EVIDENCE: no subcontractor agreement is among the documents.",
+  "evidence": []
+ },
+ {
+  "id": "U02",
+  "type": "unanswerable",
+  "question": "What is the maximum fine under the California Consumer Privacy Act?",
+  "answer": "INSUFFICIENT EVIDENCE: the CCPA is not among the documents.",
+  "evidence": []
+ },
+ {
+  "id": "U03",
+  "type": "unanswerable",
+  "question": "What annual rent is payable for the Dollar General property under the Tax Protection Agreement?",
+  "answer": "INSUFFICIENT EVIDENCE: the agreement lists debt and gain amounts for the property, not rent.",
+  "evidence": []
+ },
+ {
+  "id": "U04",
+  "type": "unanswerable",
+  "question": "How many days of paid annual leave must an employer give an employee under the Consumer Rights Act 2015?",
+  "answer": "INSUFFICIENT EVIDENCE: the Act does not regulate employment leave.",
+  "evidence": []
+ }
+]

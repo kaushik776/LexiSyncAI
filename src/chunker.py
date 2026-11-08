@@ -364,7 +364,8 @@ class _Builder:
         self.s.num = self.s.letter = None
         self.paras = []
         self.buf = carried + ([b] if b else [])
-        self.buf_has_body = False
+        # "8.9 Governing Law. The interpretation ..." carries body text in the heading block.
+        self.buf_has_body = bool(b) and _n_words(b.text) > _n_words(label) + _n_words(title) + 3
         self.awaiting_title = None if title else 2
         self.title_open = 2 if title.isupper() else None
 
@@ -395,6 +396,10 @@ class _Builder:
                 if not self._accept_unit_number(int(m.group(2)), m.group(1)):
                     return False
             if level == 1:
+                # "Chapter 5 — General ..." repeated at the top of pages inside Chapter 5 is a
+                # running header, not a new chapter.
+                if any(" ".join(p.split()[:2]) == label for _, p in self.s.parents):
+                    return True
                 self._level1(label, title)
             else:
                 self._level2(b, label, title)

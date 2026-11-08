@@ -274,8 +274,8 @@ def _edge_positions(p: Page) -> dict[int, tuple[str, bool]]:
     A block is a candidate if it lies in the fixed top/bottom band, or if it is one of the
     first/last two short blocks on the page (pages with wide margins, e.g. court opinions)."""
     by_y = sorted(p.blocks, key=lambda b: b.bbox[1])
-    short = [b for b in by_y if len(b.text.split()) <= 15]
-    top_edge = {id(b) for b in by_y[:2] if b in short}
+    short = [b for b in by_y if len(b.text.split()) <= 25]
+    top_edge = {id(b) for b in by_y[:3] if b in short}
     bottom_edge = {id(b) for b in by_y[-2:] if b in short}
     pos = {}
     for b in p.blocks:
@@ -309,8 +309,12 @@ def _remove_headers_footers(pages: list[Page], body_size: float) -> None:
             key = _norm_key(b.text)
             lone_enumerator = bool(re.fullmatch(r"[IVX]{1,5}|[A-Z]", b.text))   # judgment parts "II", "B"
             heading_like = bool(HEADING_LIKE.match(b.text)) or lone_enumerator
-            if heading_like:
+            if lone_enumerator:
                 repeated = in_band and raw_pages[b.text] >= config.REPEAT_MIN_PAGES
+            elif heading_like:
+                # "Article 15" at the top of one page is a real heading; "Chapter 2 — Goods"
+                # printed on every page of the chapter is a running header.
+                repeated = raw_pages[b.text] >= config.REPEAT_MIN_PAGES
             else:
                 repeated = key_pages[key] >= config.REPEAT_MIN_PAGES
             # A lone number/letter can be a heading ("3", "II"), so outside the fixed band only
