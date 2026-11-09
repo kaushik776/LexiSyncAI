@@ -2,23 +2,22 @@
  "full": {
   "summary": {
    "questions": 23,
-   "key_fact_recall": 0.825,
-   "key_fact_recall_factual": 0.923,
-   "key_fact_recall_multihop": 0.611,
-   "citation_precision": 0.847,
-   "evidence_recall": 0.921,
+   "key_fact_recall": 0.789,
+   "key_fact_recall_factual": 0.846,
+   "key_fact_recall_multihop": 0.667,
+   "citation_precision": 0.793,
+   "evidence_recall": 0.868,
    "abstention_accuracy_unanswerable": 1.0,
-   "false_abstention_rate": 0.053,
-   "mean_seconds": 10.02,
-   "p95_seconds": 18.28,
-   "mean_llm_calls": 1.522,
-   "mean_prompt_tokens": 2939.391,
-   "mean_completion_tokens": 180.783,
-   "questions_with_retry": 3,
+   "false_abstention_rate": 0.105,
+   "mean_seconds": 11.632,
+   "p95_seconds": 27.52,
+   "mean_llm_calls": 1.826,
+   "mean_prompt_tokens": 3502.174,
+   "mean_completion_tokens": 213.652,
+   "questions_with_retry": 4,
    "badges": {
     "HIGH": 15,
-    "INSUFFICIENT EVIDENCE": 5,
-    "LOW": 1,
+    "INSUFFICIENT EVIDENCE": 6,
     "MEDIUM": 2
    }
   },
@@ -27,15 +26,15 @@
     "id": "F01",
     "type": "factual",
     "question": "Within what time must a controller notify a personal data breach to the supervisory authority under the GDPR?",
-    "answer": "The controller shall notify the personal data breach to the supervisory authority without undue delay and, where feasible, not later than 72 hours after having become aware of it. [S1] [S2]",
+    "answer": "The controller shall notify the personal data breach to the supervisory authority without undue delay and, where feasible, not later than 72 hours after having become aware of it. [S1] [S2] [S3]",
     "badge": "HIGH",
     "abstained": false,
-    "citations": "[S1] GDPR, p. 52, Article 33(1)-(3); [S2] GDPR, pp. 16-17, Recitals 85-86",
+    "citations": "[S1] GDPR, p. 52, Article 33(1)-(3); [S2] GDPR, pp. 16-17, Recitals 85-86; [S3] GDPR, p. 17, Recitals 87-89",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 2163,
-    "completion_tokens": 97,
-    "seconds": 12.987,
+    "prompt_tokens": 2212,
+    "completion_tokens": 117,
+    "seconds": 13.144,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -57,7 +56,8 @@
         "claim": "The controller shall notify the personal data breach to the supervisory authority without undue delay and, where feasible, not later than 72 hours after having become aware of it.",
         "sources": [
          1,
-         2
+         2,
+         3
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
@@ -78,9 +78,9 @@
     "citations": "[S1] GDPR, pp. 37-38, Article 8(1)-(3)",
     "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2966,
-    "completion_tokens": 189,
-    "seconds": 12.752,
+    "prompt_tokens": 3015,
+    "completion_tokens": 175,
+    "seconds": 12.076,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -123,6 +123,11 @@
         "reason": "entailed (p=0.99)"
        }
       ]
+     },
+     {
+      "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
      }
     ],
     "citation_precision": 1.0,
@@ -138,9 +143,9 @@
     "citations": "[S1] GDPR, p. 55, Article 37(1)-(4)",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 1991,
+    "prompt_tokens": 2040,
     "completion_tokens": 178,
-    "seconds": 8.278,
+    "seconds": 8.303,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -200,15 +205,15 @@
     "id": "F04",
     "type": "factual",
     "question": "How long does a controller have to act on a data subject's request under Articles 15 to 22 of the GDPR, and can the period be extended?",
-    "answer": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR. [S1] [S2] The period may be extended by two further months where necessary, taking into account the complexity and number of the requests. [S1] [S2]",
+    "answer": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR. [S1] [S2] The period can be extended by two months if necessary, taking into account the complexity and number of the requests. [S1] [S2]",
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] GDPR, pp. 39-40, Article 12(1)-(3); [S2] GDPR, p. 40, Article 12(4)-(8)",
     "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2592,
-    "completion_tokens": 183,
-    "seconds": 11.646,
+    "prompt_tokens": 2659,
+    "completion_tokens": 215,
+    "seconds": 12.324,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -217,8 +222,8 @@
       "step": 0,
       "action": "plan",
       "sub_questions": [
-       "How long does a controller have to act on a data subject's request under Articles 15 to 22 of the GDPR?",
-       "Can the period for acting on a data subject's request under Articles 15 to 22 of the GDPR be extended?"
+       "How long does a controller have to act on a data subject's request under Article 12(2) of the GDPR?",
+       "Can the period for acting on a data subject's request under Articles 15 to 22 of the GDPR be extended, and if so, under which conditions (Article 28(3) of the GDPR)?"
       ]
      },
      {
@@ -244,15 +249,20 @@
         "reason": "entailed (p=1.00)"
        },
        {
-        "claim": "The period may be extended by two further months where necessary, taking into account the complexity and number of the requests.",
+        "claim": "The period can be extended by two months if necessary, taking into account the complexity and number of the requests.",
         "sources": [
          1,
          2
         ],
         "supported": true,
-        "reason": "entailed (p=0.99)"
+        "reason": "entailed (p=1.00)"
        }
       ]
+     },
+     {
+      "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
      }
     ],
     "citation_precision": 1.0,
@@ -268,9 +278,9 @@
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 20-21, Section 22(1)-(4); [S2] UK Consumer Rights Act 2015, p. 21, Section 22(5)-(8); [S3] UK Consumer Rights Act 2015, p. 18, Section 20(1)-(8)",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 2339,
+    "prompt_tokens": 2388,
     "completion_tokens": 160,
-    "seconds": 7.644,
+    "seconds": 6.998,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -314,9 +324,9 @@
     "citations": "[S1] UK Consumer Rights Act 2015, p. 55, Section 87(6)-(12); [S2] UK Consumer Rights Act 2015, pp. 147-148, Schedule 9(3) ff.",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 2396,
-    "completion_tokens": 94,
-    "seconds": 5.9,
+    "prompt_tokens": 2445,
+    "completion_tokens": 106,
+    "seconds": 6.192,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -353,15 +363,15 @@
     "id": "F07",
     "type": "factual",
     "question": "Which state's law governs the Tax Protection Agreement?",
-    "answer": "The laws of the State of Delaware govern the interpretation and construction of the Agreement. [S1]",
+    "answer": "The laws of the State of Delaware govern the Tax Protection Agreement. [S1]",
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 22, Section 8.9",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 1912,
-    "completion_tokens": 67,
-    "seconds": 5.295,
+    "prompt_tokens": 1961,
+    "completion_tokens": 72,
+    "seconds": 5.715,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -380,7 +390,7 @@
       "claims": 1,
       "checks": [
        {
-        "claim": "The laws of the State of Delaware govern the interpretation and construction of the Agreement.",
+        "claim": "The laws of the State of Delaware govern the Tax Protection Agreement.",
         "sources": [
          1
         ],
@@ -403,9 +413,9 @@
     "citations": "[S1] EX-10.2, p. 25, Schedule 2.1(b), table; [S3] EX-10.2, p. 25, Schedule 2.1(b)",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 2027,
+    "prompt_tokens": 2076,
     "completion_tokens": 104,
-    "seconds": 6.21,
+    "seconds": 6.205,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -448,9 +458,9 @@
     "citations": "[S1] UK Consumer Rights Act 2015, p. 88, Schedule 5, Part 2, table",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 2932,
+    "prompt_tokens": 2981,
     "completion_tokens": 102,
-    "seconds": 6.309,
+    "seconds": 6.308,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -486,15 +496,15 @@
     "id": "F10",
     "type": "factual",
     "question": "What remedy does a Protected Partner have if the Partnership breaches its obligations under Article 2 or Article 3?",
-    "answer": "A Protected Partner can receive monetary damages from the Partnership if the Partnership breaches its obligations under Article 2 or Article 3. [S1] The specific damages include the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the income or gain allocated to, or otherwise recognized by, such Protected Partner with respect to its Partnership Units by reason of such breach, reduced by an amount equal to the net present value of the reasonably estimated tax liability that would be due if the Partnership repaid the indebtedness required to be maintained under Article 3 at the expiration of the Tax Protection Period. [S1]",
+    "answer": "A Protected Partner can receive monetary damages from the Partnership if the Partnership breaches its obligations under Article 2 or Article 3. [S1] The damages are calculated based on the specific breach, such as the income taxes incurred by the Protected Partner or an Indirect Owner as a result of the breach. [S1]",
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, pp. 14-16, Section 4.1(a)",
     "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2633,
-    "completion_tokens": 257,
-    "seconds": 13.387,
+    "prompt_tokens": 2682,
+    "completion_tokens": 187,
+    "seconds": 12.453,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -529,14 +539,19 @@
         "reason": "entailed (p=1.00)"
        },
        {
-        "claim": "The specific damages include the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the income or gain allocated to, or otherwise recognized by, such Protected Partner with respect to its Partnership Units by reason of such breach, reduced by an amount equal to the net present value of the reasonably estimated tax liability that would be due if the Partnership repaid the indebtedness required to be maintained under Article 3 at the expiration of the Tax Protection Period.",
+        "claim": "The damages are calculated based on the specific breach, such as the income taxes incurred by the Protected Partner or an Indirect Owner as a result of the breach.",
         "sources": [
          1
         ],
         "supported": true,
-        "reason": "entailed (p=0.99)"
+        "reason": "entailed (p=0.98)"
        }
       ]
+     },
+     {
+      "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
      }
     ],
     "citation_precision": 1.0,
@@ -546,17 +561,17 @@
     "id": "F11",
     "type": "factual",
     "question": "What exceptions to the right to erasure does Article 17(3) of the GDPR set out?",
-    "answer": "Paragraphs 1 and 2 of Article 17(3) of the GDPR set out several exceptions to the right to erasure. [S3]",
-    "badge": "MEDIUM",
-    "abstained": false,
-    "citations": "[S3] GDPR, pp. 44-45, Article 18(1)-(3)",
+    "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.2 (27 pages), GDPR (88 pages), UK Consumer Rights Act 2015 (150 pages).",
+    "badge": "INSUFFICIENT EVIDENCE",
+    "abstained": true,
+    "citations": "",
     "key_fact_recall": 0.0,
-    "llm_calls": 1,
-    "prompt_tokens": 2153,
-    "completion_tokens": 92,
-    "seconds": 5.95,
-    "retries": 0,
-    "verifier_rejections": 0,
+    "llm_calls": 3,
+    "prompt_tokens": 6756,
+    "completion_tokens": 257,
+    "seconds": 15.376,
+    "retries": 2,
+    "verifier_rejections": 3,
     "planned": false,
     "retry_log": [
      {
@@ -569,41 +584,85 @@
      {
       "step": 1,
       "action": "verify",
-      "supported": 1,
+      "supported": 0,
       "claims": 1,
       "checks": [
        {
-        "claim": "Paragraphs 1 and 2 of Article 17(3) of the GDPR set out several exceptions to the right to erasure.",
+        "claim": "Article 17(3) of the GDPR sets out several exceptions to the right to erasure.",
         "sources": [
-         3
+         2
         ],
-        "supported": true,
-        "reason": "citation corrected: S2 -> S3"
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
        }
       ]
      },
      {
       "step": 2,
-      "action": "recite",
-      "detail": "citation corrected: S2 -> S3 for: Paragraphs 1 and 2 of Article 17(3) of the GDPR set out several exceptions to th"
+      "action": "redraft",
+      "answerable": true,
+      "claims": 1
+     },
+     {
+      "step": 2,
+      "action": "verify",
+      "supported": 0,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "Article 17(3) of the GDPR sets out several exceptions to the right to erasure.",
+        "sources": [
+         2
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
+       }
+      ]
+     },
+     {
+      "step": 3,
+      "action": "redraft",
+      "answerable": true,
+      "claims": 1
+     },
+     {
+      "step": 3,
+      "action": "verify",
+      "supported": 0,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "Article 17(3) of the GDPR sets out several exceptions to the right to erasure.",
+        "sources": [
+         2
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
+       }
+      ]
+     },
+     {
+      "step": 6,
+      "action": "keep_best_draft",
+      "detail": "kept the draft with 0% of claims verified"
      }
     ],
-    "citation_precision": 1.0,
-    "evidence_recall": 1.0
+    "citation_precision": null,
+    "evidence_recall": 0.0
    },
    {
     "id": "F12",
     "type": "factual",
     "question": "What does Section 8.11 of the Tax Protection Agreement provide?",
-    "answer": "Section 8.11 of the Tax Protection Agreement provides that if any part of any provision is invalid or unenforceable, only that part is ineffective, and the remaining parts remain effective. [S1]",
+    "answer": "Section 8.11 of the Tax Protection Agreement provides for the severability of provisions. [S1]",
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 22, Section 8.11",
-    "key_fact_recall": 1.0,
+    "key_fact_recall": 0.0,
     "llm_calls": 1,
-    "prompt_tokens": 1466,
-    "completion_tokens": 111,
-    "seconds": 5.765,
+    "prompt_tokens": 1515,
+    "completion_tokens": 101,
+    "seconds": 5.666,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -622,7 +681,7 @@
       "claims": 1,
       "checks": [
        {
-        "claim": "Section 8.11 of the Tax Protection Agreement provides that if any part of any provision is invalid or unenforceable, only that part is ineffective, and the remaining parts remain effective.",
+        "claim": "Section 8.11 of the Tax Protection Agreement provides for the severability of provisions.",
         "sources": [
          1
         ],
@@ -645,9 +704,9 @@
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 21-22, Section 23(1)-(6); [S2] UK Consumer Rights Act 2015, p. 35, Section 43(1)-(6)",
     "key_fact_recall": 1.0,
     "llm_calls": 1,
-    "prompt_tokens": 1985,
+    "prompt_tokens": 2034,
     "completion_tokens": 111,
-    "seconds": 6.102,
+    "seconds": 6.208,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -684,15 +743,15 @@
     "id": "M01",
     "type": "multihop",
     "question": "Under the GDPR, what is the maximum fine a company can receive, and which kinds of violations trigger the higher fine?",
-    "answer": "The maximum fine a company can receive under the GDPR is 20,000,000 EUR, or 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher. [S1] [S2]",
+    "answer": "The maximum fine a company can receive is 20,000,000 EUR, or 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher. [S1] [S2] [S3] [S4] [S5] The violations that trigger the higher fine are those listed in Article 83(5). [S1]",
     "badge": "MEDIUM",
     "abstained": false,
-    "citations": "[S1] GDPR, pp. 82-83, Article 83(3)-(5); [S2] GDPR, p. 83, Article 83(6)-(9)",
+    "citations": "[S1] GDPR, pp. 82-83, Article 83(3)-(5); [S2] GDPR, p. 83, Article 83(6)-(9); [S3] GDPR, pp. 27-28, Recitals 149-150; [S4] GDPR, p. 24, Recitals 130-131; [S5] GDPR, p. 77, Article 70(1)-(2)",
     "key_fact_recall": 0.5,
-    "llm_calls": 3,
-    "prompt_tokens": 5419,
-    "completion_tokens": 367,
-    "seconds": 18.276,
+    "llm_calls": 4,
+    "prompt_tokens": 7256,
+    "completion_tokens": 651,
+    "seconds": 27.522,
     "retries": 1,
     "verifier_rejections": 1,
     "planned": true,
@@ -723,20 +782,24 @@
         "sources": [
          1,
          2,
-         3
+         3,
+         4,
+         5
         ],
         "supported": true,
         "reason": "entailed (p=0.98)"
        },
        {
-        "claim": "Violations of the basic principles for processing, including conditions for consent, pursuant to Articles 5, 6, 7 and 9; the data subjects' rights pursuant to Articles 12 to 22; the transfers of personal data to a recipient in a third country or an international organisation pursuant to Articles 44 to 49; and any obligations pursuant to Member State law adopted under Chapter IX, trigger the higher fine.",
+        "claim": "Violations of the basic principles for processing, including conditions for consent, pursuant to Articles 5, 6, 7 and 9; data subjects' rights pursuant to Articles 12 to 22; transfers of personal data to a recipient in a third country or an international organisation pursuant to Articles 44 to 49; and non-compliance with an order or a temporary or definitive limitation on processing or the suspension of data flows by the supervisory authority pursuant to Article 58(2) or failure to provide access in violation of Article 58(1) trigger the higher fine.",
         "sources": [
          1,
          2,
-         3
+         3,
+         4,
+         5
         ],
         "supported": false,
-        "reason": "cited text does not entail the claim (p=0.03)"
+        "reason": "cited text does not entail the claim (p=0.04)"
        }
       ]
      },
@@ -753,33 +816,58 @@
       "claims": 1,
       "checks": [
        {
-        "claim": "The maximum fine a company can receive under the GDPR is 20,000,000 EUR, or 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher.",
+        "claim": "The maximum fine a company can receive is 20,000,000 EUR, or 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher.",
         "sources": [
          1,
-         2
+         2,
+         3,
+         4,
+         5
         ],
         "supported": true,
-        "reason": "entailed (p=0.98)"
+        "reason": "entailed (p=0.99)"
+       }
+      ]
+     },
+     {
+      "step": 5,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 MISSING"
+     },
+     {
+      "step": 5,
+      "action": "fill_gap",
+      "part": 2,
+      "supported": 1,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "The violations that trigger the higher fine are those listed in Article 83(5).",
+        "sources": [
+         1
+        ],
+        "supported": true,
+        "reason": "entailed (p=0.97)"
        }
       ]
      }
     ],
-    "citation_precision": 1.0,
+    "citation_precision": 0.4,
     "evidence_recall": 1.0
    },
    {
     "id": "M02",
     "type": "multihop",
     "question": "When can a consumer use the final right to reject goods, and can the trader deduct an amount for use if the consumer rejects within the first 6 months?",
-    "answer": "A consumer can use the final right to reject goods if the goods do not conform to the contract, and the trader has failed to repair or replace them within a reasonable time, or if the trader is in breach of the requirement to do so without significant inconvenience to the consumer. [S1] [S5] If the consumer rejects the goods within the first 6 months, the trader cannot deduct an amount for use, unless the goods are a motor vehicle or specified by order of the Secretary of State. [S1] [S2]",
+    "answer": "A consumer can use the final right to reject goods if the goods do not conform to the contract after one repair or replacement, or if the trader breaches the requirement to repair or replace within a reasonable time. [S1] [S5] If the consumer rejects the goods within the first 6 months, the trader cannot deduct an amount for use, unless the goods are a motor vehicle or specified by order of the Secretary of State. [S1] [S2] [S5]",
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, p. 23, Section 24(6)-(10); [S2] UK Consumer Rights Act 2015, pp. 23-24, Section 24(11)-(15); [S5] UK Consumer Rights Act 2015, p. 22, Section 24(1)-(5)",
-    "key_fact_recall": 0.6666666666666666,
+    "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2709,
-    "completion_tokens": 241,
-    "seconds": 13.015,
+    "prompt_tokens": 2758,
+    "completion_tokens": 223,
+    "seconds": 12.642,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -806,7 +894,7 @@
       "claims": 2,
       "checks": [
        {
-        "claim": "A consumer can use the final right to reject goods if the goods do not conform to the contract, and the trader has failed to repair or replace them within a reasonable time, or if the trader is in breach of the requirement to do so without significant inconvenience to the consumer.",
+        "claim": "A consumer can use the final right to reject goods if the goods do not conform to the contract after one repair or replacement, or if the trader breaches the requirement to repair or replace within a reasonable time.",
         "sources": [
          1,
          5
@@ -818,12 +906,18 @@
         "claim": "If the consumer rejects the goods within the first 6 months, the trader cannot deduct an amount for use, unless the goods are a motor vehicle or specified by order of the Secretary of State.",
         "sources": [
          1,
-         2
+         2,
+         5
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
        }
       ]
+     },
+     {
+      "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
      }
     ],
     "citation_precision": 1.0,
@@ -838,10 +932,10 @@
     "abstained": true,
     "citations": "",
     "key_fact_recall": 0.0,
-    "llm_calls": 4,
-    "prompt_tokens": 9558,
-    "completion_tokens": 604,
-    "seconds": 26.234,
+    "llm_calls": 6,
+    "prompt_tokens": 13455,
+    "completion_tokens": 867,
+    "seconds": 39.394,
     "retries": 2,
     "verifier_rejections": 3,
     "planned": false,
@@ -882,19 +976,31 @@
       "step": 2,
       "action": "redraft",
       "answerable": true,
-      "claims": 1
+      "claims": 2
      },
      {
       "step": 2,
       "action": "verify",
       "supported": 0,
-      "claims": 1,
+      "claims": 2,
       "checks": [
+       {
+        "claim": "If the goods do not conform to the contract within six months of delivery, they are presumed to have been faulty on delivery.",
+        "sources": [
+         1,
+         4,
+         7
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.00)"
+       },
        {
         "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
         "sources": [
          1,
-         3
+         3,
+         4,
+         7
         ],
         "supported": false,
         "reason": "cited text does not entail the claim (p=0.01)"
@@ -905,14 +1011,23 @@
       "step": 3,
       "action": "redraft",
       "answerable": true,
-      "claims": 1
+      "claims": 2
      },
      {
       "step": 3,
       "action": "verify",
       "supported": 0,
-      "claims": 1,
+      "claims": 2,
       "checks": [
+       {
+        "claim": "If the goods do not conform to the contract within six months of delivery, they are not necessarily presumed to have been faulty on delivery.",
+        "sources": [
+         1,
+         4
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
+       },
        {
         "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
         "sources": [
@@ -928,6 +1043,38 @@
       "step": 7,
       "action": "keep_best_draft",
       "detail": "kept the draft with 0% of claims verified"
+     },
+     {
+      "step": 8,
+      "action": "coverage",
+      "detail": "part 1 MISSING, part 2 MISSING"
+     },
+     {
+      "step": 8,
+      "action": "fill_gap",
+      "part": 1,
+      "supported": 0,
+      "claims": 0,
+      "checks": []
+     },
+     {
+      "step": 8,
+      "action": "fill_gap",
+      "part": 2,
+      "supported": 0,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, the goods have been delivered, and the trader has notified the consumer that the action has been taken to enable use, unless the goods can perish after a shorter period.",
+        "sources": [
+         3,
+         1,
+         6
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
+       }
+      ]
      }
     ],
     "citation_precision": null,
@@ -937,15 +1084,15 @@
     "id": "M04",
     "type": "multihop",
     "question": "How long does the Tax Protection Period last, and what is the Protected Partner's remedy if the Partnership breaches Article 2 during that period?",
-    "answer": "The Tax Protection Period lasts for ten years, starting from the Closing Date. [S2] If the Partnership breaches Article 2 during the Tax Protection Period, the Protected Partner’s sole remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the disposition of the Gain Limitation Property, reduced by the net present value of the reasonably estimated tax liability that would be due if the Partnership sold the Gain Limitation Property at the expiration of the Tax Protection Period. [S6]",
+    "answer": "The Tax Protection Period lasts for ten years, starting from the Closing Date. [S2] If the Partnership breaches Article 2 during the Tax Protection Period, the Protected Partner’s remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the income or gain allocated to, or otherwise recognized by, such Protected Partner with respect to its Partnership Units by reason of such breach, reduced by the net present value of the reasonably estimated tax liability that would be due if the Partnership repaid the indebtedness required to be maintained under Article 3 at the expiration of the Tax Protection Period. [S3]",
     "badge": "HIGH",
     "abstained": false,
-    "citations": "[S2] EX-10.2, p. 4, Article 1; [S6] EX-10.2, p. 12, Section 3.1(b)-(c)",
+    "citations": "[S2] EX-10.2, p. 4, Article 1; [S3] EX-10.2, p. 16, Section 4.2",
     "key_fact_recall": 0.5,
     "llm_calls": 2,
-    "prompt_tokens": 3025,
-    "completion_tokens": 234,
-    "seconds": 13.742,
+    "prompt_tokens": 3074,
+    "completion_tokens": 258,
+    "seconds": 13.644,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -980,19 +1127,24 @@
         "reason": "entailed (p=1.00)"
        },
        {
-        "claim": "If the Partnership breaches Article 2 during the Tax Protection Period, the Protected Partner’s sole remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the disposition of the Gain Limitation Property, reduced by the net present value of the reasonably estimated tax liability that would be due if the Partnership sold the Gain Limitation Property at the expiration of the Tax Protection Period.",
+        "claim": "If the Partnership breaches Article 2 during the Tax Protection Period, the Protected Partner’s remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred by the Protected Partner or an Indirect Owner as a result of the income or gain allocated to, or otherwise recognized by, such Protected Partner with respect to its Partnership Units by reason of such breach, reduced by the net present value of the reasonably estimated tax liability that would be due if the Partnership repaid the indebtedness required to be maintained under Article 3 at the expiration of the Tax Protection Period.",
         "sources": [
-         6
+         3
         ],
         "supported": true,
-        "reason": "citation corrected: S1 -> S6"
+        "reason": "citation corrected: S1 -> S3"
        }
       ]
      },
      {
       "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
+     },
+     {
+      "step": 4,
       "action": "recite",
-      "detail": "citation corrected: S1 -> S6 for: If the Partnership breaches Article 2 during the Tax Protection Period, the Prot"
+      "detail": "citation corrected: S1 -> S3 for: If the Partnership breaches Article 2 during the Tax Protection Period, the Prot"
      }
     ],
     "citation_precision": 0.5,
@@ -1002,15 +1154,15 @@
     "id": "M05",
     "type": "multihop",
     "question": "How is the Minimum Liability Amount defined, and what amount is listed for the Tractor Supply property?",
-    "answer": "The Minimum Liability Amount is defined as the amount set forth next to each Protected Partner’s name on Schedule 3.1(a) hereto. [S3] [S4] For the Tractor Supply property, the Minimum Liability Amount is $5,111,103. [S1]",
+    "answer": "The Minimum Liability Amount is defined as the amount set forth next to each Protected Partner’s name on Schedule 3.1(a) hereto. [S3] [S4] [S5] For the Tractor Supply property, the Minimum Liability Amount is $5,111,103. [S1]",
     "badge": "HIGH",
     "abstained": false,
-    "citations": "[S1] EX-10.2, p. 26, Schedule 3.1(a), table; [S3] EX-10.2, pp. 3-4, Article 1; [S4] EX-10.2, p. 9, Section 3.1(a)",
+    "citations": "[S1] EX-10.2, p. 26, Schedule 3.1(a), table; [S3] EX-10.2, pp. 3-4, Article 1; [S4] EX-10.2, p. 9, Section 3.1(a); [S5] EX-10.2, pp. 9-10, Section 3.1(a)-(b)",
     "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2385,
-    "completion_tokens": 170,
-    "seconds": 11.373,
+    "prompt_tokens": 2434,
+    "completion_tokens": 178,
+    "seconds": 11.63,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -1040,7 +1192,8 @@
         "claim": "The Minimum Liability Amount is defined as the amount set forth next to each Protected Partner’s name on Schedule 3.1(a) hereto.",
         "sources": [
          3,
-         4
+         4,
+         5
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
@@ -1054,24 +1207,29 @@
         "reason": "numbers found in table, relevance 0.99"
        }
       ]
+     },
+     {
+      "step": 3,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 covered"
      }
     ],
-    "citation_precision": 0.6666666666666666,
+    "citation_precision": 0.5,
     "evidence_recall": 1.0
    },
    {
     "id": "M06",
     "type": "multihop",
     "question": "Which is longer: the GDPR deadline for notifying a personal data breach to the supervisory authority, or the time limit for the short-term right to reject under the UK Consumer Rights Act 2015?",
-    "answer": "The GDPR requires notification of a personal data breach to the supervisory authority within 72 hours after becoming aware of it. [S2] [S4] The time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days from the first day after ownership or possession of the goods has been transferred, the goods have been delivered, and the trader has notified the consumer that the action to enable use has been taken. [S1] [S3]",
-    "badge": "LOW",
+    "answer": "Comparing the two: 30 days (720 hours) is longer than 72 hours. [S1] [S3] [S2] [S4] The GDPR requires notification of a personal data breach to the supervisory authority within 72 hours after becoming aware of it. [S2] [S4] The time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days from the first day after ownership or possession of the goods has been transferred, the goods have been delivered, and the trader has notified the consumer that the action to enable use has been taken. [S1] [S3] The time limit for the short-term right to reject is 30 days. [S1] [S3]",
+    "badge": "MEDIUM",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 20-21, Section 22(1)-(4); [S2] GDPR, p. 52, Article 33(1)-(3); [S3] UK Consumer Rights Act 2015, p. 21, Section 22(5)-(8); [S4] GDPR, pp. 16-17, Recitals 85-86",
     "key_fact_recall": 1.0,
-    "llm_calls": 4,
-    "prompt_tokens": 9533,
-    "completion_tokens": 618,
-    "seconds": 26.896,
+    "llm_calls": 6,
+    "prompt_tokens": 11289,
+    "completion_tokens": 663,
+    "seconds": 33.102,
     "retries": 2,
     "verifier_rejections": 3,
     "planned": true,
@@ -1121,31 +1279,22 @@
       "step": 2,
       "action": "redraft",
       "answerable": true,
-      "claims": 2
+      "claims": 1
      },
      {
       "step": 2,
       "action": "verify",
-      "supported": 1,
-      "claims": 2,
+      "supported": 0,
+      "claims": 1,
       "checks": [
        {
-        "claim": "The GDPR deadline for notifying a personal data breach to the supervisory authority is 72 hours after becoming aware of the breach.",
-        "sources": [
-         2,
-         4
-        ],
-        "supported": true,
-        "reason": "entailed (p=1.00)"
-       },
-       {
-        "claim": "The time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days from the first day after ownership or possession of the goods has been transferred, the goods have been delivered, and the trader has notified the consumer that the action to enable use has been taken.",
+        "claim": "The GDPR deadline for notifying a personal data breach to the supervisory authority is 72 hours, while the time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days.",
         "sources": [
          1,
          3
         ],
         "supported": false,
-        "reason": "cited text does not entail the claim (p=0.00)"
+        "reason": "number(s) 72 not in the cited source"
        }
       ]
      },
@@ -1153,31 +1302,22 @@
       "step": 3,
       "action": "redraft",
       "answerable": true,
-      "claims": 2
+      "claims": 1
      },
      {
       "step": 3,
       "action": "verify",
-      "supported": 1,
-      "claims": 2,
+      "supported": 0,
+      "claims": 1,
       "checks": [
        {
-        "claim": "The GDPR deadline for notifying a personal data breach to the supervisory authority is 72 hours after becoming aware of the breach.",
+        "claim": "The GDPR deadline for notifying a personal data breach to the supervisory authority is 72 hours, while the time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days.",
         "sources": [
          2,
-         4
-        ],
-        "supported": true,
-        "reason": "entailed (p=1.00)"
-       },
-       {
-        "claim": "The time limit for the short-term right to reject under the UK Consumer Rights Act 2015 is 30 days from the first day after ownership or possession of the goods has been transferred, the goods have been delivered, and the trader has notified the consumer that the action to enable use has been taken.",
-        "sources": [
-         1,
          3
         ],
         "supported": false,
-        "reason": "cited text does not entail the claim (p=0.00)"
+        "reason": "number(s) 30 not in the cited source"
        }
       ]
      },
@@ -1185,6 +1325,44 @@
       "step": 7,
       "action": "keep_best_draft",
       "detail": "kept the draft with 50% of claims verified"
+     },
+     {
+      "step": 8,
+      "action": "coverage",
+      "detail": "part 1 covered, part 2 MISSING"
+     },
+     {
+      "step": 8,
+      "action": "fill_gap",
+      "part": 2,
+      "supported": 1,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "The time limit for the short-term right to reject is 30 days.",
+        "sources": [
+         1,
+         3
+        ],
+        "supported": true,
+        "reason": "entailed (p=1.00)"
+       }
+      ]
+     },
+     {
+      "step": 8,
+      "action": "calculate",
+      "detail": "72 hours = 72 hours; 30 days = 720 hours. Largest to smallest: 30 days > 72 hours."
+     },
+     {
+      "step": 8,
+      "action": "conclude_fallback",
+      "detail": "LLM conclusion rejected (number(s) 72 not in the cited source); used the calculator's comparison"
+     },
+     {
+      "step": 8,
+      "action": "conclude",
+      "detail": "Comparing the two: 30 days (720 hours) is longer than 72 hours."
      }
     ],
     "citation_precision": 0.75,
@@ -1202,7 +1380,7 @@
     "llm_calls": 0,
     "prompt_tokens": 0,
     "completion_tokens": 0,
-    "seconds": 0.481,
+    "seconds": 0.493,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1226,7 +1404,7 @@
     "llm_calls": 0,
     "prompt_tokens": 0,
     "completion_tokens": 0,
-    "seconds": 0.506,
+    "seconds": 0.496,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1248,9 +1426,9 @@
     "citations": "",
     "key_fact_recall": null,
     "llm_calls": 1,
-    "prompt_tokens": 2345,
-    "completion_tokens": 61,
-    "seconds": 5.28,
+    "prompt_tokens": 2394,
+    "completion_tokens": 71,
+    "seconds": 5.33,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1260,7 +1438,7 @@
       "action": "draft",
       "answerable": false,
       "claims": 1,
-      "missing": "The annual rent amount for the Dollar General property."
+      "missing": "The sources do not include any information regarding the annual rent or lease terms for the Dollar General property."
      }
     ]
    },
@@ -1274,9 +1452,9 @@
     "citations": "",
     "key_fact_recall": null,
     "llm_calls": 1,
-    "prompt_tokens": 3077,
+    "prompt_tokens": 3126,
     "completion_tokens": 118,
-    "seconds": 6.425,
+    "seconds": 6.316,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,

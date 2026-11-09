@@ -46,6 +46,7 @@ LLM_TEMPERATURE = 0.0       # deterministic answers
 MAX_SOURCES = 8             # chunks shown to the LLM (more for multi-part questions)
 
 # --- Abstention, confidence badge, agent loop --------------------------------------
+COVERAGE_SCORE = 0.30        # a sub-question counts as answered if a verified sentence scores this high for it
 ABSTAIN_SCORE = 0.05        # top reranker probability below this -> abstain without calling the LLM
 LOW_SCORE = 0.30            # evidence strength below this -> at most LOW confidence
 HIGH_SCORE = 0.70           # evidence strength above this (and all claims verified) -> HIGH

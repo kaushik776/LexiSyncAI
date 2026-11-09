@@ -20,8 +20,9 @@ from dataclasses import asdict, dataclass, field
 
 from src import config
 from src.abstain import ABSTAIN_MESSAGE, INSUFFICIENT, badge, should_abstain_early
+from src.calculator import comparison_note, comparison_sentence
 from src.chunker import Chunk
-from src.generator import Draft, generate, generate_closed_book
+from src.generator import _MARKER, Claim, Draft, conclude, generate, generate_closed_book, needs_conclusion
 from src.indexer import CaseIndex, load_index
 from src.llm import LLM, Usage
 from src.planner import plan
@@ -188,8 +189,8 @@ class Pipeline:
                     scores += [h.score for h in extra]
                     log.append({"step": attempt, "action": "re_retrieve", "query": draft.missing,
                                 "added": [h.chunk.citation for h in extra]})
-            draft = self._attribute(generate(self.llm, question, sources, usage, feedback=check.feedback,
-                                             parts=subs), sources, log, attempt + 1)
+            draft = self._attribute(generate(self.llm, question, sources, usage, feedback=check.feedback),
+                                    sources, log, attempt + 1)
             log.append({"step": attempt + 1, "action": "redraft", "answerable": draft.answerable,
                         "claims": len(draft.claims)})
         if best is not None:
@@ -197,6 +198,9 @@ class Pipeline:
                 log.append({"step": len(log), "action": "keep_best_draft",
                             "detail": f"kept the draft with {best[1]:.0%} of claims verified"})
             draft, verified_ratio = best
+        if subs and use_verifier:
+            draft, verified_ratio = self._complete_parts(question, subs, pools, draft, sources, usage, log,
+                                                         verified_ratio)
 
         if draft.answerable and use_verifier and verified_ratio == 0:
             return self._abstain(question, pool, usage, timings, t0, log, searched,
@@ -207,6 +211,110 @@ class Pipeline:
                                  explanation=draft.explanation)
         return self._finish(question, draft, sources, usage, timings, t0, log, searched, subs,
                             verified_ratio, scores=scores)
+
+    @staticmethod
+    def _part_indices(pools: list[list[Hit]], sources: list[Chunk]) -> list[list[int]]:
+        """Evidence for each sub-question: its own best passages plus the two best passages for the
+        whole question, as positions in the shared source list (so [S3] means the same everywhere)."""
+        pos = {c.chunk_id: i for i, c in enumerate(sources)}
+        main = [pos[h.chunk.chunk_id] for h in pools[0][:2] if h.chunk.chunk_id in pos]
+        return [list(dict.fromkeys([pos[h.chunk.chunk_id] for h in pool if h.chunk.chunk_id in pos] + main))
+                for pool in pools[1:]]
+
+    def _draft_parts(self, subs: list[str], part_idx: list[list[int]], sources: list[Chunk], usage: Usage,
+                     log: list, step: int, previous: list[Draft] | None = None,
+                     feedback: dict[int, str] | None = None) -> list[Draft]:
+        """Answer each sub-question from its own evidence. On a retry only the parts with feedback
+        are redrafted; the others are kept."""
+        feedback = feedback or {}
+        parts = []
+        for k, sub in enumerate(subs):
+            if previous is not None and k not in feedback:
+                parts.append(previous[k])
+                continue
+            idx = part_idx[k]
+            local = [sources[i] for i in idx]
+            d = self._attribute(generate(self.llm, sub, local, usage, feedback=feedback.get(k, "")), local, log, step)
+            for c in d.claims:                              # local source numbers -> shared numbers
+                c.source_ids = [idx[i] for i in c.source_ids if i < len(idx)]
+                c.part = k
+            d.answer = _MARKER.sub(lambda m: f"[S{idx[int(m.group(1)) - 1] + 1}]"
+                                   if int(m.group(1)) <= len(idx) else "", d.answer)
+            parts.append(d)
+        return parts
+
+    def _complete_parts(self, question: str, subs: list[str], pools: list[list[Hit]], draft: Draft,
+                        sources: list[Chunk], usage: Usage, log: list,
+                        verified_ratio: float | None) -> tuple[Draft, float | None]:
+        """Coverage check for multi-part questions.
+
+        1. A part is covered if a verified sentence of the answer answers it (cross-encoder
+           relevance of sub-question vs sentence >= COVERAGE_SCORE).
+        2. Only for an uncovered part: answer that sub-question from its own evidence, verify it,
+           and append the verified sentences.
+        3. Comparison questions ("which is longer", "does X exceed Y") get a conclusion sentence
+           built from the verified sentences; every figure in it must appear in its sources.
+        """
+        step = len(log)
+        claims = list(draft.claims) if draft.answerable else []
+        answer = draft.answer if draft.answerable else ""
+        covered = []
+        for sub in subs:
+            good = [c.text for c in claims if c.supported]
+            covered.append(bool(good) and float(self.reranker.scores(sub, good).max()) >= config.COVERAGE_SCORE)
+        log.append({"step": step, "action": "coverage",
+                    "detail": ", ".join(f"part {k + 1} {'covered' if ok else 'MISSING'}" for k, ok in enumerate(covered))})
+
+        part_idx = self._part_indices(pools, sources)
+        for k, ok in enumerate(covered):
+            if ok:
+                continue
+            part = self._draft_parts([subs[k]], [part_idx[k]], sources, usage, log, step)[0]
+            good = []
+            if part.answerable:
+                check = verify(self.llm, part.claims, sources, usage)
+                good = [c for c in part.claims if c.supported]
+                log.append({"step": step, "action": "fill_gap", "part": k + 1, "supported": len(good),
+                            "claims": len(part.claims), "checks": check.checks})
+            else:
+                log.append({"step": step, "action": "fill_gap", "part": k + 1, "detail": "not in the sources"})
+            if good:
+                claims += good
+                answer = (answer + " " + " ".join(c.text + "".join(f" [S{i + 1}]" for i in c.source_ids)
+                                                  for c in good)).strip()
+                covered[k] = True
+
+        if sum(covered) >= 2 and needs_conclusion(question):
+            facts = " ".join(c.text + "".join(f" [S{i + 1}]" for i in c.source_ids) for c in claims if c.supported)
+            computed = comparison_note(facts)
+            if computed:
+                log.append({"step": step, "action": "calculate", "detail": computed})
+            conclusion = conclude(self.llm, question, facts, len(sources), usage, computed)
+            verify(self.llm, conclusion, sources, usage)
+            good = [c for c in conclusion if c.supported]
+            if not good and computed:
+                # The LLM's conclusion failed verification: state the computed comparison directly.
+                fallback = comparison_sentence([(c.text, c.source_ids) for c in claims if c.supported])
+                if fallback:
+                    rejected = "; ".join(c.reason for c in conclusion if c.reason)
+                    good = [Claim(fallback[0], fallback[1], supported=True, derived=True,
+                                  reason="written by the calculator from verified figures")]
+                    log.append({"step": step, "action": "conclude_fallback",
+                                "detail": f"LLM conclusion rejected ({rejected or 'no sentence'}); "
+                                          "used the calculator's comparison"})
+            if good:
+                lead = " ".join(c.text + "".join(f" [S{i + 1}]" for i in c.source_ids) for c in good)
+                answer = f"{lead} {answer}"
+                claims = good + claims
+                log.append({"step": step, "action": "conclude", "detail": good[0].text[:120]})
+
+        if not claims:
+            return draft, verified_ratio
+        missing = "; ".join(f"Part {k + 1} ({s}) is not answered by the documents"
+                            for k, (s, ok) in enumerate(zip(subs, covered)) if not ok)
+        ratio = sum(bool(c.supported) for c in claims) / len(claims)
+        return Draft(answerable=True, answer=answer, claims=claims, explanation=draft.explanation,
+                     conflict=draft.conflict, missing=missing), ratio
 
     def _attribute(self, draft: Draft, sources: list[Chunk], log: list, step: int) -> Draft:
         """Citation fallback: a claim the LLM left without a [S#] marker is attributed to the

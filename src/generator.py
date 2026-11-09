@@ -26,6 +26,7 @@ Rules:
 5. Answer every part of the question. Write for a non-lawyer: plain language, 2-6 sentences. Lead with the direct answer (e.g. "Yes."/"No."/the figure).
 6. "explanation": 1-2 sentences on why the cited evidence supports the answer, e.g. which provisions or documents were combined.
 7. "conflict" and "missing": use an empty string "" when there is no conflict or nothing is missing.
+8. If the question asks which or what things apply (cases, violations, exceptions, conditions), list them from the source in plain words. Never answer only with a reference such as "those listed in Article 83(5)".
 
 Example of the output format:
 {"answerable": true,
@@ -59,6 +60,8 @@ class Claim:
     source_ids: list[int]                 # indices into the sources list (0-based)
     supported: bool | None = None         # set by the verifier
     reason: str = ""
+    part: int = -1                        # which sub-question it answers (multi-part questions)
+    derived: bool = False                 # conclusion combining cited facts (e.g. a comparison)
 
 
 @dataclass
@@ -173,6 +176,46 @@ def generate(llm: LLM, question: str, sources: list[Chunk], usage: Usage,
         user += f"\n\nREVIEW OF YOUR PREVIOUS DRAFT (fix these problems):\n{feedback}"
     data = llm.chat_json(SYSTEM, user, ANSWER_SCHEMA, usage, purpose="redraft" if feedback else "draft")
     return parse_draft(data, len(sources))
+
+
+CONCLUDE_SYSTEM = """You combine verified partial answers into the direct answer to a legal question.
+Write 1-2 sentences that answer the QUESTION itself, e.g. state which figure is larger, whether a limit
+is exceeded, or how two rules relate. Use only facts stated in the PARTIAL ANSWERS and copy figures exactly.
+For each sentence give in "sources" the source numbers of the facts it uses (the numbers inside [S#])."""
+
+CONCLUDE_SCHEMA = {
+    "type": "object",
+    "properties": {"sentences": {"type": "array", "minItems": 1, "items": {
+        "type": "object",
+        "properties": {"text": {"type": "string"},
+                       "sources": {"type": "array", "items": {"type": "integer"}}},
+        "required": ["text", "sources"]}}},
+    "required": ["sentences"],
+}
+
+_NEEDS_CONCLUSION = re.compile(r"\b((longer|shorter|higher|lower|larger|smaller|bigger|more|less|greater) than|"
+                               r"exceed\w*|compare\w*|comparison|differen\w*|differ|versus|vs\.?|which is|"
+                               r"which one|consistent|conflict\w*|the same as)\b", re.IGNORECASE)
+
+
+def needs_conclusion(question: str) -> bool:
+    """Comparison-type questions need a sentence that combines the parts ("which is longer?")."""
+    return bool(_NEEDS_CONCLUSION.search(question))
+
+
+def conclude(llm: LLM, question: str, partial_answer: str, n_sources: int, usage: Usage,
+             computed: str = "") -> list[Claim]:
+    """Write the direct answer (e.g. the comparison) from the verified part answers.
+    `computed` is the calculator's exact comparison of the quantities (see calculator.py)."""
+    user = f"PARTIAL ANSWERS:\n{partial_answer}\n\nQUESTION: {question}"
+    if computed:
+        user += f"\n\nCOMPUTED COMPARISON (exact, use it; do not compare the figures yourself):\n{computed}"
+    data = llm.chat_json(CONCLUDE_SYSTEM, user, CONCLUDE_SCHEMA, usage, purpose="conclude", max_tokens=200)
+    draft = parse_draft({"answerable": True, "sentences": data.get("sentences", []), "explanation": "",
+                         "conflict": "", "missing": ""}, n_sources)
+    for c in draft.claims:
+        c.derived = True
+    return draft.claims
 
 
 CLOSED_BOOK_SYSTEM = """You are a legal assistant. Answer the question from your own knowledge in 2-5 plain sentences.
