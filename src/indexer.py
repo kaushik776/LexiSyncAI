@@ -6,7 +6,7 @@
         embeddings.npy    dense vectors of every chunk (normalised, float32)
 
     python -m src.indexer                 # index every PDF in data/ as case "default"
-    python -m src.indexer my_case a.pdf b.pdf
+    python -m src.indexer my_case a.pdf https://eur-lex.europa.eu/.../file.pdf
 """
 from __future__ import annotations
 
@@ -21,6 +21,7 @@ from typing import Callable
 import numpy as np
 
 from src import config
+from src.fetch import download_pdf, is_url
 from src.chunker import Chunk, chunk_document, detect_mode, document_structure, load_chunks, save_chunks
 from src.ingest import ingest_pdf
 
@@ -66,9 +67,11 @@ class CaseIndex:
         return [d["title"] for d in self.documents]
 
 
-def build_index(pdf_paths: list[str | Path], case_id: str = "default",
+def build_index(sources: list[str | Path], case_id: str = "default",
                 progress: Callable[[str, float], None] | None = None) -> CaseIndex:
-    """Ingest, chunk and embed the PDFs, then save everything under index/<case_id>/."""
+    """Ingest, chunk and embed the PDFs, then save everything under index/<case_id>/.
+    A source is a local PDF path or an http(s) URL; URLs are downloaded into
+    index/<case_id>/sources/ first."""
     def report(msg: str, frac: float) -> None:
         if progress:
             progress(msg, frac)
@@ -76,16 +79,23 @@ def build_index(pdf_paths: list[str | Path], case_id: str = "default",
     t0 = time.time()
     chunks: list[Chunk] = []
     documents = []
-    n = len(pdf_paths)
-    for i, path in enumerate(pdf_paths):
-        report(f"Reading {Path(path).name}", i / (n + 1))
+    n = len(sources)
+    for i, source in enumerate(sources):
+        origin = str(source)
+        if is_url(origin):
+            report(f"Downloading {origin}", i / (n + 1))
+            path = download_pdf(origin, case_dir(case_id) / "sources")
+        else:
+            path = Path(source)
+        report(f"Reading {path.name}", i / (n + 1))
         t = time.time()
         doc = ingest_pdf(path)
         doc_chunks = chunk_document(doc)
         chunks += doc_chunks
         documents.append({
             **doc.summary(),
-            "file": Path(path).name,
+            "file": path.name,
+            "source": origin if is_url(origin) else "upload",
             "mode": detect_mode(doc),
             "n_chunks": len(doc_chunks),
             "structure": document_structure(doc_chunks),

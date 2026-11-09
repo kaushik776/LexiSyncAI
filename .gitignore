@@ -4,3 +4,4 @@ __pycache__/
 index/
 .pytest_cache/
 *.pyc
+data/downloads/
