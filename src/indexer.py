@@ -24,6 +24,7 @@ from src import config
 from src.fetch import download_pdf, is_url
 from src.chunker import Chunk, chunk_document, detect_mode, document_structure, load_chunks, save_chunks
 from src.ingest import ingest_pdf
+from src.legal_check import check_document
 
 
 def device() -> str:
@@ -90,6 +91,9 @@ def build_index(sources: list[str | Path], case_id: str = "default",
         report(f"Reading {path.name}", i / (n + 1))
         t = time.time()
         doc = ingest_pdf(path)
+        legal = check_document(doc)               # warning only: the document is indexed either way
+        if legal.message:
+            report(f"Warning for {path.name}: {legal.message}", i / (n + 1))
         doc_chunks = chunk_document(doc)
         chunks += doc_chunks
         documents.append({
@@ -97,6 +101,8 @@ def build_index(sources: list[str | Path], case_id: str = "default",
             "file": path.name,
             "source": origin if is_url(origin) else "upload",
             "mode": detect_mode(doc),
+            "legal_check": {"likely_legal": legal.likely_legal, "score": legal.score,
+                            "signals": legal.signals, "warning": legal.message},
             "n_chunks": len(doc_chunks),
             "structure": document_structure(doc_chunks),
             "ingest_seconds": round(time.time() - t, 2),
@@ -158,6 +164,8 @@ def main(argv: list[str]) -> None:
           f"in {m['build_seconds']}s (embedding {m['embed_seconds']}s)")
     for d in m["documents"]:
         print(f"  {d['title']:<32} {d['pages']:>4} pages  {d['n_chunks']:>4} chunks  mode={d['mode']}")
+        if d["legal_check"]["warning"]:
+            print(f"    WARNING: {d['legal_check']['warning']}")
 
 
 if __name__ == "__main__":
