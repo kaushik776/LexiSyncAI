@@ -67,6 +67,7 @@ def test_scanned_and_blank_pages_flagged(tmp_path):
     scanned = doc.new_page(width=595, height=842)
     scanned.insert_image(scanned.rect, pixmap=pix)        # image only: no text layer
     doc.new_page(width=595, height=842)                    # empty page
+    _page_with_lines(doc, ["Article 2 Definitions. " + LOREM])   # a page with text, so the PDF is usable
     d = ingest_pdf(_save(doc, tmp_path), detect_tables=False, use_ocr=False)
     assert d.pages[0].is_scanned and not d.pages[0].is_blank
     assert d.pages[1].is_blank

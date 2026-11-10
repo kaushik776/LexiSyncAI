@@ -507,11 +507,44 @@ def make_doc_id(path: str | Path) -> str:
     return re.sub(r"[^A-Za-z0-9]+", "_", Path(path).stem).strip("_")
 
 
+class InvalidPDFError(ValueError):
+    """The file cannot be used; the message tells the user what to re-upload."""
+
+
+MIN_WORDS = 5     # a document with fewer readable words than this is treated as having no text
+
+
+def open_pdf(path: str | Path) -> pymupdf.Document:
+    """Open a PDF, or raise InvalidPDFError with a message the user can act on."""
+    path = Path(path)
+    name = path.name
+    if not path.exists():
+        raise InvalidPDFError(f"{name} was not found. Please upload it again.")
+    if path.stat().st_size == 0:
+        raise InvalidPDFError(f"{name} is empty (0 bytes). The upload may have failed: please upload the PDF again.")
+    with open(path, "rb") as f:
+        head = f.read(1024)
+    if b"%PDF" not in head:
+        raise InvalidPDFError(f"{name} is not a PDF file (it may be another file type renamed to .pdf). "
+                              "Please upload a PDF document.")
+    try:
+        pdf = pymupdf.open(path)
+    except Exception as e:
+        raise InvalidPDFError(f"{name} is damaged and cannot be opened ({type(e).__name__}). "
+                              "Please upload the PDF again or use another copy.") from e
+    if pdf.needs_pass:
+        raise InvalidPDFError(f"{name} is password-protected. Please upload an unlocked copy.")
+    if pdf.page_count == 0:
+        raise InvalidPDFError(f"{name} has no pages. Please upload the PDF again.")
+    return pdf
+
+
 def ingest_pdf(path: str | Path,
                detect_tables: bool = config.DETECT_TABLES,
                use_ocr: bool = config.USE_OCR) -> Document:
+    """Read a PDF. Raises InvalidPDFError for an empty, broken, locked or text-less file."""
     path = Path(path)
-    pdf = pymupdf.open(path)
+    pdf = open_pdf(path)
     pages: list[Page] = []
 
     for i, pg in enumerate(pdf):
@@ -554,6 +587,14 @@ def ingest_pdf(path: str | Path,
         p.blocks = _reading_order(p.blocks, p.width, p.height)
 
     _mark_toc(pages)
+
+    words = sum(len(b.text.split()) for p in pages for b in p.blocks if b.kind != "toc")
+    if words < MIN_WORDS:
+        scanned = sum(p.is_scanned for p in pages)
+        reason = (f"its {scanned} scanned page(s) could not be read by OCR" if scanned
+                  else "its pages are blank")
+        raise InvalidPDFError(f"{path.name} contains no readable text ({reason}). Please upload a PDF with "
+                              "selectable text, or a clearer scan.")
 
     title = path.stem.replace("_", " ")
     return Document(doc_id=make_doc_id(path), title=title, path=str(path), pages=pages,

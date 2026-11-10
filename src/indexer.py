@@ -23,7 +23,8 @@ import numpy as np
 from src import config
 from src.fetch import download_pdf, is_url
 from src.chunker import Chunk, chunk_document, detect_mode, document_structure, load_chunks, save_chunks
-from src.ingest import ingest_pdf
+from src.fetch import FetchError
+from src.ingest import InvalidPDFError, ingest_pdf
 from src.legal_check import check_document
 
 
@@ -81,16 +82,23 @@ def build_index(sources: list[str | Path], case_id: str = "default",
     chunks: list[Chunk] = []
     documents = []
     n = len(sources)
+    rejected: list[dict] = []      # files that could not be used, with a message asking for a re-upload
     for i, source in enumerate(sources):
         origin = str(source)
-        if is_url(origin):
-            report(f"Downloading {origin}", i / (n + 1))
-            path = download_pdf(origin, case_dir(case_id) / "sources")
-        else:
-            path = Path(source)
-        report(f"Reading {path.name}", i / (n + 1))
-        t = time.time()
-        doc = ingest_pdf(path)
+        try:
+            if is_url(origin):
+                report(f"Downloading {origin}", i / (n + 1))
+                path = download_pdf(origin, case_dir(case_id) / "sources")
+            else:
+                path = Path(source)
+            report(f"Reading {path.name}", i / (n + 1))
+            t = time.time()
+            doc = ingest_pdf(path)
+        except (InvalidPDFError, FetchError) as e:
+            # Skip this file but keep going, so one bad upload does not block the others.
+            rejected.append({"file": Path(origin).name if not is_url(origin) else origin, "error": str(e)})
+            report(f"ERROR: {e}", i / (n + 1))
+            continue
         legal = check_document(doc)               # warning only: the document is indexed either way
         if legal.message:
             report(f"Warning for {path.name}: {legal.message}", i / (n + 1))
@@ -108,12 +116,17 @@ def build_index(sources: list[str | Path], case_id: str = "default",
             "ingest_seconds": round(time.time() - t, 2),
         })
 
+    if not documents:
+        raise InvalidPDFError("None of the files could be used:\n" +
+                              "\n".join(f"- {r['error']}" for r in rejected))
+
     report("Embedding chunks", n / (n + 1))
     t = time.time()
     embeddings = embed_passages([c.context_text for c in chunks]) if chunks else np.zeros((0, 384), np.float32)
     manifest = {
         "case_id": case_id,
         "documents": documents,
+        "rejected": rejected,
         "n_chunks": len(chunks),
         "embed_model": config.EMBED_MODEL,
         "embed_seconds": round(time.time() - t, 2),
@@ -158,7 +171,10 @@ def main(argv: list[str]) -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     case_id = argv[0] if argv else "default"
     paths = argv[1:] or [str(p) for p in sorted(config.DATA_DIR.glob("*.pdf"))]
-    index = build_index(paths, case_id, progress=lambda m, f: print(f"[{f:4.0%}] {m}"))
+    try:
+        index = build_index(paths, case_id, progress=lambda m, f: print(f"[{f:4.0%}] {m}"))
+    except InvalidPDFError as e:
+        sys.exit(f"\nIndexing stopped. {e}")
     m = index.manifest
     print(f"\nCase '{case_id}': {m['n_chunks']} chunks from {len(m['documents'])} documents "
           f"in {m['build_seconds']}s (embedding {m['embed_seconds']}s)")
@@ -166,6 +182,8 @@ def main(argv: list[str]) -> None:
         print(f"  {d['title']:<32} {d['pages']:>4} pages  {d['n_chunks']:>4} chunks  mode={d['mode']}")
         if d["legal_check"]["warning"]:
             print(f"    WARNING: {d['legal_check']['warning']}")
+    for r in m["rejected"]:
+        print(f"  SKIPPED {r['file']}: {r['error']}")
 
 
 if __name__ == "__main__":
