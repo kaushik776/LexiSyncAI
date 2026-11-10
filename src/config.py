@@ -43,6 +43,7 @@ OPENAI_BASE_URL = "https://api.groq.com/openai/v1"   # used when LLM_BACKEND = "
 OPENAI_MODEL = "llama-3.1-8b-instant"
 LLM_NUM_CTX = 8192          # context window in tokens (sources + prompt + answer)
 LLM_TEMPERATURE = 0.0       # deterministic answers
+LLM_THINK = "auto"          # reasoning ("thinking") models: "on", "off", or "auto" = model default
 MAX_SOURCES = 8             # chunks shown to the LLM (more for multi-part questions)
 
 # --- Abstention, confidence badge, agent loop --------------------------------------

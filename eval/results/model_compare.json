@@ -1,0 +1,125 @@
+{
+ "qwen2.5:7b (current)": [
+  {
+   "id": "F04",
+   "type": "factual",
+   "badge": "HIGH",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 1.0,
+   "seconds": 21.5,
+   "llm_seconds": 13.158,
+   "llm_calls": 2,
+   "tokens_out": 215,
+   "answer": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR. [S1] [S2] The period can be extended by two months if necessary, taking into account the complexity and number of the requests. [S1] [S2]"
+  },
+  {
+   "id": "M01",
+   "type": "multihop",
+   "badge": "MEDIUM",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 0.5,
+   "seconds": 28.4,
+   "llm_seconds": 25.915,
+   "llm_calls": 4,
+   "tokens_out": 560,
+   "answer": "The maximum fine a company can receive is 20,000,000 EUR, or 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher. [S1] [S2] [S3] [S4] [S5] The violations that trigger the higher fine are those listed in Article 83(5). [S1]"
+  },
+  {
+   "id": "U03",
+   "type": "unanswerable",
+   "badge": "INSUFFICIENT EVIDENCE",
+   "abstained": true,
+   "correct_abstention": true,
+   "key_facts": null,
+   "seconds": 6.4,
+   "llm_seconds": 5.789,
+   "llm_calls": 1,
+   "tokens_out": 63,
+   "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.2 (27 pages), GDPR (88 pages), UK Consumer Rights Act 2015 (150 pages)."
+  }
+ ],
+ "qwen3:8b, thinking off": [
+  {
+   "id": "F04",
+   "type": "factual",
+   "badge": "HIGH",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 1.0,
+   "seconds": 42.3,
+   "llm_seconds": 40.487,
+   "llm_calls": 2,
+   "tokens_out": 221,
+   "answer": "The standard response time for a controller to act on a data subject's request under Articles 15 to 22 of the GDPR is one month. [S1] The response period can be extended by two further months if the request is complex or numerous. [S1]"
+  },
+  {
+   "id": "M01",
+   "type": "multihop",
+   "badge": "MEDIUM",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 0.5,
+   "seconds": 65.5,
+   "llm_seconds": 63.804,
+   "llm_calls": 2,
+   "tokens_out": 331,
+   "answer": "The maximum fine a company can receive under the GDPR is up to 20 000 000 EUR, or in the case of an undertaking, up to 4 % of the total worldwide annual turnover of the preceding financial year, whichever is higher. [S1] [S5] The kinds of violations that trigger the higher fine include: (a) the basic principles for processing, including conditions for consent, pursuant to Articles 5, 6, 7 and 9; (b) the data subjects' rights pursuant to Articles 12 to 22; (c) the transfers of personal data to a recipient in a third country or an international organisation pursuant to Articles 44 to 49; (d) any obligations pursuant to Member State law adopted under Chapter IX; (e) non-compliance with an order or a temporary or definitive limitation on processing or the suspension of data flows by the supervisory authority pursuant to Article 58(2) or failure to provide access in violation of Article 58(1). [S1] [S5]"
+  },
+  {
+   "id": "U03",
+   "type": "unanswerable",
+   "badge": "INSUFFICIENT EVIDENCE",
+   "abstained": true,
+   "correct_abstention": true,
+   "key_facts": null,
+   "seconds": 25.8,
+   "llm_seconds": 25.282,
+   "llm_calls": 1,
+   "tokens_out": 108,
+   "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.2 (27 pages), GDPR (88 pages), UK Consumer Rights Act 2015 (150 pages)."
+  }
+ ],
+ "qwen3:8b, thinking on": [
+  {
+   "id": "F04",
+   "type": "factual",
+   "badge": "HIGH",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 1.0,
+   "seconds": 136.9,
+   "llm_seconds": 135.066,
+   "llm_calls": 2,
+   "tokens_out": 1168,
+   "answer": "The standard response period is one month. [S1] [S2] [S4] The period may be extended by two further months if the request is complex or numerous. [S1] [S2]"
+  },
+  {
+   "id": "M01",
+   "type": "multihop",
+   "badge": "HIGH",
+   "abstained": false,
+   "correct_abstention": true,
+   "key_facts": 0.5,
+   "seconds": 168.9,
+   "llm_seconds": 167.158,
+   "llm_calls": 2,
+   "tokens_out": 1220,
+   "answer": "The maximum fine is up to €20,000,000 or 4% of the company's global annual turnover, whichever is higher. [S1] [S2] Violations triggering the higher fine include breaches of data subject rights (Articles 12-22), data transfers to third countries (Articles 44-49), non-compliance with supervisory orders (Article 58(2)), and obligations under Member State law (Chapter IX). [S1] [S2] [S3]"
+  },
+  {
+   "id": "U03",
+   "type": "unanswerable",
+   "badge": "INSUFFICIENT EVIDENCE",
+   "abstained": true,
+   "correct_abstention": true,
+   "key_facts": null,
+   "seconds": 248.4,
+   "llm_seconds": 246.588,
+   "llm_calls": 3,
+   "tokens_out": 1489,
+   "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.2 (27 pages), GDPR (88 pages), UK Consumer Rights Act 2015 (150 pages)."
+  }
+ ]
+}

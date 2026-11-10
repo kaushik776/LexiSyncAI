@@ -63,6 +63,11 @@ class LLM:
         import ollama
         try:
             client = ollama.Client(host=config.OLLAMA_HOST)
+            extra = {}
+            if config.LLM_THINK in ("on", "off"):          # only for models with a thinking mode
+                extra["think"] = config.LLM_THINK == "on"
+                if config.LLM_THINK == "on":                 # room for the reasoning before the answer
+                    max_tokens += 2048
             r = client.chat(
                 model=self.model,
                 messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -70,6 +75,7 @@ class LLM:
                 options={"temperature": config.LLM_TEMPERATURE, "seed": config.SEED,
                          "num_ctx": config.LLM_NUM_CTX, "num_predict": max_tokens},
                 keep_alive="30m",
+                **extra,
             )
         except Exception as e:                                   # connection refused, model missing ...
             raise LLMError(f"Ollama call failed ({e}). Is Ollama running and is "
