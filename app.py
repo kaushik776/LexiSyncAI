@@ -604,7 +604,10 @@ def main() -> None:
     names = " · ".join(d.get("name") or d["title"] for d in index.documents)
     st.markdown(f"<p class='lx-muted'>📁 <b>{esc(case_id)}</b> — {esc(names[:260])}</p>", unsafe_allow_html=True)
 
-    ask, docs, ev = st.tabs(["💬 Ask", "📄 Documents", "📊 Evaluation"])
+    # The evaluation results were measured on the example case only, so the tab is shown only there.
+    labels = ["💬 Ask", "📄 Documents"] + (["📊 Evaluation"] if case_id == "default" else [])
+    tabs = st.tabs(labels)
+    ask, docs = tabs[0], tabs[1]
     with ask:
         mode = st.segmented_control("Ask", ["Whole case", "Compare documents"], default="Whole case",
                                     key="ask_mode", label_visibility="collapsed")
@@ -614,8 +617,9 @@ def main() -> None:
             ask_tab(case_id, index)
     with docs:
         documents_tab(index)
-    with ev:
-        evaluation_tab()
+    if case_id == "default":
+        with tabs[2]:
+            evaluation_tab()
 
 
 main()

@@ -102,7 +102,7 @@ shellingham==1.5.4
 stack-data==0.6.3
 starlette==1.10.0
 streamlit==1.67.0
-sympy==1.14.0
+sympy==1.13.1
 tabulate==0.10.0
 threadpoolctl==3.8.0
 tifffile==2026.10.15
