@@ -1,0 +1,9 @@
+# Not copied into the Docker image
+.venv/
+.git/
+index/
+data/downloads/
+**/__pycache__/
+.pytest_cache/
+*.pyc
+.ipynb_checkpoints/

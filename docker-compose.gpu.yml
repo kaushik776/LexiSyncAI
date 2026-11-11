@@ -1,0 +1,22 @@
+# Optional: use the NVIDIA GPU for the LLM and the app's models (much faster).
+# Needs an NVIDIA GPU with Docker GPU support (Docker Desktop + WSL2 on Windows,
+# or the NVIDIA Container Toolkit on Linux).
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+
+services:
+  ollama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  app:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

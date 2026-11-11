@@ -1,0 +1,49 @@
+# LexiSyncAI with Docker:   docker compose up --build      then open http://localhost:8501
+#
+# Three services:
+#   ollama        runs the local LLM server (same Ollama version as development: 0.40.16)
+#   ollama-init   one-off: downloads the LLM into the ollama volume, then exits
+#   app           the Streamlit app; starts after the model is available
+# Runs on CPU by default (works on any machine). With an NVIDIA GPU:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+
+services:
+  ollama:
+    image: ollama/ollama:0.40.16
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  ollama-init:
+    image: ollama/ollama:0.40.16
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: ollama:11434
+    entrypoint: ["ollama", "pull", "qwen2.5:7b"]
+    restart: "no"
+
+  app:
+    build: .
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+    environment:
+      OLLAMA_HOST: http://ollama:11434     # read by src/config.py (environment overrides)
+    ports:
+      - "8501:8501"
+    volumes:
+      - hf_models:/root/.cache/huggingface # embedding, reranker and NLI models (downloaded once)
+      - cases:/app/index                   # search indexes and your cases survive restarts
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+  hf_models:
+  cases:
