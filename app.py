@@ -34,10 +34,11 @@ from src.pipeline import Pipeline  # noqa: E402
 st.set_page_config(page_title="LexiSyncAI", page_icon="⚖️", layout="wide", initial_sidebar_state="expanded")
 
 BADGES = {
-    HIGH: ("#15803d", "#dcfce7", "Strong evidence, every claim verified against its source."),
-    MEDIUM: ("#b45309", "#fef3c7", "Good evidence; most claims verified."),
-    LOW: ("#c2410c", "#ffedd5", "Weak evidence or some claims unverified: check the cited pages."),
-    INSUFFICIENT: ("#475569", "#e2e8f0", "The documents do not contain enough evidence, so the system abstains."),
+    HIGH: ("#4ade80", "rgba(34, 197, 94, 0.14)", "Strong evidence, every claim verified against its source."),
+    MEDIUM: ("#fbbf24", "rgba(245, 158, 11, 0.14)", "Good evidence; most claims verified."),
+    LOW: ("#fb923c", "rgba(249, 115, 22, 0.14)", "Weak evidence or some claims unverified: check the cited pages."),
+    INSUFFICIENT: ("#a5b0c0", "rgba(148, 163, 184, 0.14)",
+                   "The documents do not contain enough evidence, so the system abstains."),
 }
 EXAMPLES = {
     "Factual": "Which state's law governs the Tax Protection Agreement?",
@@ -54,34 +55,61 @@ COMPARE_EXAMPLES = ["What is the cap on the Supplier's liability?", "Which law g
 
 CSS = """
 <style>
-.block-container {padding-top: 1.4rem; max-width: 1380px;}
-/* Header: deep navy with a thin gold rule, serif title */
-.lx-hero {background: linear-gradient(135deg, #1b3a57 0%, #24527a 55%, #2f6690 100%); color: #fff;
-          padding: 22px 28px 20px 28px; border-radius: 18px; margin-bottom: 16px;
-          box-shadow: 0 6px 24px rgba(27, 58, 87, 0.18); border-bottom: 3px solid #c9a227;}
-.lx-hero h1 {color: #fff; font-family: 'Lora', Georgia, serif; font-size: 1.9rem; font-weight: 700;
-             margin: 0; padding: 0; letter-spacing: .01em;}
-.lx-hero p {color: #dfe8f1; margin: 6px 0 0 0; font-size: 0.98rem;}
-/* Cards (bordered containers) get a soft lift */
-div[data-testid="stVerticalBlockBorderWrapper"] {background: #ffffff; box-shadow: 0 2px 12px rgba(31, 42, 55, 0.05);}
-.lx-badge {display: inline-block; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 0.82rem;}
-.lx-answer {font-size: 1.06rem; line-height: 1.75; color: #1f2a37;}
-.lx-cite {display: inline-block; background: #e8eff6; color: #24527a; border-radius: 999px; padding: 0 8px;
-          font-size: 0.74rem; font-weight: 700; margin: 0 2px; vertical-align: 1px;}
-.lx-muted {color: #6b7280; font-size: 0.86rem;}
-.lx-verdict {padding: 14px 18px; border-radius: 14px; font-weight: 600; margin: 6px 0 12px 0;}
-.lx-dot {display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px;}
-/* Buttons: gentle lift on hover instead of a hard flat block */
+/* ---- Layout: compact, little empty space ---- */
+.block-container {padding: 0.9rem 1.6rem 1.2rem 1.6rem; max-width: 1560px;}
+div[data-testid="stVerticalBlock"] {gap: 0.55rem;}
+div[data-testid="stHorizontalBlock"] {gap: 0.9rem;}
+section[data-testid="stSidebar"] > div:first-child {padding-top: 0.6rem;}
+section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {gap: 0.45rem;}
+header[data-testid="stHeader"] {height: 2.2rem; background: transparent;}
+/* ---- Header: slim bar, gradient accent ---- */
+.lx-hero {display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+          background: linear-gradient(110deg, #141a26 0%, #1a2336 60%, #1d2a44 100%);
+          border: 1px solid #263045; border-left: 4px solid #7c9cff; border-radius: 12px;
+          padding: 10px 18px; margin-bottom: 6px;}
+.lx-hero h1 {color: #f1f4f9; font-size: 1.6rem; font-weight: 700; margin: 0; padding: 0; letter-spacing: .01em;}
+.lx-hero p {color: #9aa6b8; margin: 0; font-size: 1rem;}
+/* ---- Cards ---- */
+div[data-testid="stVerticalBlockBorderWrapper"] {background: #151a23; border-color: #252c38 !important;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02), 0 6px 18px rgba(0, 0, 0, 0.25);}
+.lx-badge {display: inline-block; padding: 3px 12px; border-radius: 999px; font-weight: 600; font-size: 0.86rem;
+           letter-spacing: .02em;}
+.lx-answer {font-size: 1.12rem; line-height: 1.7; color: #e6e9ef;}
+.lx-cite {display: inline-block; background: rgba(124, 156, 255, 0.16); color: #a9bcff; border-radius: 6px;
+          padding: 0 7px; font-size: 0.8rem; font-weight: 700; margin: 0 2px; vertical-align: 1px;}
+.lx-muted {color: #8b96a8; font-size: 0.93rem;}
+.lx-verdict {padding: 10px 14px; border-radius: 10px; font-weight: 600; margin: 2px 0 6px 0; border: 1px solid;}
+.lx-dot {display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;}
+/* ---- Buttons ---- */
 .stButton button, .stFormSubmitButton button {font-weight: 600; transition: all .15s ease;}
 .stButton button:hover, .stFormSubmitButton button:hover {transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(36, 82, 122, 0.18);}
-/* Tabs: a little more breathing room */
-.stTabs [data-baseweb="tab-list"] {gap: 6px;}
-.stTabs [data-baseweb="tab"] {font-weight: 600; padding: 8px 14px;}
-/* Hide Streamlit's "Press Enter to submit form" hints */
-div[data-testid="InputInstructions"] {display: none;}
-div[data-testid="stMetricValue"] {font-size: 1.4rem; font-family: 'Lora', Georgia, serif;}
-section[data-testid="stSidebar"] h2 {font-family: 'Lora', Georgia, serif;}
+          box-shadow: 0 4px 14px rgba(124, 156, 255, 0.25);}
+/* ---- Tabs ---- */
+.stTabs [data-baseweb="tab-list"] {gap: 4px; border-bottom: 1px solid #252c38;}
+.stTabs [data-baseweb="tab"] {font-weight: 600; padding: 7px 14px; font-size: 1rem;}
+.stTabs [data-baseweb="tab-panel"] {padding-top: 0.6rem;}
+/* ---- Small widgets ---- */
+div[data-testid="InputInstructions"] {display: none;}          /* hide "Press Enter to submit form" */
+div[data-testid="stMetric"] {background: #11161e; border: 1px solid #222935; border-radius: 10px; padding: 6px 12px;}
+div[data-testid="stMetricValue"] {font-size: 1.4rem;}
+div[data-testid="stMetricLabel"] {font-size: 0.86rem; color: #8b96a8;}
+div[data-testid="stExpander"] details {border-color: #252c38;}
+div[data-testid="stImage"] img {border-radius: 8px; border: 1px solid #252c38;}
+div[data-testid="stAlert"] {padding: 0.55rem 0.8rem;}
+/* ---- Sidebar: remove the empty band above the logo ---- */
+div[data-testid="stSidebarHeader"] {height: 1.6rem; padding: 0.3rem 1rem 0 1rem; margin-bottom: 0;}
+section[data-testid="stSidebar"] h2 {padding-top: 0; margin-top: -0.6rem; font-size: 1.45rem;}
+div[data-testid="stSidebarUserContent"] {padding-top: 0;}
+/* ---- Case line, document cards ---- */
+.lx-caseline {display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.95rem; color: #c9d1dd;}
+.lx-caseline b {margin-right: 4px;}
+.lx-chip {background: #161b24; border: 1px solid #262d39; border-radius: 999px; padding: 1px 10px;
+          color: #aab4c3; font-size: 0.86rem; white-space: nowrap;}
+.lx-section {font-size: 0.84rem; text-transform: uppercase; letter-spacing: .08em; color: #7d889a; margin: 6px 0 0 0;}
+.lx-doc {background: #151a23; border: 1px solid #252c38; border-radius: 10px; padding: 10px 12px;}
+.lx-doc-title {font-weight: 600; color: #e6e9ef; margin-bottom: 2px; font-size: 1.02rem;}
+.lx-warn {color: #fbbf24; font-size: 0.86rem; margin-top: 2px;}
+.lx-hero {margin-right: 48px;}     /* leave room for Streamlit's menu button */
 </style>
 """
 
@@ -131,8 +159,33 @@ def with_cites(text: str) -> str:
 
 
 def badge(b: str) -> str:
-    fg, bg, tip = BADGES.get(b, ("#475569", "#e2e8f0", ""))
+    fg, bg, tip = BADGES.get(b, BADGES[INSUFFICIENT])
     return f"<span class='lx-badge' style='color:{fg};background:{bg};border:1px solid {fg}' title='{esc(tip)}'>{esc(b)}</span>"
+
+
+def short_name(d: dict, limit: int = 42) -> str:
+    """A short display name: the detected title if it is short, otherwise the file title."""
+    name = d.get("name") or d["title"]
+    if len(name) > limit:
+        name = d["title"] if len(d["title"]) <= limit else name[: limit - 1] + "…"
+    return name
+
+
+def case_overview(index) -> None:
+    """Compact cards for the documents of the case (shown before the first question)."""
+    st.markdown("<p class='lx-section'>In this case</p>", unsafe_allow_html=True)
+    cols = st.columns(min(len(index.documents), 4) or 1)
+    for k, d in enumerate(index.documents):
+        with cols[k % len(cols)]:
+            facts = [f"{d['pages']} pages", f"{len(d['structure'])} sections", f"{d['n_chunks']} passages"]
+            if d["tables"]:
+                facts.append(f"{len(d['tables'])} tables")
+            if d["scanned_pages"]:
+                facts.append(f"{len(d['scanned_pages'])} scanned")
+            warn = "<div class='lx-warn'>may not be a legal document</div>" \
+                if d.get("legal_check", {}).get("warning") else ""
+            st.markdown(f"<div class='lx-doc'><div class='lx-doc-title'>📄 {esc(short_name(d, 60))}</div>"
+                        f"<div class='lx-muted'>{' · '.join(facts)}</div>{warn}</div>", unsafe_allow_html=True)
 
 
 def doc_paths(index) -> dict[str, str]:
@@ -155,7 +208,7 @@ def sidebar() -> str | None:
     sb.markdown(f"<span class='lx-dot' style='background:{colour}'></span><b>LLM</b> "
                 f"<span class='lx-muted'>{esc(msg)}</span><br>"
                 f"<span class='lx-dot' style='background:{'#16a34a' if OFFLINE else '#f59e0b'}'></span><b>Models</b> "
-                f"<span class='lx-muted'>{'loaded from this computer' if OFFLINE else 'will download if missing'}</span>",
+                f"<span class='lx-muted'>{'cached locally' if OFFLINE else 'download if missing'}</span>",
                 unsafe_allow_html=True)
     sb.divider()
 
@@ -333,8 +386,9 @@ def ask_tab(case_id: str, index) -> None:
 
     history = st.session_state.get("history", [])
     if not history:
-        st.info("Ask anything about these documents. Each answer shows the page it came from, and you'll be "
-                "told plainly when the documents don't cover it.")
+        st.markdown("<p class='lx-muted'>What would you like to know? I'll answer from these documents and show you "
+                    "exactly where it says so.</p>", unsafe_allow_html=True)
+        case_overview(index)
         return
     if len(history) > 1:
         labels = [a.question[:90] for a in history]
@@ -349,7 +403,7 @@ def show_answer(a, paths: dict[str, str]) -> None:
     left, right = st.columns([11, 9], gap="large")
     with left:
         with st.container(border=True):
-            fg, bg, tip = BADGES.get(a.badge, ("#475569", "#e2e8f0", ""))
+            fg, bg, tip = BADGES.get(a.badge, BADGES[INSUFFICIENT])
             st.markdown(f"{badge(a.badge)} <span class='lx-muted'>&nbsp;{esc(tip)}</span>", unsafe_allow_html=True)
             st.markdown(f"<p class='lx-muted' style='margin-top:10px'>Q: {esc(a.question)}</p>", unsafe_allow_html=True)
             if a.abstained:
@@ -470,11 +524,12 @@ def compare_tab(case_id: str, index) -> None:
     c = st.session_state.get("comparison")
     if c is None:
         return
-    style = {"conflict": ("#991b1b", "#fee2e2", "⚠️ Conflict between the documents"),
-             "agree": ("#166534", "#dcfce7", "✅ The documents agree"),
-             "single": ("#1e40af", "#dbeafe", "ℹ️ Only one document answers this"),
-             "none": ("#475569", "#e2e8f0", "No document contains the answer")}[c.status]
-    st.markdown(f"<div class='lx-verdict' style='color:{style[0]};background:{style[1]}'>{style[2]}</div>",
+    style = {"conflict": ("#fca5a5", "rgba(239, 68, 68, 0.12)", "⚠️ Conflict between the documents"),
+             "agree": ("#86efac", "rgba(34, 197, 94, 0.12)", "✅ The documents agree"),
+             "single": ("#93c5fd", "rgba(59, 130, 246, 0.12)", "ℹ️ Only one document answers this"),
+             "none": ("#a5b0c0", "rgba(148, 163, 184, 0.12)", "No document contains the answer")}[c.status]
+    st.markdown(f"<div class='lx-verdict' style='color:{style[0]};background:{style[1]};border-color:{style[0]}55'>"
+                f"{style[2]}</div>",
                 unsafe_allow_html=True)
     for f in c.findings:
         st.markdown(f"- {esc(f)}", unsafe_allow_html=True)
@@ -586,8 +641,7 @@ def evaluation_tab() -> None:
 def main() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     case_id = sidebar()
-    st.markdown("<div class='lx-hero'><h1>⚖️ LexiSyncAI</h1><p>Your legal documents, explained in plain "
-                "language, with the exact page and clause behind every answer.</p></div>",
+    st.markdown("<div class='lx-hero'><h1>⚖️ LexiSyncAI</h1><p>Legal answers you can verify.</p></div>",
                 unsafe_allow_html=True)
     if case_id is None:
         st.info("Create a case in the sidebar: upload 2-5 public legal PDFs or paste links, then index them.")
@@ -601,8 +655,9 @@ def main() -> None:
         st.session_state.history = []
         st.session_state.comparison = None
         st.session_state.answer_case = case_id
-    names = " · ".join(d.get("name") or d["title"] for d in index.documents)
-    st.markdown(f"<p class='lx-muted'>📁 <b>{esc(case_id)}</b> — {esc(names[:260])}</p>", unsafe_allow_html=True)
+    chips = "".join(f"<span class='lx-chip' title='{esc(d.get('name') or d['title'])}'>📄 {esc(short_name(d))}</span>"
+                    for d in index.documents)
+    st.markdown(f"<div class='lx-caseline'><b>📁 {esc(case_id)}</b>{chips}</div>", unsafe_allow_html=True)
 
     # The evaluation results were measured on the example case only, so the tab is shown only there.
     labels = ["💬 Ask", "📄 Documents"] + (["📊 Evaluation"] if case_id == "default" else [])

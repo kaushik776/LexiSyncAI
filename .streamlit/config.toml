@@ -5,22 +5,27 @@ enableStaticServing = true    # serves static/ (the bundled fonts) so the app lo
 [browser]
 gatherUsageStats = false      # no usage data sent to Streamlit
 
+[client]
+toolbarMode = "minimal"       # hide the "Deploy" button; keep only the menu
+
 [theme]
-base = "light"
-primaryColor = "#24527a"              # calm navy
-backgroundColor = "#fbfaf6"           # warm off-white
-secondaryBackgroundColor = "#f3efe6"  # soft sand (sidebar, inputs)
-textColor = "#1f2a37"
-linkColor = "#24527a"
-borderColor = "#e4ddcf"
+base = "dark"
+primaryColor = "#7c9cff"              # soft blue accent
+backgroundColor = "#0e1117"           # deep charcoal
+secondaryBackgroundColor = "#161b24"  # panels, sidebar, inputs
+textColor = "#e6e9ef"
+linkColor = "#9db4ff"
+borderColor = "#262d39"
 showWidgetBorder = true
-baseRadius = "0.7rem"
-buttonRadius = "full"                 # pill-shaped buttons
+baseRadius = "0.55rem"
+buttonRadius = "0.55rem"
 font = "Plus Jakarta Sans, sans-serif"
-headingFont = "Lora, Georgia, serif"
-baseFontSize = 15
-headingFontWeights = [700, 600, 600, 600, 600, 600]
-dataframeHeaderBackgroundColor = "#f3efe6"
+headingFont = "Plus Jakarta Sans, sans-serif"
+baseFontSize = 16
+headingFontWeights = [700, 700, 600, 600, 600, 600]
+headingFontSizes = ["1.8rem", "1.45rem", "1.2rem", "1.08rem", "1rem", "0.95rem"]
+dataframeHeaderBackgroundColor = "#1b212c"
+codeBackgroundColor = "#161b24"
 
 [[theme.fontFaces]]
 family = "Plus Jakarta Sans"
