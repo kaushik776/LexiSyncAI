@@ -71,10 +71,13 @@ class CaseIndex:
 
 
 def build_index(sources: list[str | Path], case_id: str = "default",
-                progress: Callable[[str, float], None] | None = None) -> CaseIndex:
+                progress: Callable[[str, float], None] | None = None,
+                source_labels: dict[str, str] | None = None) -> CaseIndex:
     """Ingest, chunk and embed the PDFs, then save everything under index/<case_id>/.
     A source is a local PDF path or an http(s) URL; URLs are downloaded into
-    index/<case_id>/sources/ first."""
+    index/<case_id>/sources/ first. source_labels maps a local path to the link it was
+    originally downloaded from (kept when a case is rebuilt)."""
+    source_labels = source_labels or {}
     def report(msg: str, frac: float) -> None:
         if progress:
             progress(msg, frac)
@@ -111,7 +114,7 @@ def build_index(sources: list[str | Path], case_id: str = "default",
             **doc.summary(),
             "file": path.name,
             "path": str(Path(path).resolve()),
-            "source": origin if is_url(origin) else "upload",
+            "source": origin if is_url(origin) else source_labels.get(str(Path(path).resolve()), "upload"),
             "mode": detect_mode(doc),
             "legal_check": {"likely_legal": legal.likely_legal, "score": legal.score,
                             "signals": legal.signals, "warning": legal.message},
@@ -146,6 +149,50 @@ def build_index(sources: list[str | Path], case_id: str = "default",
     save_index(index)
     report("Done", 1.0)
     return index
+
+
+MAX_DOCUMENTS = 5          # documents per case (the assignment uses bundles of 2-5)
+
+
+class CaseError(ValueError):
+    """A case cannot be changed as asked; the message says why."""
+
+
+def add_to_case(case_id: str, new_sources: list[str | Path],
+                progress: Callable[[str, float], None] | None = None) -> tuple[CaseIndex, list[str]]:
+    """Add documents to an existing case. The case is rebuilt from its existing documents plus
+    the new ones, exactly as if all had been uploaded together (one search index, and the page
+    anomaly detector sees every page). Existing documents are read from their saved copies, so
+    nothing is uploaded or downloaded again. Returns the new index and notes about skipped files."""
+    if case_id == "default":
+        raise CaseError("The example case is used for the evaluation results, so it cannot be changed. "
+                        "Create a new case with these documents instead.")
+    old = load_index(case_id)
+    existing, labels = [], {}
+    for d in old.documents:
+        path = d.get("path") or str(config.DATA_DIR / d["file"])
+        if not Path(path).exists():
+            raise CaseError(f"The saved copy of {d['file']} is missing, so the case cannot be rebuilt. "
+                            "Create a new case and upload all documents again.")
+        existing.append(path)
+        if d.get("source", "upload") != "upload":
+            labels[str(Path(path).resolve())] = d["source"]
+    names = {Path(p).name.lower() for p in existing}
+    notes, to_add = [], []
+    for src in new_sources:
+        name = Path(str(src)).name.lower()
+        if not is_url(str(src)) and name in names:
+            notes.append(f"{Path(str(src)).name} is already in this case, so it was skipped.")
+            continue
+        names.add(name)
+        to_add.append(src)
+    if not to_add:
+        raise CaseError("No new documents to add. " + " ".join(notes))
+    if len(existing) + len(to_add) > MAX_DOCUMENTS:
+        raise CaseError(f"This case has {len(existing)} document(s); adding {len(to_add)} would exceed the "
+                        f"limit of {MAX_DOCUMENTS}. Remove some files and try again.")
+    index = build_index(existing + to_add, case_id, progress, source_labels=labels)
+    return index, notes + [f"Not indexed: {r['error']}" for r in index.manifest.get("rejected", [])]
 
 
 def case_dir(case_id: str) -> Path:

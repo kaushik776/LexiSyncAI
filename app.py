@@ -26,7 +26,7 @@ import streamlit as st  # noqa: E402
 
 from src import config  # noqa: E402
 from src.abstain import HIGH, INSUFFICIENT, LOW, MEDIUM  # noqa: E402
-from src.indexer import build_index, case_dir, list_cases, load_index  # noqa: E402
+from src.indexer import CaseError, MAX_DOCUMENTS, add_to_case, build_index, case_dir, list_cases, load_index  # noqa: E402
 from src.ingest import InvalidPDFError  # noqa: E402
 from src.llm import LLMError  # noqa: E402
 from src.pipeline import Pipeline  # noqa: E402
@@ -161,13 +161,23 @@ def sidebar() -> str | None:
 
     cases = list_cases()
     if cases:
-        current = st.session_state.get("case")
-        start = cases.index(current) if current in cases else (cases.index("default") if "default" in cases else 0)
-        case = sb.selectbox("📁 Case", cases, index=start)
+        # The picker keeps a fixed key, so a selection is never lost on rerun. A new or deleted
+        # case is passed in through "pending_case" before the picker is drawn.
+        pending = st.session_state.pop("pending_case", None)
+        if pending is not None or st.session_state.get("case_select") not in cases:
+            wanted = pending if pending in cases else ("default" if "default" in cases else cases[0])
+            st.session_state.case_select = wanted
+        case = sb.selectbox("📁 Case", cases, key="case_select")
         st.session_state.case = case
         index = load_index(case)
         sb.caption(f"{len(index.documents)} document(s) · {index.manifest['n_chunks']} passages")
+        notes = st.session_state.pop("add_notes", None)
+        if notes is not None:                     # shown once, right after documents were added
+            sb.success("Documents added. The case was re-indexed with all its documents together.")
+            for note in notes:
+                sb.warning(note)
         if case != "default":
+            add_documents_ui(case, index)
             delete_case_ui(case)
     else:
         case = None
@@ -195,13 +205,62 @@ def delete_case_ui(case: str) -> None:
     c1, c2 = sb.columns(2)
     if c1.button("Yes, delete", type="primary", width="stretch"):
         shutil.rmtree(case_dir(case), ignore_errors=True)
-        st.session_state.pop("case", None)
+        st.session_state.pending_case = "default"
         st.session_state.confirm_delete = None
         st.session_state.history = []
         st.rerun()
     if c2.button("Cancel", width="stretch"):
         st.session_state.confirm_delete = None
         st.rerun()
+
+
+def add_documents_ui(case: str, index) -> None:
+    """Add documents to the open case; it is re-indexed with the old and new documents together."""
+    room = MAX_DOCUMENTS - len(index.documents)
+    with st.sidebar.expander("📎 Add documents to this case"):
+        if room <= 0:
+            st.caption(f"This case already has {MAX_DOCUMENTS} documents, the maximum.")
+            return
+        with st.form(f"add_{case}", clear_on_submit=True):
+            files = st.file_uploader("Upload PDFs", type=["pdf"], accept_multiple_files=True,
+                                     help=f"Up to {room} more document(s)")
+            urls = st.text_area("Or paste PDF links", height=68, placeholder="e.g. https://site.org/act.pdf",
+                                help="One link per line")
+            submitted = st.form_submit_button("Add to case", type="primary", width="stretch")
+    if submitted:
+        add_documents(case, index, files or [], [u.strip() for u in urls.splitlines() if u.strip()])
+
+
+def add_documents(case: str, index, files, urls: list[str]) -> None:
+    sb = st.sidebar
+    existing = {d["file"].lower() for d in index.documents}
+    upload_dir = case_dir(case) / "uploads"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    sources, skipped = [], []
+    for f in files:
+        name = Path(f.name).name
+        if name.lower() in existing:            # checked before saving, so an existing copy is never overwritten
+            skipped.append(f"{name} is already in this case, so it was skipped.")
+            continue
+        path = upload_dir / name
+        path.write_bytes(f.getbuffer())
+        sources.append(str(path))
+    sources += urls
+    if not sources:
+        sb.warning(" ".join(skipped) or "Please upload a PDF or paste a link.")
+        return
+    bar = sb.progress(0.0, text="Re-indexing the case...")
+    try:
+        _, notes = add_to_case(case, sources, progress=lambda msg, frac: bar.progress(min(frac, 1.0), text=msg[:70]))
+    except (CaseError, InvalidPDFError) as e:
+        bar.empty()
+        sb.error(str(e).replace("\n", "  \n"))
+        return
+    bar.empty()
+    st.session_state.history = []
+    st.session_state.comparison = None
+    st.session_state.add_notes = skipped + notes
+    st.rerun()
 
 
 def create_case(name: str, files, urls: list[str]) -> None:
@@ -238,7 +297,7 @@ def create_case(name: str, files, urls: list[str]) -> None:
         sb.warning("Please upload the files again.")
         return
     bar.empty()
-    st.session_state.case = case_id
+    st.session_state.pending_case = case_id
     st.session_state.history = []
     st.rerun()
 
