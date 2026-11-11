@@ -1,8 +1,58 @@
 [server]
-maxUploadSize = 60          # MB, same limit as URL downloads
+maxUploadSize = 60            # MB, same limit as URL downloads
+enableStaticServing = true    # serves static/ (the bundled fonts) so the app looks the same offline
 
 [browser]
-gatherUsageStats = false    # no usage data sent to Streamlit
+gatherUsageStats = false      # no usage data sent to Streamlit
 
 [theme]
-primaryColor = "#1f4e79"
+base = "light"
+primaryColor = "#24527a"              # calm navy
+backgroundColor = "#fbfaf6"           # warm off-white
+secondaryBackgroundColor = "#f3efe6"  # soft sand (sidebar, inputs)
+textColor = "#1f2a37"
+linkColor = "#24527a"
+borderColor = "#e4ddcf"
+showWidgetBorder = true
+baseRadius = "0.7rem"
+buttonRadius = "full"                 # pill-shaped buttons
+font = "Plus Jakarta Sans, sans-serif"
+headingFont = "Lora, Georgia, serif"
+baseFontSize = 15
+headingFontWeights = [700, 600, 600, 600, 600, 600]
+dataframeHeaderBackgroundColor = "#f3efe6"
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/PlusJakartaSans-400.ttf"
+weight = 400
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/PlusJakartaSans-500.ttf"
+weight = 500
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/PlusJakartaSans-600.ttf"
+weight = 600
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/PlusJakartaSans-700.ttf"
+weight = 700
+
+[[theme.fontFaces]]
+family = "Lora"
+url = "app/static/fonts/Lora-500.ttf"
+weight = 500
+
+[[theme.fontFaces]]
+family = "Lora"
+url = "app/static/fonts/Lora-600.ttf"
+weight = 600
+
+[[theme.fontFaces]]
+family = "Lora"
+url = "app/static/fonts/Lora-700.ttf"
+weight = 700

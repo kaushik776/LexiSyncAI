@@ -54,20 +54,34 @@ COMPARE_EXAMPLES = ["What is the cap on the Supplier's liability?", "Which law g
 
 CSS = """
 <style>
-.block-container {padding-top: 1.6rem; max-width: 1400px;}
-.lx-hero {background: linear-gradient(120deg, #0f2a4a 0%, #1f4e79 60%, #2f6aa3 100%); color: #fff;
-          padding: 18px 24px; border-radius: 14px; margin-bottom: 14px;}
-.lx-hero h1 {color: #fff; font-size: 1.7rem; margin: 0; padding: 0;}
-.lx-hero p {color: #dbe7f5; margin: 4px 0 0 0; font-size: 0.95rem;}
-.lx-badge {display: inline-block; padding: 4px 14px; border-radius: 999px; font-weight: 700;
-           font-size: 0.85rem; letter-spacing: .02em;}
-.lx-answer {font-size: 1.05rem; line-height: 1.65;}
-.lx-cite {display: inline-block; background: #e0ecfa; color: #1f4e79; border-radius: 6px; padding: 0 6px;
-          font-size: 0.78rem; font-weight: 700; margin: 0 1px; vertical-align: 1px;}
-.lx-muted {color: #64748b; font-size: 0.85rem;}
-.lx-verdict {padding: 12px 16px; border-radius: 10px; font-weight: 600; margin: 6px 0 12px 0;}
+.block-container {padding-top: 1.4rem; max-width: 1380px;}
+/* Header: deep navy with a thin gold rule, serif title */
+.lx-hero {background: linear-gradient(135deg, #1b3a57 0%, #24527a 55%, #2f6690 100%); color: #fff;
+          padding: 22px 28px 20px 28px; border-radius: 18px; margin-bottom: 16px;
+          box-shadow: 0 6px 24px rgba(27, 58, 87, 0.18); border-bottom: 3px solid #c9a227;}
+.lx-hero h1 {color: #fff; font-family: 'Lora', Georgia, serif; font-size: 1.9rem; font-weight: 700;
+             margin: 0; padding: 0; letter-spacing: .01em;}
+.lx-hero p {color: #dfe8f1; margin: 6px 0 0 0; font-size: 0.98rem;}
+/* Cards (bordered containers) get a soft lift */
+div[data-testid="stVerticalBlockBorderWrapper"] {background: #ffffff; box-shadow: 0 2px 12px rgba(31, 42, 55, 0.05);}
+.lx-badge {display: inline-block; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 0.82rem;}
+.lx-answer {font-size: 1.06rem; line-height: 1.75; color: #1f2a37;}
+.lx-cite {display: inline-block; background: #e8eff6; color: #24527a; border-radius: 999px; padding: 0 8px;
+          font-size: 0.74rem; font-weight: 700; margin: 0 2px; vertical-align: 1px;}
+.lx-muted {color: #6b7280; font-size: 0.86rem;}
+.lx-verdict {padding: 14px 18px; border-radius: 14px; font-weight: 600; margin: 6px 0 12px 0;}
 .lx-dot {display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px;}
-div[data-testid="stMetricValue"] {font-size: 1.35rem;}
+/* Buttons: gentle lift on hover instead of a hard flat block */
+.stButton button, .stFormSubmitButton button {font-weight: 600; transition: all .15s ease;}
+.stButton button:hover, .stFormSubmitButton button:hover {transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(36, 82, 122, 0.18);}
+/* Tabs: a little more breathing room */
+.stTabs [data-baseweb="tab-list"] {gap: 6px;}
+.stTabs [data-baseweb="tab"] {font-weight: 600; padding: 8px 14px;}
+/* Hide Streamlit's "Press Enter to submit form" hints */
+div[data-testid="InputInstructions"] {display: none;}
+div[data-testid="stMetricValue"] {font-size: 1.4rem; font-family: 'Lora', Georgia, serif;}
+section[data-testid="stSidebar"] h2 {font-family: 'Lora', Georgia, serif;}
 </style>
 """
 
@@ -161,11 +175,11 @@ def sidebar() -> str | None:
 
     with sb.expander("➕ New case", expanded=not cases):
         with st.form("new_case", clear_on_submit=False):
-            name = st.text_input("Case name", placeholder="e.g. vendor_contract_review")
-            files = st.file_uploader("Legal PDFs (2-5)", type=["pdf"], accept_multiple_files=True)
-            urls = st.text_area("or PDF links, one per line", height=80,
-                                placeholder="https://www.legislation.gov.uk/.../pdfs/....pdf")
-            if st.form_submit_button("Create and index", type="primary", width="stretch"):
+            name = st.text_input("Case name", placeholder="e.g. lease_review")
+            files = st.file_uploader("Upload PDFs", type=["pdf"], accept_multiple_files=True, help="2 to 5 legal documents")
+            urls = st.text_area("Or paste PDF links", height=68, placeholder="e.g. https://site.org/act.pdf",
+                                help="One link per line")
+            if st.form_submit_button("Create case", type="primary", width="stretch"):
                 create_case(name, files or [], [u.strip() for u in urls.splitlines() if u.strip()])
     return case
 
@@ -236,19 +250,18 @@ def create_case(name: str, files, urls: list[str]) -> None:
 def ask_tab(case_id: str, index) -> None:
     pipe = get_pipeline(case_id, index.manifest.get("built_at", ""))
     if case_id == "default":
-        pick = st.pills("Try an example", list(EXAMPLES), selection_mode="single", key="example_pick")
+        pick = st.pills("Not sure what to ask? Try one of these", list(EXAMPLES), selection_mode="single", key="example_pick")
         if pick and st.session_state.get("last_pick") != pick:
             st.session_state.question = EXAMPLES[pick]
             st.session_state.last_pick = pick
     with st.form("ask", border=False):
         q_col, b_col = st.columns([6, 1], vertical_alignment="bottom")
-        question = q_col.text_area("Ask a question about the documents", key="question", height=80,
-                                   placeholder="e.g. Does the liability cap in Section 7 exceed the indemnities "
-                                               "in Section 9?")
-        go = b_col.form_submit_button("Ask  ➜", type="primary", width="stretch")
+        question = q_col.text_area("Your question", key="question", height=80,
+                                   placeholder="e.g. What is the liability cap?")
+        go = b_col.form_submit_button("Ask", type="primary", width="stretch")
     if go and question.strip():
-        with st.status("Working on it...", expanded=False) as status:
-            status.write("Searching the documents (BM25 + embeddings, reranked)...")
+        with st.status("Reading the documents...", expanded=False) as status:
+            status.write("Finding the relevant passages, drafting an answer and checking every claim...")
             try:
                 answer = pipe.ask(question.strip())
             except LLMError as e:
@@ -261,8 +274,8 @@ def ask_tab(case_id: str, index) -> None:
 
     history = st.session_state.get("history", [])
     if not history:
-        st.info("Ask a question to get a cited answer. Every claim is linked to a page and clause, and the "
-                "system says so when the documents do not contain the answer.")
+        st.info("Ask anything about these documents. Each answer shows the page it came from, and you'll be "
+                "told plainly when the documents don't cover it.")
         return
     if len(history) > 1:
         labels = [a.question[:90] for a in history]
@@ -377,13 +390,13 @@ def compare_tab(case_id: str, index) -> None:
                "and checked for conflicts (different figures, or statements that contradict each other).")
     chosen = st.multiselect("Documents", list(docs), default=list(docs)[:3], format_func=lambda d: docs[d][:60])
     if case_id == "conflict_demo":
-        pick = st.pills("Try an example", COMPARE_EXAMPLES, selection_mode="single", key="cmp_pick")
+        pick = st.pills("Try one of these", COMPARE_EXAMPLES, selection_mode="single", key="cmp_pick")
         if pick and st.session_state.get("last_cmp_pick") != pick:
             st.session_state.cmp_question = pick
             st.session_state.last_cmp_pick = pick
     with st.form("compare", border=False):
         q_col, b_col = st.columns([6, 1], vertical_alignment="bottom")
-        question = q_col.text_input("Question", key="cmp_question", placeholder="e.g. What is the liability cap?")
+        question = q_col.text_input("Your question", key="cmp_question", placeholder="e.g. What is the liability cap?")
         go = b_col.form_submit_button("Compare", type="primary", width="stretch")
     if go and question.strip() and len(chosen) >= 2:
         with st.spinner(f"Asking {len(chosen)} documents..."):
@@ -514,8 +527,8 @@ def evaluation_tab() -> None:
 def main() -> None:
     st.markdown(CSS, unsafe_allow_html=True)
     case_id = sidebar()
-    st.markdown("<div class='lx-hero'><h1>⚖️ LexiSyncAI</h1><p>Evidence-grounded legal document analyst · "
-                "every claim cited to a page and clause · abstains when the documents do not say</p></div>",
+    st.markdown("<div class='lx-hero'><h1>⚖️ LexiSyncAI</h1><p>Your legal documents, explained in plain "
+                "language, with the exact page and clause behind every answer.</p></div>",
                 unsafe_allow_html=True)
     if case_id is None:
         st.info("Create a case in the sidebar: upload 2-5 public legal PDFs or paste links, then index them.")
