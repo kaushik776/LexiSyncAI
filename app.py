@@ -545,11 +545,14 @@ def main() -> None:
     names = " · ".join(d.get("name") or d["title"] for d in index.documents)
     st.markdown(f"<p class='lx-muted'>📁 <b>{esc(case_id)}</b> — {esc(names[:260])}</p>", unsafe_allow_html=True)
 
-    ask, cmp, docs, ev = st.tabs(["💬 Ask", "⚖️ Compare documents", "📄 Documents", "📊 Evaluation"])
+    ask, docs, ev = st.tabs(["💬 Ask", "📄 Documents", "📊 Evaluation"])
     with ask:
-        ask_tab(case_id, index)
-    with cmp:
-        compare_tab(case_id, index)
+        mode = st.segmented_control("Ask", ["Whole case", "Compare documents"], default="Whole case",
+                                    key="ask_mode", label_visibility="collapsed")
+        if mode == "Compare documents":
+            compare_tab(case_id, index)
+        else:
+            ask_tab(case_id, index)
     with docs:
         documents_tab(index)
     with ev:
