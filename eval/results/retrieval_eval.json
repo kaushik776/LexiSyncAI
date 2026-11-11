@@ -7,7 +7,7 @@
   "MRR": 0.86,
   "multihop_all_evidence@5": 0.833,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 2.2,
+  "ms_per_query": 3.1,
   "per_question": [
    {
     "id": "F01",
@@ -266,7 +266,7 @@
   "MRR": 0.815,
   "multihop_all_evidence@5": 0.667,
   "multihop_all_evidence@10": 0.833,
-  "ms_per_query": 21.8,
+  "ms_per_query": 24.3,
   "per_question": [
    {
     "id": "F01",
@@ -525,7 +525,7 @@
   "MRR": 0.825,
   "multihop_all_evidence@5": 0.833,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 22.6,
+  "ms_per_query": 24.6,
   "per_question": [
    {
     "id": "F01",
@@ -784,7 +784,7 @@
   "MRR": 0.815,
   "multihop_all_evidence@5": 0.667,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 21.4,
+  "ms_per_query": 27.4,
   "per_question": [
    {
     "id": "F01",
@@ -1043,7 +1043,7 @@
   "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 503.9,
+  "ms_per_query": 510.6,
   "per_question": [
    {
     "id": "F01",
@@ -1302,7 +1302,7 @@
   "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 512.4,
+  "ms_per_query": 516.5,
   "per_question": [
    {
     "id": "F01",
@@ -1561,7 +1561,7 @@
   "MRR": 1.0,
   "multihop_all_evidence@5": 1.0,
   "multihop_all_evidence@10": 1.0,
-  "ms_per_query": 514.6,
+  "ms_per_query": 519.2,
   "per_question": [
    {
     "id": "F01",
