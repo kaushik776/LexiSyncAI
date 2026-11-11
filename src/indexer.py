@@ -26,6 +26,7 @@ from src.chunker import Chunk, chunk_document, detect_mode, document_structure, 
 from src.fetch import FetchError
 from src.ingest import InvalidPDFError, ingest_pdf
 from src.legal_check import check_document
+from src.anomaly import detect as detect_anomalies
 
 
 def device() -> str:
@@ -83,6 +84,7 @@ def build_index(sources: list[str | Path], case_id: str = "default",
     documents = []
     n = len(sources)
     rejected: list[dict] = []      # files that could not be used, with a message asking for a re-upload
+    parsed = []                    # ingested documents (for the page-anomaly detector)
     for i, source in enumerate(sources):
         origin = str(source)
         try:
@@ -104,9 +106,11 @@ def build_index(sources: list[str | Path], case_id: str = "default",
             report(f"Warning for {path.name}: {legal.message}", i / (n + 1))
         doc_chunks = chunk_document(doc)
         chunks += doc_chunks
+        parsed.append(doc)
         documents.append({
             **doc.summary(),
             "file": path.name,
+            "path": str(Path(path).resolve()),
             "source": origin if is_url(origin) else "upload",
             "mode": detect_mode(doc),
             "legal_check": {"likely_legal": legal.likely_legal, "score": legal.score,
@@ -119,6 +123,11 @@ def build_index(sources: list[str | Path], case_id: str = "default",
     if not documents:
         raise InvalidPDFError("None of the files could be used:\n" +
                               "\n".join(f"- {r['error']}" for r in rejected))
+
+    # Autoencoder page-anomaly detector (bonus feature 8): unusual pages across the case.
+    for a in detect_anomalies(parsed):
+        entry = next(d for d in documents if d["doc_id"] == a.doc_id)
+        entry.setdefault("anomalies", []).append({"page": a.page, "score": a.score, "reason": a.reason})
 
     report("Embedding chunks", n / (n + 1))
     t = time.time()

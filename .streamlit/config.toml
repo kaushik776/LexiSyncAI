@@ -1,0 +1,8 @@
+[server]
+maxUploadSize = 60          # MB, same limit as URL downloads
+
+[browser]
+gatherUsageStats = false    # no usage data sent to Streamlit
+
+[theme]
+primaryColor = "#1f4e79"

@@ -1,0 +1,60 @@
+{
+ "summary": {
+  "tables": 4,
+  "detected": 4,
+  "shape_match": 4,
+  "cell_accuracy": 0.981,
+  "cell_similarity": 1.0,
+  "numeric_cell_accuracy": 0.75
+ },
+ "tables": [
+  {
+   "doc": "EX-10.2.pdf",
+   "page": 25,
+   "detected": true,
+   "rows_pred": 5,
+   "rows_gold": 5,
+   "shape_match": true,
+   "cells": 20,
+   "cell_accuracy": 1.0,
+   "cell_similarity": 1.0,
+   "numeric_cell_accuracy": 1.0
+  },
+  {
+   "doc": "EX-10.2.pdf",
+   "page": 26,
+   "detected": true,
+   "rows_pred": 5,
+   "rows_gold": 5,
+   "shape_match": true,
+   "cells": 15,
+   "cell_accuracy": 1.0,
+   "cell_similarity": 1.0,
+   "numeric_cell_accuracy": 1.0
+  },
+  {
+   "doc": "UK_Consumer_Rights_Act_2015.pdf",
+   "page": 88,
+   "detected": true,
+   "rows_pred": 7,
+   "rows_gold": 7,
+   "shape_match": true,
+   "cells": 14,
+   "cell_accuracy": 1.0,
+   "cell_similarity": 1.0,
+   "numeric_cell_accuracy": 1.0
+  },
+  {
+   "doc": "UK_Consumer_Rights_Act_2015.pdf",
+   "page": 89,
+   "detected": true,
+   "rows_pred": 2,
+   "rows_gold": 2,
+   "shape_match": true,
+   "cells": 4,
+   "cell_accuracy": 0.75,
+   "cell_similarity": 0.998,
+   "numeric_cell_accuracy": 0.0
+  }
+ ]
+}

@@ -5,19 +5,20 @@
    "key_fact_recall": 0.789,
    "key_fact_recall_factual": 0.846,
    "key_fact_recall_multihop": 0.667,
-   "citation_precision": 0.793,
+   "citation_precision": 0.699,
    "evidence_recall": 0.868,
    "abstention_accuracy_unanswerable": 1.0,
    "false_abstention_rate": 0.105,
-   "mean_seconds": 11.632,
+   "mean_seconds": 12.094,
    "p95_seconds": 27.52,
-   "mean_llm_calls": 1.826,
-   "mean_prompt_tokens": 3502.174,
-   "mean_completion_tokens": 213.652,
-   "questions_with_retry": 4,
+   "mean_llm_calls": 1.913,
+   "mean_prompt_tokens": 3734.043,
+   "mean_completion_tokens": 227.696,
+   "questions_with_retry": 5,
    "badges": {
-    "HIGH": 15,
+    "HIGH": 14,
     "INSUFFICIENT EVIDENCE": 6,
+    "LOW": 1,
     "MEDIUM": 2
    }
   },
@@ -30,11 +31,22 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] GDPR, p. 52, Article 33(1)-(3); [S2] GDPR, pp. 16-17, Recitals 85-86; [S3] GDPR, p. 17, Recitals 87-89",
+    "cited_chunk_ids": [
+     "GDPR:0149",
+     "GDPR:0050",
+     "GDPR:0051"
+    ],
+    "timings": {
+     "retrieval_s": 1.522,
+     "rerank_s": 0.956,
+     "llm_s": 6.208,
+     "total_s": 12.173
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2212,
     "completion_tokens": 117,
-    "seconds": 13.144,
+    "seconds": 12.173,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -76,11 +88,20 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] GDPR, pp. 37-38, Article 8(1)-(3)",
+    "cited_chunk_ids": [
+     "GDPR:0110"
+    ],
+    "timings": {
+     "retrieval_s": 0.067,
+     "rerank_s": 1.475,
+     "llm_s": 10.46,
+     "total_s": 12.645
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 2,
     "prompt_tokens": 3015,
-    "completion_tokens": 175,
-    "seconds": 12.076,
+    "completion_tokens": 189,
+    "seconds": 12.645,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -141,11 +162,20 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] GDPR, p. 55, Article 37(1)-(4)",
+    "cited_chunk_ids": [
+     "GDPR:0158"
+    ],
+    "timings": {
+     "retrieval_s": 0.024,
+     "rerank_s": 0.476,
+     "llm_s": 6.952,
+     "total_s": 8.028
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2040,
     "completion_tokens": 178,
-    "seconds": 8.303,
+    "seconds": 8.028,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -205,15 +235,28 @@
     "id": "F04",
     "type": "factual",
     "question": "How long does a controller have to act on a data subject's request under Articles 15 to 22 of the GDPR, and can the period be extended?",
-    "answer": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR. [S1] [S2] The period can be extended by two months if necessary, taking into account the complexity and number of the requests. [S1] [S2]",
+    "answer": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR. [S1] [S2] [S3] [S4] [S5] The period may be extended by two months if necessary, taking into account the complexity and number of the requests. [S1] [S2] [S3] [S4] [S5]",
     "badge": "HIGH",
     "abstained": false,
-    "citations": "[S1] GDPR, pp. 39-40, Article 12(1)-(3); [S2] GDPR, p. 40, Article 12(4)-(8)",
+    "citations": "[S1] GDPR, pp. 39-40, Article 12(1)-(3); [S2] GDPR, p. 40, Article 12(4)-(8); [S3] GDPR, pp. 54-55, Article 36(1)-(3); [S4] GDPR, pp. 11-12, Recitals 59-60; [S5] GDPR, p. 43, Article 15(1)",
+    "cited_chunk_ids": [
+     "GDPR:0116",
+     "GDPR:0117",
+     "GDPR:0156",
+     "GDPR:0033",
+     "GDPR:0123"
+    ],
+    "timings": {
+     "retrieval_s": 0.055,
+     "rerank_s": 1.546,
+     "llm_s": 10.793,
+     "total_s": 12.587
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 2,
-    "prompt_tokens": 2659,
-    "completion_tokens": 215,
-    "seconds": 12.324,
+    "prompt_tokens": 2641,
+    "completion_tokens": 218,
+    "seconds": 12.587,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -222,8 +265,8 @@
       "step": 0,
       "action": "plan",
       "sub_questions": [
-       "How long does a controller have to act on a data subject's request under Article 12(2) of the GDPR?",
-       "Can the period for acting on a data subject's request under Articles 15 to 22 of the GDPR be extended, and if so, under which conditions (Article 28(3) of the GDPR)?"
+       "How long does a controller have to act on a data subject's request under Articles 15 to 22 of the GDPR?",
+       "Can the period for acting on a data subject's request under Articles 15 to 22 of the GDPR be extended?"
       ]
      },
      {
@@ -243,16 +286,22 @@
         "claim": "A controller has one month to act on a data subject's request under Articles 15 to 22 of the GDPR.",
         "sources": [
          1,
-         2
+         2,
+         3,
+         4,
+         5
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
        },
        {
-        "claim": "The period can be extended by two months if necessary, taking into account the complexity and number of the requests.",
+        "claim": "The period may be extended by two months if necessary, taking into account the complexity and number of the requests.",
         "sources": [
          1,
-         2
+         2,
+         3,
+         4,
+         5
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
@@ -265,7 +314,7 @@
       "detail": "part 1 covered, part 2 covered"
      }
     ],
-    "citation_precision": 1.0,
+    "citation_precision": 0.4,
     "evidence_recall": 1.0
    },
    {
@@ -276,11 +325,22 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 20-21, Section 22(1)-(4); [S2] UK Consumer Rights Act 2015, p. 21, Section 22(5)-(8); [S3] UK Consumer Rights Act 2015, p. 18, Section 20(1)-(8)",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0034",
+     "UK_Consumer_Rights_Act_2015:0035",
+     "UK_Consumer_Rights_Act_2015:0028"
+    ],
+    "timings": {
+     "retrieval_s": 0.021,
+     "rerank_s": 0.506,
+     "llm_s": 6.753,
+     "total_s": 7.358
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2388,
     "completion_tokens": 160,
-    "seconds": 6.998,
+    "seconds": 7.358,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -322,11 +382,21 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, p. 55, Section 87(6)-(12); [S2] UK Consumer Rights Act 2015, pp. 147-148, Schedule 9(3) ff.",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0124",
+     "UK_Consumer_Rights_Act_2015:0272"
+    ],
+    "timings": {
+     "retrieval_s": 0.025,
+     "rerank_s": 0.473,
+     "llm_s": 5.749,
+     "total_s": 6.305
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2445,
     "completion_tokens": 106,
-    "seconds": 6.192,
+    "seconds": 6.305,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -367,11 +437,20 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 22, Section 8.9",
+    "cited_chunk_ids": [
+     "EX_10_2:0039"
+    ],
+    "timings": {
+     "retrieval_s": 0.018,
+     "rerank_s": 0.457,
+     "llm_s": 4.729,
+     "total_s": 5.263
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 1961,
     "completion_tokens": 72,
-    "seconds": 5.715,
+    "seconds": 5.263,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -411,11 +490,21 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 25, Schedule 2.1(b), table; [S3] EX-10.2, p. 25, Schedule 2.1(b)",
+    "cited_chunk_ids": [
+     "EX_10_2:0046",
+     "EX_10_2:0045"
+    ],
+    "timings": {
+     "retrieval_s": 0.022,
+     "rerank_s": 0.475,
+     "llm_s": 5.56,
+     "total_s": 6.095
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2076,
     "completion_tokens": 104,
-    "seconds": 6.205,
+    "seconds": 6.095,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -456,11 +545,20 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, p. 88, Schedule 5, Part 2, table",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0179"
+    ],
+    "timings": {
+     "retrieval_s": 0.025,
+     "rerank_s": 0.533,
+     "llm_s": 5.794,
+     "total_s": 6.388
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2981,
     "completion_tokens": 102,
-    "seconds": 6.308,
+    "seconds": 6.388,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -496,17 +594,29 @@
     "id": "F10",
     "type": "factual",
     "question": "What remedy does a Protected Partner have if the Partnership breaches its obligations under Article 2 or Article 3?",
-    "answer": "A Protected Partner can receive monetary damages from the Partnership if the Partnership breaches its obligations under Article 2 or Article 3. [S1] The damages are calculated based on the specific breach, such as the income taxes incurred by the Protected Partner or an Indirect Owner as a result of the breach. [S1]",
-    "badge": "HIGH",
+    "answer": "A Protected Partner can receive monetary damages from the Partnership if the Partnership breaches its obligations under Article 2 or Article 3. [S1] The damages are calculated based on the specific breach, such as the income taxes incurred by the Protected Partner or an Indirect Owner as a result of the breach. [S1] If the Partnership breaches or violates any of the covenants set forth in Article 2 or Article 3, the Protected Partner and the Partnership will negotiate in good faith to resolve any disagreements regarding the amount of damages. [S2] If the disagreement cannot be resolved within 60 days, an Accounting Firm will be jointly retained to resolve the disagreement and determine the amount of damages. [S2] The Partnership must provide immediate notice to the affected Protected Partner of the transaction or event giving rise to the breach, and all payments required to be made under this Article 4 to any Protected Partner shall be made on or before April 15 of the year following the year in which the gain recognition event giving rise to such payment took place. [S3] If the Partnership breaches its obligations under Article 3, the Protected Partner may also be offered the opportunity to enter into a Deficit Restoration Obligation in lieu of the other debt maintenance obligations set forth in Article 3. [S5]",
+    "badge": "LOW",
     "abstained": false,
-    "citations": "[S1] EX-10.2, pp. 14-16, Section 4.1(a)",
+    "citations": "[S1] EX-10.2, pp. 14-16, Section 4.1(a); [S2] EX-10.2, p. 16, Section 4.2; [S3] EX-10.2, p. 18, Section 4.3; [S5] EX-10.2, pp. 9-10, Section 3.1(a)-(b)",
+    "cited_chunk_ids": [
+     "EX_10_2:0021",
+     "EX_10_2:0024",
+     "EX_10_2:0026",
+     "EX_10_2:0012"
+    ],
+    "timings": {
+     "retrieval_s": 0.07,
+     "rerank_s": 1.454,
+     "llm_s": 24.962,
+     "total_s": 27.52
+    },
     "key_fact_recall": 1.0,
-    "llm_calls": 2,
-    "prompt_tokens": 2682,
-    "completion_tokens": 187,
-    "seconds": 12.453,
-    "retries": 0,
-    "verifier_rejections": 0,
+    "llm_calls": 4,
+    "prompt_tokens": 8038,
+    "completion_tokens": 638,
+    "seconds": 27.52,
+    "retries": 2,
+    "verifier_rejections": 3,
     "planned": true,
     "retry_log": [
      {
@@ -521,14 +631,14 @@
       "step": 1,
       "action": "draft",
       "answerable": true,
-      "claims": 2,
+      "claims": 6,
       "missing": ""
      },
      {
       "step": 1,
       "action": "verify",
-      "supported": 2,
-      "claims": 2,
+      "supported": 4,
+      "claims": 6,
       "checks": [
        {
         "claim": "A Protected Partner can receive monetary damages from the Partnership if the Partnership breaches its obligations under Article 2 or Article 3.",
@@ -545,16 +655,97 @@
         ],
         "supported": true,
         "reason": "entailed (p=0.98)"
+       },
+       {
+        "claim": "If the Partnership breaches or violates any of the covenants set forth in Article 2 or Article 3, the Protected Partner and the Partnership will negotiate in good faith to resolve any disagreements regarding the amount of damages.",
+        "sources": [
+         2
+        ],
+        "supported": true,
+        "reason": "entailed (p=1.00)"
+       },
+       {
+        "claim": "If the disagreement cannot be resolved within 60 days, an Accounting Firm will be jointly retained to resolve the disagreement and determine the amount of damages.",
+        "sources": [
+         2
+        ],
+        "supported": true,
+        "reason": "entailed (p=1.00)"
+       },
+       {
+        "claim": "The Partnership must provide immediate notice to the affected Protected Partner of the transaction or event giving rise to the breach, and all payments required to be made under this Article 4 to any Protected Partner shall be made on or before April 15 of the year following the year in which the gain recognition event giving rise to such payment took place.",
+        "sources": [
+         3
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.00)"
+       },
+       {
+        "claim": "If the Partnership breaches its obligations under Article 3, the Protected Partner may also be offered the opportunity to enter into a Deficit Restoration Obligation in lieu of the other debt maintenance obligations set forth in Article 3.",
+        "sources": [
+         5
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.00)"
+       }
+      ]
+     },
+     {
+      "step": 2,
+      "action": "redraft",
+      "answerable": true,
+      "claims": 1
+     },
+     {
+      "step": 2,
+      "action": "verify",
+      "supported": 0,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "The Protected Partner’s sole remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred as a result of the breach, reduced by the net present value of the reasonably estimated tax liability.",
+        "sources": [
+         1
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
        }
       ]
      },
      {
       "step": 3,
+      "action": "redraft",
+      "answerable": true,
+      "claims": 1
+     },
+     {
+      "step": 3,
+      "action": "verify",
+      "supported": 0,
+      "claims": 1,
+      "checks": [
+       {
+        "claim": "The Protected Partner’s sole remedy is to receive from the Partnership an amount equal to the aggregate federal, state, and local income taxes incurred as a result of the breach, reduced by the net present value of the reasonably estimated tax liability.",
+        "sources": [
+         1
+        ],
+        "supported": false,
+        "reason": "cited text does not entail the claim (p=0.01)"
+       }
+      ]
+     },
+     {
+      "step": 7,
+      "action": "keep_best_draft",
+      "detail": "kept the draft with 67% of claims verified"
+     },
+     {
+      "step": 8,
       "action": "coverage",
       "detail": "part 1 covered, part 2 covered"
      }
     ],
-    "citation_precision": 1.0,
+    "citation_precision": 0.25,
     "evidence_recall": 1.0
    },
    {
@@ -565,11 +756,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.023,
+     "rerank_s": 0.487,
+     "llm_s": 13.78,
+     "total_s": 15.021
+    },
     "key_fact_recall": 0.0,
     "llm_calls": 3,
     "prompt_tokens": 6756,
     "completion_tokens": 257,
-    "seconds": 15.376,
+    "seconds": 15.021,
     "retries": 2,
     "verifier_rejections": 3,
     "planned": false,
@@ -658,11 +856,20 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 22, Section 8.11",
+    "cited_chunk_ids": [
+     "EX_10_2:0041"
+    ],
+    "timings": {
+     "retrieval_s": 0.021,
+     "rerank_s": 0.448,
+     "llm_s": 5.25,
+     "total_s": 5.765
+    },
     "key_fact_recall": 0.0,
     "llm_calls": 1,
     "prompt_tokens": 1515,
     "completion_tokens": 101,
-    "seconds": 5.666,
+    "seconds": 5.765,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -702,11 +909,21 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 21-22, Section 23(1)-(6); [S2] UK Consumer Rights Act 2015, p. 35, Section 43(1)-(6)",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0036",
+     "UK_Consumer_Rights_Act_2015:0068"
+    ],
+    "timings": {
+     "retrieval_s": 0.024,
+     "rerank_s": 0.492,
+     "llm_s": 5.61,
+     "total_s": 6.172
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 1,
     "prompt_tokens": 2034,
     "completion_tokens": 111,
-    "seconds": 6.208,
+    "seconds": 6.172,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -747,11 +964,24 @@
     "badge": "MEDIUM",
     "abstained": false,
     "citations": "[S1] GDPR, pp. 82-83, Article 83(3)-(5); [S2] GDPR, p. 83, Article 83(6)-(9); [S3] GDPR, pp. 27-28, Recitals 149-150; [S4] GDPR, p. 24, Recitals 130-131; [S5] GDPR, p. 77, Article 70(1)-(2)",
+    "cited_chunk_ids": [
+     "GDPR:0235",
+     "GDPR:0236",
+     "GDPR:0085",
+     "GDPR:0074",
+     "GDPR:0219"
+    ],
+    "timings": {
+     "retrieval_s": 0.066,
+     "rerank_s": 1.459,
+     "llm_s": 23.276,
+     "total_s": 25.096
+    },
     "key_fact_recall": 0.5,
     "llm_calls": 4,
-    "prompt_tokens": 7256,
-    "completion_tokens": 651,
-    "seconds": 27.522,
+    "prompt_tokens": 7248,
+    "completion_tokens": 547,
+    "seconds": 25.096,
     "retries": 1,
     "verifier_rejections": 1,
     "planned": true,
@@ -790,7 +1020,7 @@
         "reason": "entailed (p=0.98)"
        },
        {
-        "claim": "Violations of the basic principles for processing, including conditions for consent, pursuant to Articles 5, 6, 7 and 9; data subjects' rights pursuant to Articles 12 to 22; transfers of personal data to a recipient in a third country or an international organisation pursuant to Articles 44 to 49; and non-compliance with an order or a temporary or definitive limitation on processing or the suspension of data flows by the supervisory authority pursuant to Article 58(2) or failure to provide access in violation of Article 58(1) trigger the higher fine.",
+        "claim": "Violations of the basic principles for processing, including conditions for consent, pursuant to Articles 5, 6, 7 and 9; data subjects' rights pursuant to Articles 12 to 22; transfers of personal data to a recipient in a third country or an international organisation pursuant to Articles 44 to 49; and any obligations pursuant to Member State law adopted under Chapter IX, as well as non-compliance with an order or a temporary or definitive limitation on processing or the suspension of data flows by the supervisory authority, trigger the higher fine.",
         "sources": [
          1,
          2,
@@ -799,7 +1029,7 @@
          5
         ],
         "supported": false,
-        "reason": "cited text does not entail the claim (p=0.04)"
+        "reason": "cited text does not entail the claim (p=0.07)"
        }
       ]
      },
@@ -859,15 +1089,27 @@
     "id": "M02",
     "type": "multihop",
     "question": "When can a consumer use the final right to reject goods, and can the trader deduct an amount for use if the consumer rejects within the first 6 months?",
-    "answer": "A consumer can use the final right to reject goods if the goods do not conform to the contract after one repair or replacement, or if the trader breaches the requirement to repair or replace within a reasonable time. [S1] [S5] If the consumer rejects the goods within the first 6 months, the trader cannot deduct an amount for use, unless the goods are a motor vehicle or specified by order of the Secretary of State. [S1] [S2] [S5]",
+    "answer": "A consumer can use the final right to reject goods if the goods do not conform to the contract after one repair or replacement, or if the trader breaches the requirement to repair or replace within a reasonable time. [S1] [S5] If the consumer rejects the goods within the first 6 months, the trader cannot deduct an amount for use, unless the goods are a motor vehicle or specified by order of the Secretary of State. [S1] [S2] [S4]",
     "badge": "HIGH",
     "abstained": false,
-    "citations": "[S1] UK Consumer Rights Act 2015, p. 23, Section 24(6)-(10); [S2] UK Consumer Rights Act 2015, pp. 23-24, Section 24(11)-(15); [S5] UK Consumer Rights Act 2015, p. 22, Section 24(1)-(5)",
+    "citations": "[S1] UK Consumer Rights Act 2015, p. 23, Section 24(6)-(10); [S2] UK Consumer Rights Act 2015, pp. 23-24, Section 24(11)-(15); [S4] UK Consumer Rights Act 2015, pp. 42-43, Section 58(1)-(8); [S5] UK Consumer Rights Act 2015, p. 22, Section 24(1)-(5)",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0039",
+     "UK_Consumer_Rights_Act_2015:0040",
+     "UK_Consumer_Rights_Act_2015:0089",
+     "UK_Consumer_Rights_Act_2015:0038"
+    ],
+    "timings": {
+     "retrieval_s": 0.066,
+     "rerank_s": 1.509,
+     "llm_s": 11.099,
+     "total_s": 12.934
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 2,
     "prompt_tokens": 2758,
-    "completion_tokens": 223,
-    "seconds": 12.642,
+    "completion_tokens": 230,
+    "seconds": 12.934,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -907,7 +1149,7 @@
         "sources": [
          1,
          2,
-         5
+         4
         ],
         "supported": true,
         "reason": "entailed (p=1.00)"
@@ -920,7 +1162,7 @@
       "detail": "part 1 covered, part 2 covered"
      }
     ],
-    "citation_precision": 1.0,
+    "citation_precision": 0.75,
     "evidence_recall": 1.0
    },
    {
@@ -931,11 +1173,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.069,
+     "rerank_s": 1.513,
+     "llm_s": 35.451,
+     "total_s": 37.55
+    },
     "key_fact_recall": 0.0,
     "llm_calls": 6,
-    "prompt_tokens": 13455,
-    "completion_tokens": 867,
-    "seconds": 39.394,
+    "prompt_tokens": 13458,
+    "completion_tokens": 833,
+    "seconds": 37.55,
     "retries": 2,
     "verifier_rejections": 3,
     "planned": false,
@@ -945,7 +1194,7 @@
       "action": "plan",
       "sub_questions": [
        "If goods turn out not to conform within six months of delivery, are they presumed to have been faulty on delivery?",
-       "What is the deadline for the short-term right to reject goods that are not conforming?"
+       "What is the deadline for the short-term right to reject goods that are found to be non-conforming?"
       ]
      },
      {
@@ -962,7 +1211,7 @@
       "claims": 1,
       "checks": [
        {
-        "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
+        "claim": "The deadline for the short-term right to reject goods that are found to be non-conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
         "sources": [
          1,
          3
@@ -985,7 +1234,7 @@
       "claims": 2,
       "checks": [
        {
-        "claim": "If the goods do not conform to the contract within six months of delivery, they are presumed to have been faulty on delivery.",
+        "claim": "If goods do not conform to the contract within six months of delivery, they are presumed to have been faulty on delivery.",
         "sources": [
          1,
          4,
@@ -995,12 +1244,10 @@
         "reason": "cited text does not entail the claim (p=0.00)"
        },
        {
-        "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
+        "claim": "The deadline for the short-term right to reject goods that are found to be non-conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
         "sources": [
          1,
-         3,
-         4,
-         7
+         3
         ],
         "supported": false,
         "reason": "cited text does not entail the claim (p=0.01)"
@@ -1011,25 +1258,16 @@
       "step": 3,
       "action": "redraft",
       "answerable": true,
-      "claims": 2
+      "claims": 1
      },
      {
       "step": 3,
       "action": "verify",
       "supported": 0,
-      "claims": 2,
+      "claims": 1,
       "checks": [
        {
-        "claim": "If the goods do not conform to the contract within six months of delivery, they are not necessarily presumed to have been faulty on delivery.",
-        "sources": [
-         1,
-         4
-        ],
-        "supported": false,
-        "reason": "cited text does not entail the claim (p=0.01)"
-       },
-       {
-        "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
+        "claim": "The deadline for the short-term right to reject goods that are found to be non-conforming is 30 days after the first day ownership or possession has been transferred, unless the goods are of a kind that can reasonably be expected to perish after a shorter period, in which case the deadline is that shorter period.",
         "sources": [
          1,
          3
@@ -1065,11 +1303,9 @@
       "claims": 1,
       "checks": [
        {
-        "claim": "The deadline for the short-term right to reject goods that are not conforming is 30 days after the first day ownership or possession has been transferred, the goods have been delivered, and the trader has notified the consumer that the action has been taken to enable use, unless the goods can perish after a shorter period.",
+        "claim": "The deadline for the short-term right to reject goods that are found to be non-conforming is 30 days from the first day after ownership or possession has been transferred, the goods have been delivered, and the trader has notified the consumer that the action has been taken, unless the goods can perish after a shorter period, in which case the time limit is that shorter period.",
         "sources": [
-         3,
-         1,
-         6
+         1
         ],
         "supported": false,
         "reason": "cited text does not entail the claim (p=0.01)"
@@ -1088,11 +1324,21 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S2] EX-10.2, p. 4, Article 1; [S3] EX-10.2, p. 16, Section 4.2",
+    "cited_chunk_ids": [
+     "EX_10_2:0006",
+     "EX_10_2:0024"
+    ],
+    "timings": {
+     "retrieval_s": 0.056,
+     "rerank_s": 1.427,
+     "llm_s": 11.576,
+     "total_s": 13.452
+    },
     "key_fact_recall": 0.5,
     "llm_calls": 2,
     "prompt_tokens": 3074,
     "completion_tokens": 258,
-    "seconds": 13.644,
+    "seconds": 13.452,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -1158,11 +1404,23 @@
     "badge": "HIGH",
     "abstained": false,
     "citations": "[S1] EX-10.2, p. 26, Schedule 3.1(a), table; [S3] EX-10.2, pp. 3-4, Article 1; [S4] EX-10.2, p. 9, Section 3.1(a); [S5] EX-10.2, pp. 9-10, Section 3.1(a)-(b)",
+    "cited_chunk_ids": [
+     "EX_10_2:0047",
+     "EX_10_2:0004",
+     "EX_10_2:0011",
+     "EX_10_2:0012"
+    ],
+    "timings": {
+     "retrieval_s": 0.072,
+     "rerank_s": 1.481,
+     "llm_s": 9.883,
+     "total_s": 11.6
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 2,
     "prompt_tokens": 2434,
     "completion_tokens": 178,
-    "seconds": 11.63,
+    "seconds": 11.6,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": true,
@@ -1225,11 +1483,23 @@
     "badge": "MEDIUM",
     "abstained": false,
     "citations": "[S1] UK Consumer Rights Act 2015, pp. 20-21, Section 22(1)-(4); [S2] GDPR, p. 52, Article 33(1)-(3); [S3] UK Consumer Rights Act 2015, p. 21, Section 22(5)-(8); [S4] GDPR, pp. 16-17, Recitals 85-86",
+    "cited_chunk_ids": [
+     "UK_Consumer_Rights_Act_2015:0034",
+     "GDPR:0149",
+     "UK_Consumer_Rights_Act_2015:0035",
+     "GDPR:0050"
+    ],
+    "timings": {
+     "retrieval_s": 0.071,
+     "rerank_s": 1.486,
+     "llm_s": 31.572,
+     "total_s": 33.393
+    },
     "key_fact_recall": 1.0,
     "llm_calls": 6,
     "prompt_tokens": 11289,
-    "completion_tokens": 663,
-    "seconds": 33.102,
+    "completion_tokens": 659,
+    "seconds": 33.393,
     "retries": 2,
     "verifier_rejections": 3,
     "planned": true,
@@ -1376,11 +1646,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.026,
+     "rerank_s": 0.476,
+     "llm_s": 0.0,
+     "total_s": 0.502
+    },
     "key_fact_recall": null,
     "llm_calls": 0,
     "prompt_tokens": 0,
     "completion_tokens": 0,
-    "seconds": 0.493,
+    "seconds": 0.502,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1400,11 +1677,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.022,
+     "rerank_s": 0.479,
+     "llm_s": 0.0,
+     "total_s": 0.502
+    },
     "key_fact_recall": null,
     "llm_calls": 0,
     "prompt_tokens": 0,
     "completion_tokens": 0,
-    "seconds": 0.496,
+    "seconds": 0.502,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1424,11 +1708,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.018,
+     "rerank_s": 0.463,
+     "llm_s": 4.563,
+     "total_s": 5.13
+    },
     "key_fact_recall": null,
     "llm_calls": 1,
     "prompt_tokens": 2394,
-    "completion_tokens": 71,
-    "seconds": 5.33,
+    "completion_tokens": 61,
+    "seconds": 5.13,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,
@@ -1438,7 +1729,7 @@
       "action": "draft",
       "answerable": false,
       "claims": 1,
-      "missing": "The sources do not include any information regarding the annual rent or lease terms for the Dollar General property."
+      "missing": "The annual rent amount for the Dollar General property."
      }
     ]
    },
@@ -1450,11 +1741,18 @@
     "badge": "INSUFFICIENT EVIDENCE",
     "abstained": true,
     "citations": "",
+    "cited_chunk_ids": [],
+    "timings": {
+     "retrieval_s": 0.019,
+     "rerank_s": 0.452,
+     "llm_s": 6.217,
+     "total_s": 6.688
+    },
     "key_fact_recall": null,
     "llm_calls": 1,
     "prompt_tokens": 3126,
     "completion_tokens": 118,
-    "seconds": 6.316,
+    "seconds": 6.688,
     "retries": 0,
     "verifier_rejections": 0,
     "planned": false,

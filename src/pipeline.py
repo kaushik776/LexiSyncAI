@@ -99,17 +99,19 @@ class Pipeline:
         self.index = index
         self.exclude_kinds = exclude_kinds          # ablation: ("table",) = text-only
         self.retrieval_mode = retrieval_mode        # ablation: "dense" = dense-only
+        self._doc_ids: list[str] | None = None      # set per question by ask(doc_ids=...)
         self.retriever = HybridRetriever(index)
         self.reranker = Reranker()
         self.llm = llm or LLM()
 
     def searched_documents(self) -> list[str]:
-        return [f"{d['title']} ({d['pages']} pages)" for d in self.index.documents]
+        docs = [d for d in self.index.documents if not self._doc_ids or d["doc_id"] in self._doc_ids]
+        return [f"{d['title']} ({d['pages']} pages)" for d in docs]
 
     def _retrieve(self, query: str, k: int, timings: dict) -> list[Hit]:
         t = time.time()
         candidates = self.retriever.search(query, k=config.CANDIDATES, mode=self.retrieval_mode,
-                                           exclude_kinds=self.exclude_kinds)
+                                           exclude_kinds=self.exclude_kinds, doc_ids=self._doc_ids)
         timings["retrieval_s"] = timings.get("retrieval_s", 0) + time.time() - t
         t = time.time()
         hits = self.reranker.rerank(query, candidates, k=k)
@@ -134,7 +136,10 @@ class Pipeline:
         return [best[c] for c in order][:limit]
 
     def ask(self, question: str, use_retrieval: bool = True, use_planner: bool = config.USE_PLANNER,
-            use_verifier: bool = config.USE_VERIFIER, max_retries: int = config.MAX_RETRIES) -> Answer:
+            use_verifier: bool = config.USE_VERIFIER, max_retries: int = config.MAX_RETRIES,
+            doc_ids: list[str] | None = None) -> Answer:
+        """Answer a question. doc_ids limits the search to some documents of the case."""
+        self._doc_ids = list(doc_ids) if doc_ids else None
         t0 = time.time()
         usage, timings, log = Usage(), {}, []
         searched = self.searched_documents()

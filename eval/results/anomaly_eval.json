@@ -1,0 +1,138 @@
+{
+ "summary": {
+  "pages": 265,
+  "special_pages": 23,
+  "flagged": 21,
+  "precision": 0.333,
+  "recall": 0.304,
+  "precision_incl_hand_checked": 0.667
+ },
+ "flagged": [
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 2,
+   "score": 29.037,
+   "reason": "capital letters higher than usual, image coverage higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 8,
+   "score": 11.575,
+   "reason": "image coverage higher than usual, font size higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 1,
+   "score": 11.253,
+   "reason": "layout spread higher than usual, image coverage higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 89,
+   "score": 5.164,
+   "reason": "capital letters higher than usual, digit share lower than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 88,
+   "score": 3.717,
+   "reason": "capital letters higher than usual, bold text lower than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 64,
+   "score": 2.391,
+   "reason": "bold text higher than usual, digit share higher than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 25,
+   "score": 2.391,
+   "reason": "layout spread higher than usual, bold text higher than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 8,
+   "score": 2.296,
+   "reason": "number of blocks lower than usual, text area lower than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 7,
+   "score": 1.975,
+   "reason": "number of blocks lower than usual, text area lower than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 87,
+   "score": 1.511,
+   "reason": "digit share higher than usual, text area higher than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 23,
+   "score": 1.45,
+   "reason": "capital letters higher than usual, text area lower than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 24,
+   "score": 1.421,
+   "reason": "capital letters higher than usual, text area lower than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 18,
+   "score": 1.236,
+   "reason": "bold text higher than usual, text area higher than usual"
+  },
+  {
+   "doc_id": "GDPR",
+   "page": 88,
+   "score": 1.233,
+   "reason": "capital letters higher than usual, text area lower than usual"
+  },
+  {
+   "doc_id": "GDPR",
+   "page": 80,
+   "score": 0.853,
+   "reason": "layout spread higher than usual, bold text higher than usual"
+  },
+  {
+   "doc_id": "GDPR",
+   "page": 1,
+   "score": 0.783,
+   "reason": "bold text higher than usual, layout spread higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 120,
+   "score": 0.739,
+   "reason": "digit share higher than usual, layout spread higher than usual"
+  },
+  {
+   "doc_id": "EX_10_2",
+   "page": 16,
+   "score": 0.364,
+   "reason": "digit share lower than usual, words per block higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 86,
+   "score": 0.297,
+   "reason": "digit share higher than usual, layout spread higher than usual"
+  },
+  {
+   "doc_id": "UK_Consumer_Rights_Act_2015",
+   "page": 130,
+   "score": 0.293,
+   "reason": "bold text higher than usual, layout spread lower than usual"
+  },
+  {
+   "doc_id": "GDPR",
+   "page": 35,
+   "score": 0.285,
+   "reason": "layout spread higher than usual, footnotes higher than usual"
+  }
+ ]
+}

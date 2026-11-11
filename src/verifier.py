@@ -57,6 +57,15 @@ def _windows(text: str, max_words: int = 160) -> list[str]:
     return out or [text]
 
 
+def contradiction(a: str, b: str) -> float:
+    """Probability that statement b contradicts statement a (and the reverse; the higher is
+    returned). Used to detect conflicts between answers from two documents."""
+    model, _ = _nli_model()
+    labels = {v.lower(): int(k) for k, v in model.config.id2label.items()}
+    probs = model.predict([(a, b), (b, a)], apply_softmax=True, show_progress_bar=False)
+    return float(probs[:, labels["contradiction"]].max())
+
+
 def entailment(claim: str, sources: list[Chunk], top_windows: int = 12) -> float:
     """Best entailment probability of the claim over the sentence windows of the sources.
     Only the windows sharing the most words with the claim are scored (speed)."""

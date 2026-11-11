@@ -1,6 +1,6 @@
 | Configuration | Key facts | Key facts (multi-hop) | Citation precision | Evidence recall | Abstention acc. | False abstention | Mean s | Tokens in | Tokens out |
 |---|---|---|---|---|---|---|---|---|---|
-| full | 0.789 | 0.667 | 0.793 | 0.868 | 1.0 | 0.105 | 11.632 | 3502.174 | 213.652 |
+| full | 0.789 | 0.667 | 0.699 | 0.868 | 1.0 | 0.105 | 12.094 | 3734.043 | 227.696 |
 | no_retrieval | 0.351 | 0.444 | - | 0.0 | 0.0 | 0.0 | 4.276 | 73.478 | 77.826 |
 | dense_only | 0.825 | 0.611 | 0.785 | 0.868 | 1.0 | 0.105 | 10.402 | 3108.304 | 194.913 |
 | no_verifier | 0.851 | 0.694 | 0.838 | 1.0 | 1.0 | 0.0 | 7.558 | 2267.043 | 144.174 |

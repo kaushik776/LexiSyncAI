@@ -74,6 +74,7 @@ class Page:
     ocr_confidence: float | None = None
     removed: list[str] = field(default_factory=list)  # header/footer text that was dropped
     running_header: str = ""   # digit-free running header, e.g. "Opinion of the Court"
+    image_coverage: float = 0.0  # share of the page covered by images (used by the anomaly detector)
 
 
 @dataclass
@@ -551,9 +552,10 @@ def ingest_pdf(path: str | Path,
         page = Page(number=i + 1, width=pg.rect.width, height=pg.rect.height)
         page.blocks = _extract_page(pg, page.number)
         page.n_chars = sum(len(b.text) for b in page.blocks)
+        page.image_coverage = round(_image_coverage(pg), 3)
 
         if page.n_chars < config.SCANNED_MAX_CHARS:
-            if _image_coverage(pg) >= config.SCANNED_MIN_IMAGE_AREA:
+            if page.image_coverage >= config.SCANNED_MIN_IMAGE_AREA:
                 page.is_scanned = True
                 ocr = _try_ocr(pg, page.number) if use_ocr else None
                 if ocr:

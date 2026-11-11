@@ -149,6 +149,14 @@ class HybridRetriever:
             lists["dense"] = self.dense_ranking(query, n_candidates)
         if mode == "hybrid+refs":
             lists["refs"] = self.ref_ranking(query, n_candidates)
+        if doc_ids:
+            # Restrict each list to the chosen documents before fusion, so a small document's
+            # passages are not crowded out of the top candidates by a larger document.
+            keep = {i for i, c in enumerate(self.chunks) if c.doc_id in doc_ids}
+            full = {"bm25": lambda: self.bm25_ranking(query, len(self.chunks)),
+                    "dense": lambda: self.dense_ranking(query, len(self.chunks)),
+                    "refs": lambda: self.ref_ranking(query, len(self.chunks))}
+            lists = {name: [i for i in full[name]() if i in keep][:n_candidates] for name in lists}
 
         fused: dict[int, float] = {}
         sources: dict[int, dict] = {}

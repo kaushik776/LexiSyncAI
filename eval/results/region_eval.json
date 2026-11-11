@@ -1,0 +1,112 @@
+{
+ "summary": {
+  "cited_passages": 45,
+  "page_precision": 0.6,
+  "region_precision": 0.511,
+  "mean_highlight_share_of_page": 0.178
+ },
+ "questions": [
+  {
+   "id": "F01",
+   "cited": 3,
+   "page_hits": 3,
+   "region_hits": 2
+  },
+  {
+   "id": "F02",
+   "cited": 1,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F03",
+   "cited": 1,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F04",
+   "cited": 5,
+   "page_hits": 2,
+   "region_hits": 1
+  },
+  {
+   "id": "F05",
+   "cited": 3,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F06",
+   "cited": 2,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F07",
+   "cited": 1,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F08",
+   "cited": 2,
+   "page_hits": 2,
+   "region_hits": 1
+  },
+  {
+   "id": "F09",
+   "cited": 1,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F10",
+   "cited": 4,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F12",
+   "cited": 1,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "F13",
+   "cited": 2,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "M01",
+   "cited": 5,
+   "page_hits": 2,
+   "region_hits": 2
+  },
+  {
+   "id": "M02",
+   "cited": 4,
+   "page_hits": 3,
+   "region_hits": 2
+  },
+  {
+   "id": "M04",
+   "cited": 2,
+   "page_hits": 1,
+   "region_hits": 1
+  },
+  {
+   "id": "M05",
+   "cited": 4,
+   "page_hits": 2,
+   "region_hits": 2
+  },
+  {
+   "id": "M06",
+   "cited": 4,
+   "page_hits": 3,
+   "region_hits": 3
+  }
+ ]
+}

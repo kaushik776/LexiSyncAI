@@ -63,6 +63,8 @@ def score_question(q: dict, a) -> dict:
         "id": q["id"], "type": q["type"], "question": q["question"],
         "answer": a.answer, "badge": a.badge, "abstained": a.abstained,
         "citations": "; ".join(f"[{s.marker}] {s.chunk.citation}" for s in cited),
+        "cited_chunk_ids": [s.chunk.chunk_id for s in cited],
+        "timings": a.timings,
         "key_fact_recall": key_fact_recall(a.answer if not a.abstained else "", q.get("key_facts", [])),
         "llm_calls": a.usage.get("llm_calls", 0), "prompt_tokens": a.usage.get("prompt_tokens", 0),
         "completion_tokens": a.usage.get("completion_tokens", 0), "seconds": a.timings.get("total_s", 0),
