@@ -46,10 +46,9 @@ eval-quick: ## Evaluations without the LLM: retrieval recall@k, tables, autoenco
 	$(VENV_PY) -m eval.table_eval
 	$(VENV_PY) -m eval.anomaly_eval
 
-eval: eval-quick ## All evaluations incl. answers, OCR, regions, latency (needs Ollama, ~30 min, on mains power)
+eval: eval-quick ## All evaluations incl. answers, regions, latency (needs Ollama, ~30 min, on mains power)
 	$(VENV_PY) -m eval.answer_eval
 	$(VENV_PY) -m eval.region_eval
-	$(VENV_PY) -m eval.ocr_eval
 	$(VENV_PY) -m eval.latency_report
 
 clean: ## Remove Python caches (keeps the indexes and your cases)

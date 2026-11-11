@@ -101,12 +101,15 @@ div[data-testid="stSidebarHeader"] {height: 1.6rem; padding: 0.3rem 1rem 0 1rem;
 section[data-testid="stSidebar"] h2 {padding-top: 0; margin-top: -0.6rem; font-size: 1.45rem;}
 div[data-testid="stSidebarUserContent"] {padding-top: 0;}
 /* ---- Case line, document cards ---- */
-.lx-caseline {display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 0.95rem; color: #c9d1dd;}
+.lx-caseline {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.95rem; color: #c9d1dd;
+               margin-top: 10px;}
 .lx-caseline b {margin-right: 4px;}
-.lx-chip {background: #161b24; border: 1px solid #262d39; border-radius: 999px; padding: 1px 10px;
+.lx-chip {background: #161b24; border: 1px solid #262d39; border-radius: 999px; padding: 3px 16px;
           color: #aab4c3; font-size: 0.86rem; white-space: nowrap;}
-.lx-section {font-size: 0.84rem; text-transform: uppercase; letter-spacing: .08em; color: #7d889a; margin: 6px 0 0 0;}
-.lx-doc {background: #151a23; border: 1px solid #252c38; border-radius: 10px; padding: 10px 12px;}
+.lx-section {font-size: 0.84rem; text-transform: uppercase; letter-spacing: .08em; color: #7d889a;
+             margin: 22px 0 4px 0;}
+.lx-doc {background: #151a23; border: 1px solid #252c38; border-radius: 10px; padding: 34px 20px 14px 20px;
+         min-height: 126px;}
 .lx-doc-title {font-weight: 600; color: #e6e9ef; margin-bottom: 2px; font-size: 1.02rem;}
 .lx-warn {color: #fbbf24; font-size: 0.86rem; margin-top: 2px;}
 .lx-hero {margin-right: 48px;}     /* leave room for Streamlit's menu button */
@@ -174,7 +177,7 @@ def short_name(d: dict, limit: int = 42) -> str:
 def case_overview(index) -> None:
     """Compact cards for the documents of the case (shown before the first question)."""
     st.markdown("<p class='lx-section'>In this case</p>", unsafe_allow_html=True)
-    cols = st.columns(min(len(index.documents), 4) or 1)
+    cols = st.columns(min(len(index.documents), 4) or 1, gap="small")
     for k, d in enumerate(index.documents):
         with cols[k % len(cols)]:
             facts = [f"{d['pages']} pages", f"{len(d['structure'])} sections", f"{d['n_chunks']} passages"]
@@ -619,14 +622,6 @@ def evaluation_tab() -> None:
     results = config.ROOT / "eval" / "results"
     st.caption("Results from the evaluation scripts in `eval/` on 23 held-out questions over the three example "
                "documents. Re-run them with the commands in the README.")
-    ocr = results / "ocr_eval.json"
-    if ocr.exists():
-        s = json.loads(ocr.read_text(encoding="utf-8"))["summary"]
-        with st.expander("OCR accuracy on scanned pages", expanded=False):
-            c = st.columns(3)
-            c[0].metric("Pages detected as scanned", f"{s['detected_as_scanned']}/{s['pages']}")
-            c[1].metric("Character accuracy", f"{s['mean_char_accuracy']:.1%}")
-            c[2].metric("Word accuracy", f"{s['mean_word_accuracy']:.1%}")
     for title, name in EVAL_SECTIONS:
         f = results / name
         if f.exists():
