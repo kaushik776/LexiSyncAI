@@ -185,6 +185,20 @@ Mandatory comparison (no retrieval vs retrieval, dense-only vs hybrid) and ablat
 | no verifier | 0.798 | 0.694 | 0.789 | 1.000 | 4/4 | 0 | 7.9 |
 | text only (no tables) | 0.693 | 0.528 | 0.680 | 0.737 | 4/4 | 0.158 | 11.8 |
 
+**Manual correctness (full system)**, graded by hand: 1 = correct, 0.5 = partly correct, 0 = wrong. The grades and a note for each answer are in `eval/results/answers_for_grading.csv`.
+
+| Questions | Correct |
+|---|---|
+| Factual (13) | 11 / 13 = **0.846** |
+| Multi-hop (6) | 4 / 6 = **0.667** |
+| **All answerable (19)** | **15 / 19 = 0.789** |
+| Unanswerable, correctly abstained (4) | **4 / 4** |
+
+Where points were lost:
+- **False abstentions:** two answers that are in the documents (F11, M03) were refused.
+- **Incomplete answers:** three answers miss part of the expected detail (F09, M01, M04).
+- **Too brief:** one answer is correct but very short (F12).
+
 How to read it:
 - **Retrieval doubles accuracy.** Key facts 0.789 vs 0.377 without retrieval; without the documents the LLM also never abstains.
 - **Hybrid vs dense only:** the same key facts, but slightly higher citation precision.
@@ -193,7 +207,7 @@ How to read it:
 
 Metric definitions:
 - *Key facts:* an automatic stand-in for correctness, the share of expected figures and terms present in the answer.
-- *Manual correctness:* graded by hand in `eval/results/answers_for_grading.csv`.
+- *Manual correctness:* graded by hand, see the table above.
 - *Citation precision:* share of cited sources whose page holds gold evidence.
 - *Evidence recall:* share of gold evidence covered by the citations.
 
@@ -332,7 +346,7 @@ Every value in [src/config.py](src/config.py) can be overridden with an environm
 
 - **OCR errors pass into answers.** A misread figure ("Sl.25" for "$1.25") is cited correctly but not corrected. The verifier checks the answer against the OCR text, not against the image.
 - **The verifier is strict.** About 10 % of answerable questions end in abstention because a correct claim could not be confirmed by the NLI model (e.g. paraphrased legal wording).
-- **Small evaluation sets.** 23 + 25 questions; differences of one or two questions are within run-to-run variation. Key-fact recall is an automatic stand-in; correctness is graded by hand in `eval/results/answers_for_grading.csv`.
+- **Small evaluation sets.** 23 + 25 questions; differences of one or two questions are within run-to-run variation. Key-fact recall is an automatic stand-in; the manual grade (0.789 on answerable questions) is the reference.
 - **Autoencoder labels.** Part of the anomaly evaluation uses pages labelled by hand after seeing the first results, so 0.667 is optimistic; 0.333 is the strict figure.
 - **Speed.** About 12 s per question on a laptop GPU, mostly the 7B LLM; about 3× slower on battery, much slower on CPU only.
 - **Not implemented:** reading charts and figures (VLM), a fine-tuned reranker or embedder, public deployment.
