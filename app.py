@@ -121,7 +121,7 @@ div[data-testid="stSidebarUserContent"] {padding-top: 0;}
 # Helpers
 # ---------------------------------------------------------------------------------------------
 
-@st.cache_resource(show_spinner="Loading the models (first time only)...")
+@st.cache_resource(show_spinner="Loading the model (first time only)...")
 def get_pipeline(case_id: str, built_at: str) -> Pipeline:
     return Pipeline(load_index(case_id))
 
@@ -232,7 +232,7 @@ def sidebar() -> str | None:
             sb.success("Documents added. The case was re-indexed with all its documents together.")
             for note in notes:
                 sb.warning(note)
-        if case != "default":
+        if case not in EXAMPLE_CASES:
             add_documents_ui(case, index)
             delete_case_ui(case)
     else:
@@ -545,6 +545,12 @@ def compare_tab(case_id: str, index) -> None:
                         unsafe_allow_html=True)
             for s in d.answer.cited_sources:
                 st.caption(f"{s.marker}: {s.chunk.citation}")
+    # The full answer view for each document: verification, sources, agent log, cited page.
+    st.markdown("<p class='lx-section'>Verification and sources per document</p>", unsafe_allow_html=True)
+    paths = doc_paths(index)
+    for tab, d in zip(st.tabs([f"📄 {d.title[:40]}" for d in c.answers]), c.answers):
+        with tab:
+            show_answer(d.answer, paths)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -606,7 +612,8 @@ def documents_tab(index) -> None:
 # Evaluation tab
 # ---------------------------------------------------------------------------------------------
 
-EVAL_SECTIONS = [
+# Each example case shows only the evaluations that were measured on its own documents.
+EVAL_SECTIONS = {"default": [
     ("Retrieval: recall@k per configuration (dense-only vs hybrid)", "retrieval_eval.md"),
     ("Answers: correctness proxy, citation precision, abstention, latency; no-retrieval and ablations",
      "answer_eval.md"),
@@ -615,17 +622,26 @@ EVAL_SECTIONS = [
     ("Autoencoder page-anomaly detector", "anomaly_eval.md"),
     ("Latency and cost", "latency_report.md"),
     ("LLM comparison: Qwen2.5 7B vs Qwen3 8B (thinking on/off)", "model_compare.md"),
-]
+], "scanned_pdf": [
+    ("Retrieval and answers: scanned copy vs digital original (25 questions)", "scanned_eval.md"),
+    ("OCR accuracy: scanned pages vs the digital original", "ocr_eval.md"),
+]}
+EVAL_CAPTIONS = {
+    "default": "Results from the evaluation scripts in `eval/` on 23 held-out questions over the three example "
+               "documents. Re-run them with the commands in the README.",
+    "scanned_pdf": "This case holds the same SEC exhibit twice: a scanned copy read with OCR and the digital "
+                   "original. Re-run with `python -m eval.scanned_eval` and `python -m eval.ocr_eval`.",
+}
+EXAMPLE_CASES = set(EVAL_SECTIONS)     # built-in cases: no adding or deleting documents
 
 
-def evaluation_tab() -> None:
+def evaluation_tab(case_id: str) -> None:
     results = config.ROOT / "eval" / "results"
-    st.caption("Results from the evaluation scripts in `eval/` on 23 held-out questions over the three example "
-               "documents. Re-run them with the commands in the README.")
-    for title, name in EVAL_SECTIONS:
+    st.caption(EVAL_CAPTIONS[case_id])
+    for title, name in EVAL_SECTIONS[case_id]:
         f = results / name
         if f.exists():
-            with st.expander(title, expanded=name in ("retrieval_eval.md", "answer_eval.md")):
+            with st.expander(title, expanded=name in ("retrieval_eval.md", "answer_eval.md", "scanned_eval.md")):
                 st.markdown(f.read_text(encoding="utf-8").replace("$", r"\$"))
 
 
@@ -654,8 +670,8 @@ def main() -> None:
                     for d in index.documents)
     st.markdown(f"<div class='lx-caseline'><b>📁 {esc(case_id)}</b>{chips}</div>", unsafe_allow_html=True)
 
-    # The evaluation results were measured on the example case only, so the tab is shown only there.
-    labels = ["💬 Ask", "📄 Documents"] + (["📊 Evaluation"] if case_id == "default" else [])
+    # The evaluation results were measured on the example cases only, so the tab is shown only there.
+    labels = ["💬 Ask", "📄 Documents"] + (["📊 Evaluation"] if case_id in EVAL_SECTIONS else [])
     tabs = st.tabs(labels)
     ask, docs = tabs[0], tabs[1]
     with ask:
@@ -667,9 +683,9 @@ def main() -> None:
             ask_tab(case_id, index)
     with docs:
         documents_tab(index)
-    if case_id == "default":
+    if case_id in EVAL_SECTIONS:
         with tabs[2]:
-            evaluation_tab()
+            evaluation_tab(case_id)
 
 
 main()
