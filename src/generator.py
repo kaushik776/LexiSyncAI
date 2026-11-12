@@ -13,6 +13,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from src import config
 from src.chunker import Chunk
 from src.llm import LLM, Usage
 
@@ -42,7 +43,7 @@ ANSWER_SCHEMA = {
         "sentences": {"type": "array", "minItems": 1, "items": {
             "type": "object",
             "properties": {"text": {"type": "string"},
-                           "sources": {"type": "array", "items": {"type": "integer"}}},
+                           "sources": {"type": "array", "maxItems": config.MAX_SOURCES, "items": {"type": "integer"}}},
             "required": ["text", "sources"]}},
         "explanation": {"type": "string"},
         "conflict": {"type": "string"},
@@ -188,7 +189,7 @@ CONCLUDE_SCHEMA = {
     "properties": {"sentences": {"type": "array", "minItems": 1, "items": {
         "type": "object",
         "properties": {"text": {"type": "string"},
-                       "sources": {"type": "array", "items": {"type": "integer"}}},
+                       "sources": {"type": "array", "maxItems": config.MAX_SOURCES, "items": {"type": "integer"}}},
         "required": ["text", "sources"]}}},
     "required": ["sentences"],
 }

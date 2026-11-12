@@ -102,6 +102,16 @@ _REF = re.compile(r"\b(articles?|sections?|s\.|regulations?|reg\.|schedules?|rec
 _NUM = re.compile(r"\d+(?:[ ,.]\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?")
 
 
+def _to_float(raw: str) -> float:
+    """'2,000,000.00' -> 2000000.0. OCR may read commas as dots: in '2000.000.00' the last dot is
+    the decimal point; in '1.250.000' (three digits after the last dot) every dot separates thousands."""
+    text = re.sub(r"[ ,]", "", raw) if re.search(r"[ ,]\d{3}", raw) else raw.replace(",", "")
+    if text.count(".") > 1:
+        head, _, tail = text.rpartition(".")
+        text = head.replace(".", "") + ("" if len(tail) == 3 else ".") + tail
+    return float(text)
+
+
 def numbers_in(text: str, keep_unscaled: bool = True) -> set[float]:
     """All numbers in a text, normalised: '20 000 000' -> 20000000, 'EUR 20 million' -> 20000000,
     'thirty' -> 30, '4 %' -> 4."""
@@ -110,7 +120,7 @@ def numbers_in(text: str, keep_unscaled: bool = True) -> set[float]:
     out = set()
     for m in _NUM.finditer(t):
         raw = m.group(0)
-        value = float(re.sub(r"[ ,]", "", raw) if re.search(r"[ ,]\d{3}", raw) else raw.replace(",", ""))
+        value = _to_float(raw)
         after = t[m.end():m.end() + 10].strip().split(" ")[0].strip(".,;:)") if m.end() < len(t) else ""
         if after in _SCALE:
             out.add(value * _SCALE[after])

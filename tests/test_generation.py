@@ -36,6 +36,9 @@ def test_numbers_normalised():
     assert numbers_in("EUR 20 million", keep_unscaled=False) == {20_000_000}
     assert 72 in numbers_in("not later than 72 hours (Article 33(1))")
     assert 33 not in numbers_in("as set out in Article 33(1)")              # clause numbers are not facts
+    # OCR may read commas as dots
+    assert numbers_in("up to $2000.000.00 in subordinated debt") == {2_000_000}
+    assert numbers_in("1.250.000 Common Shares") == {1_250_000}
     assert 10 in numbers_in("ending on the tenth anniversary")
 
 
