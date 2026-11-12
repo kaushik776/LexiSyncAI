@@ -1,0 +1,6046 @@
+{
+ "retrieval": {
+  "Original (digital)": {
+   "BM25 only": {
+    "recall@1": 0.81,
+    "recall@3": 0.905,
+    "recall@5": 0.929,
+    "recall@10": 1.0,
+    "MRR": 0.934,
+    "multihop_all_evidence@5": 0.8,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 0.6,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.1111111111111111
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 0.5,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   },
+   "Dense only": {
+    "recall@1": 0.69,
+    "recall@3": 0.833,
+    "recall@5": 0.905,
+    "recall@10": 0.952,
+    "MRR": 0.841,
+    "multihop_all_evidence@5": 0.8,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 37.9,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.16666666666666666
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   },
+   "Hybrid (BM25 + dense, RRF)": {
+    "recall@1": 0.738,
+    "recall@3": 0.905,
+    "recall@5": 0.952,
+    "recall@10": 1.0,
+    "MRR": 0.889,
+    "multihop_all_evidence@5": 1.0,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 42.3,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.16666666666666666
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   },
+   "Hybrid + refs + rerank (final)": {
+    "recall@1": 0.786,
+    "recall@3": 0.929,
+    "recall@5": 0.929,
+    "recall@10": 0.929,
+    "MRR": 0.929,
+    "multihop_all_evidence@5": 0.8,
+    "multihop_all_evidence@10": 0.8,
+    "ms_per_query": 596.1,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 0.5,
+      "complete@5": 0.0,
+      "recall@10": 0.5,
+      "complete@10": 0.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   }
+  },
+  "Scanned (OCR)": {
+   "BM25 only": {
+    "recall@1": 0.762,
+    "recall@3": 0.905,
+    "recall@5": 0.952,
+    "recall@10": 0.952,
+    "MRR": 0.905,
+    "multihop_all_evidence@5": 1.0,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 0.6,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   },
+   "Dense only": {
+    "recall@1": 0.524,
+    "recall@3": 0.738,
+    "recall@5": 0.762,
+    "recall@10": 0.81,
+    "MRR": 0.659,
+    "multihop_all_evidence@5": 0.8,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 37.5,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.3333333333333333
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.3333333333333333
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.16666666666666666
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     }
+    ]
+   },
+   "Hybrid (BM25 + dense, RRF)": {
+    "recall@1": 0.548,
+    "recall@3": 0.786,
+    "recall@5": 0.857,
+    "recall@10": 0.952,
+    "MRR": 0.731,
+    "multihop_all_evidence@5": 1.0,
+    "multihop_all_evidence@10": 1.0,
+    "ms_per_query": 36.3,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.2
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 0.0,
+      "complete@10": 0.0,
+      "rr": 0.0
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.16666666666666666
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.3333333333333333
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.14285714285714285
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   },
+   "Hybrid + refs + rerank (final)": {
+    "recall@1": 0.738,
+    "recall@3": 0.929,
+    "recall@5": 0.929,
+    "recall@10": 0.976,
+    "MRR": 0.91,
+    "multihop_all_evidence@5": 0.8,
+    "multihop_all_evidence@10": 0.8,
+    "ms_per_query": 564.0,
+    "per_question": [
+     {
+      "id": "F01",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F02",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F03",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F04",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F05",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F06",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F07",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F08",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F09",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F10",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F11",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F12",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.5
+     },
+     {
+      "id": "F13",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F14",
+      "type": "factual",
+      "recall@1": 0.0,
+      "complete@1": 0.0,
+      "recall@3": 0.0,
+      "complete@3": 0.0,
+      "recall@5": 0.0,
+      "complete@5": 0.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 0.1111111111111111
+     },
+     {
+      "id": "F15",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "F16",
+      "type": "factual",
+      "recall@1": 1.0,
+      "complete@1": 1.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M01",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M02",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M03",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 0.5,
+      "complete@3": 0.0,
+      "recall@5": 0.5,
+      "complete@5": 0.0,
+      "recall@10": 0.5,
+      "complete@10": 0.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M04",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     },
+     {
+      "id": "M05",
+      "type": "multihop",
+      "recall@1": 0.5,
+      "complete@1": 0.0,
+      "recall@3": 1.0,
+      "complete@3": 1.0,
+      "recall@5": 1.0,
+      "complete@5": 1.0,
+      "recall@10": 1.0,
+      "complete@10": 1.0,
+      "rr": 1.0
+     }
+    ]
+   }
+  }
+ },
+ "answers": {
+  "Original (digital)": {
+   "summary": {
+    "questions": 25,
+    "key_fact_recall": 0.77,
+    "key_fact_recall_factual": 0.771,
+    "key_fact_recall_multihop": 0.767,
+    "citation_precision": 0.858,
+    "evidence_recall": 0.833,
+    "abstention_accuracy_unanswerable": 1.0,
+    "false_abstention_rate": 0.143,
+    "mean_seconds": 10.235,
+    "p95_seconds": 17.48,
+    "mean_llm_calls": 1.8,
+    "mean_prompt_tokens": 3895.72,
+    "mean_completion_tokens": 158.2,
+    "questions_with_retry": 6,
+    "badges": {
+     "HIGH": 15,
+     "INSUFFICIENT EVIDENCE": 7,
+     "LOW": 3
+    }
+   },
+   "rows": [
+    {
+     "id": "F01",
+     "type": "factual",
+     "question": "What was the original principal amount of the Secured Convertible Promissory Note, and when was it issued?",
+     "answer": "The original principal amount of the Secured Convertible Promissory Note was $2,890,000.00. [S1] The Secured Convertible Promissory Note was issued on December 13, 2024. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 1, Exhibit 10.3, paras 1-2",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0001"
+     ],
+     "timings": {
+      "retrieval_s": 0.105,
+      "rerank_s": 1.644,
+      "llm_s": 11.085,
+      "total_s": 17.39
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 2011,
+     "completion_tokens": 156,
+     "seconds": 17.39,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "What was the original principal amount of the Secured Convertible Promissory Note?",
+        "When was the Secured Convertible Promissory Note issued?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The original principal amount of the Secured Convertible Promissory Note was $2,890,000.00.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Secured Convertible Promissory Note was issued on December 13, 2024.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F02",
+     "type": "factual",
+     "question": "What is the new Mandatory Monthly Prepayment Amount under Amendment #2?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.119,
+      "rerank_s": 1.674,
+      "llm_s": 14.907,
+      "total_s": 17.482
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 3,
+     "prompt_tokens": 5693,
+     "completion_tokens": 282,
+     "seconds": 17.482,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": "The new amount for the Mandatory Monthly Prepayment Amount."
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The new Mandatory Monthly Prepayment Amount is not specified in the provided sources.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.04)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The new Mandatory Monthly Prepayment Amount is not specified in the provided sources.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.04)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The new Mandatory Monthly Prepayment Amount is not specified in the provided sources.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.04)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ],
+     "citation_precision": null,
+     "evidence_recall": 0.0
+    },
+    {
+     "id": "F03",
+     "type": "factual",
+     "question": "To what amount is the Floor Price reduced by the amendment?",
+     "answer": "The Floor Price is reduced to $1.25 by the amendment. [S1] [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 1-2, Exhibit 10.3, para 2; [S2] EX-10.3 original, p. 2, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0002",
+      "EX_10_3_original:0003"
+     ],
+     "timings": {
+      "retrieval_s": 0.027,
+      "rerank_s": 0.543,
+      "llm_s": 4.144,
+      "total_s": 4.772
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 1232,
+     "completion_tokens": 67,
+     "seconds": 4.772,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Floor Price is reduced to $1.25 by the amendment.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F04",
+     "type": "factual",
+     "question": "By what percentage is the Outstanding Balance increased, and what is the Outstanding Balance after that increase?",
+     "answer": "The Outstanding Balance is increased by twenty percent (20%). [S1] The Outstanding Balance after the increase is $3,597,501.71. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 1-2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0002"
+     ],
+     "timings": {
+      "retrieval_s": 0.119,
+      "rerank_s": 1.668,
+      "llm_s": 8.011,
+      "total_s": 9.963
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 1593,
+     "completion_tokens": 125,
+     "seconds": 9.963,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "By what percentage is the Outstanding Balance increased?",
+        "What is the Outstanding Balance after the increase?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Outstanding Balance is increased by twenty percent (20%).",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Outstanding Balance after the increase is $3,597,501.71.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F05",
+     "type": "factual",
+     "question": "What is the maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion?",
+     "answer": "The maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion is 9.99%. [S1] [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 1-2, Exhibit 10.3, para 2; [S2] EX-10.3 original, p. 2, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0002",
+      "EX_10_3_original:0003"
+     ],
+     "timings": {
+      "retrieval_s": 0.037,
+      "rerank_s": 0.56,
+      "llm_s": 5.161,
+      "total_s": 5.815
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2709,
+     "completion_tokens": 89,
+     "seconds": 5.815,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion is 9.99%.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F06",
+     "type": "factual",
+     "question": "How much subordinated debt may the Company take on, and from how many subordinated lenders at most?",
+     "answer": "The Company may take on up to $2,000,000.00 in subordinated debt. [S1] The debt may be taken from up to five (5) different subordinated lenders. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 2, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0003"
+     ],
+     "timings": {
+      "retrieval_s": 0.033,
+      "rerank_s": 0.54,
+      "llm_s": 5.085,
+      "total_s": 5.768
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 840,
+     "completion_tokens": 99,
+     "seconds": 5.768,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Company may take on up to $2,000,000.00 in subordinated debt.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The debt may be taken from up to five (5) different subordinated lenders.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F07",
+     "type": "factual",
+     "question": "How many Pre-Delivery Shares does the Investor buy, and at what price per share?",
+     "answer": "The Investor buys 1,250,000 Pre-Delivery Shares. [S1] The purchase price per share is $0.0001. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0004"
+     ],
+     "timings": {
+      "retrieval_s": 0.043,
+      "rerank_s": 0.549,
+      "llm_s": 4.936,
+      "total_s": 5.632
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 1285,
+     "completion_tokens": 98,
+     "seconds": 5.632,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor buys 1,250,000 Pre-Delivery Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The purchase price per share is $0.0001.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F08",
+     "type": "factual",
+     "question": "How does the amendment change the share reserve held for the Investor with the transfer agent?",
+     "answer": "The share reserve held for Investor with the transfer agent was increased from 7,500,000 Common Shares to 15,000,000 Common Shares. [S1] [S3]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3; [S3] EX-10.3 original, pp. 3-4, Exhibit 10.3, paras 7-9",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0004",
+      "EX_10_3_original:0006"
+     ],
+     "timings": {
+      "retrieval_s": 0.037,
+      "rerank_s": 0.542,
+      "llm_s": 5.459,
+      "total_s": 6.114
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2561,
+     "completion_tokens": 106,
+     "seconds": 6.114,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The share reserve held for Investor with the transfer agent was increased from 7,500,000 Common Shares to 15,000,000 Common Shares.",
+         "sources": [
+          1,
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F09",
+     "type": "factual",
+     "question": "Who signed Amendment #2 on behalf of the Investor and on behalf of the Company?",
+     "answer": "John M. Fife signed Amendment #2 on behalf of the Investor. [S1] [S2] William Alessi signed Amendment #2 on behalf of the Company. [S1] [S2]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 3-4, Exhibit 10.3, paras 7-9; [S2] EX-10.3 original, p. 1, Exhibit 10.3, paras 1-2",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0006",
+      "EX_10_3_original:0001"
+     ],
+     "timings": {
+      "retrieval_s": 0.039,
+      "rerank_s": 0.546,
+      "llm_s": 14.654,
+      "total_s": 15.526
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 3,
+     "prompt_tokens": 8147,
+     "completion_tokens": 273,
+     "seconds": 15.526,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M. Fife signed Amendment #2 on behalf of the Investor.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M. Fife signed Amendment #2 on behalf of the Investor.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M. Fife signed Amendment #2 on behalf of the Investor.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F10",
+     "type": "factual",
+     "question": "How large is the Organizational Fee paid to AMH under the Patent Monetization Agreement?",
+     "answer": "The Organizational Fee is up to 4% of the total budgeted litigation fees (discounted 50%), and budgeted litigation expenses (100%). [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 7, Exhibit A",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0012"
+     ],
+     "timings": {
+      "retrieval_s": 0.045,
+      "rerank_s": 0.565,
+      "llm_s": 5.772,
+      "total_s": 6.439
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2630,
+     "completion_tokens": 106,
+     "seconds": 6.439,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Organizational Fee is up to 4% of the total budgeted litigation fees (discounted 50%), and budgeted litigation expenses (100%).",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F11",
+     "type": "factual",
+     "question": "What Management Fee does AMH receive, and for how long?",
+     "answer": "AMH receives a Management Fee of 2.75% per annum. [S1] The Management Fee is paid quarterly for up to three years. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 7, Exhibit A",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0012"
+     ],
+     "timings": {
+      "retrieval_s": 0.03,
+      "rerank_s": 0.56,
+      "llm_s": 5.869,
+      "total_s": 6.563
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2512,
+     "completion_tokens": 93,
+     "seconds": 6.563,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "AMH receives a Management Fee of 2.75% per annum.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Management Fee is paid quarterly for up to three years.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F12",
+     "type": "factual",
+     "question": "How are proceeds from licensing the Patents to a person other than a Defendant shared?",
+     "answer": "AMH or the Funding Party is entitled to fifty percent (50.0%) of any proceeds from licensing the Patents to a person other than a Defendant. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 8-9, Exhibit A, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0015"
+     ],
+     "timings": {
+      "retrieval_s": 0.047,
+      "rerank_s": 0.556,
+      "llm_s": 5.094,
+      "total_s": 5.766
+     },
+     "key_fact_recall": 0.3333333333333333,
+     "llm_calls": 1,
+     "prompt_tokens": 2659,
+     "completion_tokens": 86,
+     "seconds": 5.766,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "AMH or the Funding Party is entitled to fifty percent (50.0%) of any proceeds from licensing the Patents to a person other than a Defendant.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.86)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F13",
+     "type": "factual",
+     "question": "How long is the Option Period in which AMH may decide to fund a Subsequent Litigation?",
+     "answer": "The Option Period is 60 days. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 9, Exhibit A, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0018"
+     ],
+     "timings": {
+      "retrieval_s": 0.034,
+      "rerank_s": 0.56,
+      "llm_s": 4.634,
+      "total_s": 5.282
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2574,
+     "completion_tokens": 62,
+     "seconds": 5.282,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Option Period is 60 days.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F14",
+     "type": "factual",
+     "question": "Which state's law governs the Patent Monetization Agreement?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.03,
+      "rerank_s": 0.556,
+      "llm_s": 14.391,
+      "total_s": 15.734
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 3,
+     "prompt_tokens": 8156,
+     "completion_tokens": 240,
+     "seconds": 15.734,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "North Carolina's law governs the Patent Monetization Agreement.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "North Carolina's law governs the Patent Monetization Agreement.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "North Carolina's law governs the Patent Monetization Agreement.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ],
+     "citation_precision": null,
+     "evidence_recall": 0.0
+    },
+    {
+     "id": "F15",
+     "type": "factual",
+     "question": "Where are mediation and arbitration proceedings under the Patent Monetization Agreement conducted?",
+     "answer": "The mediation and arbitration proceedings will be conducted without discovery in Washington, D.C. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 18, Exhibit A, para 12",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0040"
+     ],
+     "timings": {
+      "retrieval_s": 0.029,
+      "rerank_s": 0.561,
+      "llm_s": 5.029,
+      "total_s": 5.666
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2725,
+     "completion_tokens": 70,
+     "seconds": 5.666,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The mediation and arbitration proceedings will be conducted without discovery in Washington, D.C.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F16",
+     "type": "factual",
+     "question": "For how long can the option to buy the membership interests in Alpha Modus Ventures be exercised?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.03,
+      "rerank_s": 0.556,
+      "llm_s": 14.324,
+      "total_s": 15.059
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 3,
+     "prompt_tokens": 8251,
+     "completion_tokens": 255,
+     "seconds": 15.059,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option to buy the membership interests in Alpha Modus Ventures can be exercised for five (5) years from the Grant Date.",
+         "sources": [
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option to buy the membership interests in Alpha Modus Ventures can be exercised for five (5) years from the Grant Date.",
+         "sources": [
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option to buy the membership interests in Alpha Modus Ventures can be exercised for five (5) years from the Grant Date.",
+         "sources": [
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ],
+     "citation_precision": null,
+     "evidence_recall": 0.0
+    },
+    {
+     "id": "M01",
+     "type": "multihop",
+     "question": "If the Company exercises its option to purchase the membership interests in AMV, what happens to those interests under the amendment, and what is the exercise price of that option?",
+     "answer": "If the Company exercises its option to purchase the membership interests in AMV, those interests will automatically become subject to the security interest granted to Investor pursuant to the Security Agreement dated October 23, 2024 between Company and Investor. [S1] [S3]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3; [S3] EX-10.3 original, p. 20, Exhibit B",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0004",
+      "EX_10_3_original:0046"
+     ],
+     "timings": {
+      "retrieval_s": 0.127,
+      "rerank_s": 1.684,
+      "llm_s": 9.204,
+      "total_s": 11.159
+     },
+     "key_fact_recall": 0.3333333333333333,
+     "llm_calls": 2,
+     "prompt_tokens": 2892,
+     "completion_tokens": 168,
+     "seconds": 11.159,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "What happens to the membership interests in AMV if the Company exercises its option under the amendment?",
+        "What is the exercise price of the option for the Company to purchase the membership interests in AMV under the amendment?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "If the Company exercises its option to purchase the membership interests in AMV, those interests will automatically become subject to the security interest granted to Investor pursuant to the Security Agreement dated October 23, 2024 between Company and Investor.",
+         "sources": [
+          1,
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M02",
+     "type": "multihop",
+     "question": "Which agreement with Alpha Modus Ventures does the Investor consent to, and what kind of entity is Alpha Modus Ventures?",
+     "answer": "The Investor consents to the Patent Monetization Agreement with Alpha Modus Ventures, LLC. [S1] [S2] Alpha Modus Ventures, LLC is a North Carolina limited liability company. [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3; [S2] EX-10.3 original, p. 5, Exhibit A",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0004",
+      "EX_10_3_original:0007"
+     ],
+     "timings": {
+      "retrieval_s": 0.133,
+      "rerank_s": 1.68,
+      "llm_s": 9.435,
+      "total_s": 11.482
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 2951,
+     "completion_tokens": 150,
+     "seconds": 11.482,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "Which agreement with Alpha Modus Ventures does the Investor consent to?",
+        "What kind of entity is Alpha Modus Ventures?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor consents to the Patent Monetization Agreement with Alpha Modus Ventures, LLC.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "Alpha Modus Ventures, LLC is a North Carolina limited liability company.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "citation corrected: S1, S3 -> S2"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      },
+      {
+       "step": 4,
+       "action": "recite",
+       "detail": "citation corrected: S1, S3 -> S2 for: Alpha Modus Ventures, LLC is a North Carolina limited liability company."
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M03",
+     "type": "multihop",
+     "question": "How are disputes under the Patent Monetization Agreement resolved, and which courts have jurisdiction over actions seeking an injunction?",
+     "answer": "Disputes under the Patent Monetization Agreement are resolved under the procedures of Section 13(d). [S1] [S2] [S3] [S4] [S5] [S6] The jurisdiction for actions seeking an injunction is the United States District Court, Western District of Texas or, if jurisdiction does not lie in the federal court, the District Court for Travis County, Texas. [S1] [S2] [S3] [S4] [S5] [S6]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 19, Exhibit A, para 12; [S2] EX-10.3 original, p. 5, Exhibit A; [S3] EX-10.3 original, p. 14, Exhibit A, paras 3-9; [S4] EX-10.3 original, p. 20, Exhibit B; [S5] EX-10.3 original, pp. 5-6, Exhibit A; [S6] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0041",
+      "EX_10_3_original:0007",
+      "EX_10_3_original:0028",
+      "EX_10_3_original:0045",
+      "EX_10_3_original:0008",
+      "EX_10_3_original:0004"
+     ],
+     "timings": {
+      "retrieval_s": 0.12,
+      "rerank_s": 1.677,
+      "llm_s": 24.955,
+      "total_s": 27.341
+     },
+     "key_fact_recall": 0.5,
+     "llm_calls": 5,
+     "prompt_tokens": 11385,
+     "completion_tokens": 499,
+     "seconds": 27.341,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "How are disputes under the Patent Monetization Agreement resolved?",
+        "Which courts have jurisdiction over actions seeking an injunction under the Patent Monetization Agreement?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved under the procedures of Section 13(d).",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "The jurisdiction for actions seeking an injunction is the United States District Court, Western District of Texas or, if jurisdiction does not lie in the federal court, the District Court for Travis County, Texas.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved under the procedures of Section 13(d).",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved under the procedures of Section 13(d).",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 7,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      },
+      {
+       "step": 8,
+       "action": "coverage",
+       "detail": "part 1 MISSING, part 2 covered"
+      },
+      {
+       "step": 8,
+       "action": "fill_gap",
+       "part": 1,
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved through the procedures of Section 13(d).",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.16666666666666666,
+     "evidence_recall": 0.5
+    },
+    {
+     "id": "M04",
+     "type": "multihop",
+     "question": "What deadlines after the Amendment Date does the Company have for the special stockholder meeting, the Form S-1 filing and the increase of the share reserve?",
+     "answer": "The Company has 60 days to hold a special stockholder meeting to approve issuances of Common Shares. [S1] Within 10 days of the Amendment Date, the Company must file a Form S-1 Registration Statement. [S1] The Company must increase the share reserve held for Investor’s benefit with its transfer agent within 3 Trading Days of the Amendment Date. [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 2, Exhibit 10.3, para 3; [S2] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0003",
+      "EX_10_3_original:0004"
+     ],
+     "timings": {
+      "retrieval_s": 0.034,
+      "rerank_s": 0.56,
+      "llm_s": 6.207,
+      "total_s": 6.968
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2238,
+     "completion_tokens": 142,
+     "seconds": 6.968,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 3,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 3,
+       "claims": 3,
+       "checks": [
+        {
+         "claim": "The Company has 60 days to hold a special stockholder meeting to approve issuances of Common Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "Within 10 days of the Amendment Date, the Company must file a Form S-1 Registration Statement.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Company must increase the share reserve held for Investor’s benefit with its transfer agent within 3 Trading Days of the Amendment Date.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M05",
+     "type": "multihop",
+     "question": "Who are the members of Alpha Modus Ventures that grant the option, and what right does the option give AMH?",
+     "answer": "The members of Alpha Modus Ventures that grant the option are Janbella Group, LLC and Chris Chumas. [S1] [S2] [S3] [S4] [S5] [S6] [S7] The option gives AMH the right to acquire all of the membership interests of Alpha Modus Ventures LLC. [S1] [S2] [S3] [S4] [S5] [S6] [S7] AMH has the right to acquire all of the membership interests of Owner. [S2] [S1]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 original, p. 20, Exhibit B; [S2] EX-10.3 original, p. 16, Exhibit A, para 9; [S3] EX-10.3 original, pp. 2-3, Exhibit 10.3, para 3; [S4] EX-10.3 original, p. 10, Exhibit A, para 3; [S5] EX-10.3 original, p. 5, Exhibit A; [S6] EX-10.3 original, p. 9, Exhibit A, para 3; [S7] EX-10.3 original, p. 15, Exhibit A, para 9",
+     "cited_chunk_ids": [
+      "EX_10_3_original:0045",
+      "EX_10_3_original:0035",
+      "EX_10_3_original:0004",
+      "EX_10_3_original:0019",
+      "EX_10_3_original:0007",
+      "EX_10_3_original:0018",
+      "EX_10_3_original:0030"
+     ],
+     "timings": {
+      "retrieval_s": 0.115,
+      "rerank_s": 1.679,
+      "llm_s": 25.502,
+      "total_s": 27.749
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 5,
+     "prompt_tokens": 12980,
+     "completion_tokens": 473,
+     "seconds": 27.749,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "Who are the members of Alpha Modus Ventures that grant the option?",
+        "What right does the option give AMH?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The members of Alpha Modus Ventures that grant the option are Janbella Group, LLC and Chris Chumas.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        },
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Alpha Modus Ventures LLC.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Alpha Modus Ventures, LLC.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Alpha Modus Ventures, LLC.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 7,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      },
+      {
+       "step": 8,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 MISSING"
+      },
+      {
+       "step": 8,
+       "action": "fill_gap",
+       "part": 2,
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "AMH has the right to acquire all of the membership interests of Owner.",
+         "sources": [
+          2,
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.2857142857142857,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "U01",
+     "type": "unanswerable",
+     "question": "What interest rate does the Secured Convertible Promissory Note carry?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.029,
+      "rerank_s": 0.556,
+      "llm_s": 5.142,
+      "total_s": 5.728
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 1850,
+     "completion_tokens": 96,
+     "seconds": 5.728,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 1,
+       "missing": "Interest rate details"
+      }
+     ]
+    },
+    {
+     "id": "U02",
+     "type": "unanswerable",
+     "question": "What is the maturity date of the Note?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.034,
+      "rerank_s": 0.546,
+      "llm_s": 4.522,
+      "total_s": 5.169
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 2298,
+     "completion_tokens": 54,
+     "seconds": 5.169,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 1,
+       "missing": "The maturity date of the Note."
+      }
+     ]
+    },
+    {
+     "id": "U03",
+     "type": "unanswerable",
+     "question": "Which patent numbers are listed in Schedule A of the Patent Monetization Agreement?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.04,
+      "rerank_s": 0.556,
+      "llm_s": 4.806,
+      "total_s": 5.404
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 2757,
+     "completion_tokens": 70,
+     "seconds": 5.404,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 0,
+       "missing": "The patent numbers listed in Schedule A."
+      }
+     ]
+    },
+    {
+     "id": "U04",
+     "type": "unanswerable",
+     "question": "What is the total Litigation Budget for the initial Identified Litigation?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 original (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.042,
+      "rerank_s": 0.558,
+      "llm_s": 5.233,
+      "total_s": 5.916
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 2464,
+     "completion_tokens": 96,
+     "seconds": 5.916,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "auto_cite",
+       "detail": "attributed 1 uncited claim(s) by cross-encoder: S2 (0.86), S5 (0.62)"
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 1,
+       "missing": "The total Litigation Budget figure for the initial Identified Litigation."
+      }
+     ]
+    }
+   ]
+  },
+  "Scanned (OCR)": {
+   "summary": {
+    "questions": 25,
+    "key_fact_recall": 0.857,
+    "key_fact_recall_factual": 0.812,
+    "key_fact_recall_multihop": 1.0,
+    "citation_precision": 0.86,
+    "evidence_recall": 0.881,
+    "abstention_accuracy_unanswerable": 1.0,
+    "false_abstention_rate": 0.095,
+    "mean_seconds": 10.466,
+    "p95_seconds": 17.1,
+    "mean_llm_calls": 1.8,
+    "mean_prompt_tokens": 3781.0,
+    "mean_completion_tokens": 168.4,
+    "questions_with_retry": 7,
+    "badges": {
+     "HIGH": 13,
+     "INSUFFICIENT EVIDENCE": 6,
+     "LOW": 5,
+     "MEDIUM": 1
+    }
+   },
+   "rows": [
+    {
+     "id": "F01",
+     "type": "factual",
+     "question": "What was the original principal amount of the Secured Convertible Promissory Note, and when was it issued?",
+     "answer": "The original principal amount of the Secured Convertible Promissory Note was $2,890,000.00. [S1] The Secured Convertible Promissory Note was issued on December 13, 2024. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 1, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0000"
+     ],
+     "timings": {
+      "retrieval_s": 0.115,
+      "rerank_s": 1.575,
+      "llm_s": 9.44,
+      "total_s": 11.286
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 1932,
+     "completion_tokens": 166,
+     "seconds": 11.286,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "What was the original principal amount of the Secured Convertible Promissory Note?",
+        "When was the Secured Convertible Promissory Note issued?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The original principal amount of the Secured Convertible Promissory Note was $2,890,000.00.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Secured Convertible Promissory Note was issued on December 13, 2024.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F02",
+     "type": "factual",
+     "question": "What is the new Mandatory Monthly Prepayment Amount under Amendment #2?",
+     "answer": "The new Mandatory Monthly Prepayment Amount is $582,000.00 plus all accrued but unpaid interest. [S1]",
+     "badge": "MEDIUM",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 1, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0000"
+     ],
+     "timings": {
+      "retrieval_s": 0.035,
+      "rerank_s": 0.519,
+      "llm_s": 4.693,
+      "total_s": 5.304
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 1891,
+     "completion_tokens": 92,
+     "seconds": 5.304,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The new Mandatory Monthly Prepayment Amount is $582,000.00 plus all accrued but unpaid interest.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.98)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F03",
+     "type": "factual",
+     "question": "To what amount is the Floor Price reduced by the amendment?",
+     "answer": "The Floor Price is reduced to Sl.25. [S1] [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, pp. 1-2, Exhibit 10.3, para 2; [S2] EX-10.3 scanned, p. 1, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0001",
+      "EX_10_3_scanned:0000"
+     ],
+     "timings": {
+      "retrieval_s": 0.044,
+      "rerank_s": 0.508,
+      "llm_s": 5.269,
+      "total_s": 5.876
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2658,
+     "completion_tokens": 72,
+     "seconds": 5.876,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Floor Price is reduced to Sl.25.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F04",
+     "type": "factual",
+     "question": "By what percentage is the Outstanding Balance increased, and what is the Outstanding Balance after that increase?",
+     "answer": "The Outstanding Balance is increased by twenty percent (20%). [S1] The Outstanding Balance after the increase is S3,597,501.71. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, pp. 1-2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0001"
+     ],
+     "timings": {
+      "retrieval_s": 0.12,
+      "rerank_s": 1.588,
+      "llm_s": 7.946,
+      "total_s": 9.834
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 1573,
+     "completion_tokens": 125,
+     "seconds": 9.834,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "By what percentage is the Outstanding Balance increased?",
+        "What is the Outstanding Balance after the increase?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Outstanding Balance is increased by twenty percent (20%).",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The Outstanding Balance after the increase is S3,597,501.71.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F05",
+     "type": "factual",
+     "question": "What is the maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion?",
+     "answer": "The maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion is 9.99%. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, pp. 1-2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0001"
+     ],
+     "timings": {
+      "retrieval_s": 0.039,
+      "rerank_s": 0.531,
+      "llm_s": 4.852,
+      "total_s": 5.473
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2285,
+     "completion_tokens": 91,
+     "seconds": 5.473,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The maximum percentage of the outstanding Common Shares that the Lender may beneficially own after a conversion is 9.99%.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F06",
+     "type": "factual",
+     "question": "How much subordinated debt may the Company take on, and from how many subordinated lenders at most?",
+     "answer": "The Company may take on up to S2,000,000.00 in subordinated debt. [S1] This debt can be taken from no more than five (5) different subordinated lenders. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0002"
+     ],
+     "timings": {
+      "retrieval_s": 0.055,
+      "rerank_s": 0.531,
+      "llm_s": 4.962,
+      "total_s": 5.634
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 787,
+     "completion_tokens": 105,
+     "seconds": 5.634,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Company may take on up to S2,000,000.00 in subordinated debt.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "This debt can be taken from no more than five (5) different subordinated lenders.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F07",
+     "type": "factual",
+     "question": "How many Pre-Delivery Shares does the Investor buy, and at what price per share?",
+     "answer": "The Investor buys 1,250,000 Pre-Delivery Shares. [S1] The purchase price per share is $0.0001. [S1]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0003"
+     ],
+     "timings": {
+      "retrieval_s": 0.032,
+      "rerank_s": 0.512,
+      "llm_s": 14.627,
+      "total_s": 15.47
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 3,
+     "prompt_tokens": 5119,
+     "completion_tokens": 296,
+     "seconds": 15.47,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor buys 1,250,000 Pre-Delivery Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        },
+        {
+         "claim": "The purchase price per share is $0.0001.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor buys 1,250,000 Pre-Delivery Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        },
+        {
+         "claim": "The purchase price per share is $0.01.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "number(s) 0.01 not in the cited source"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor buys 1,250,000 Pre-Delivery Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        },
+        {
+         "claim": "The purchase price per share is $0.0001.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F08",
+     "type": "factual",
+     "question": "How does the amendment change the share reserve held for the Investor with the transfer agent?",
+     "answer": "The share reserve held for Investor with the transfer agent will increase from 7,500,000 Common Shares to 15,000,000 Common Shares. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 3, IN WITNESS WHEREOF, the undersigned have executed this Amendment as of the date set forth above:",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0004"
+     ],
+     "timings": {
+      "retrieval_s": 0.038,
+      "rerank_s": 0.524,
+      "llm_s": 5.279,
+      "total_s": 5.879
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2322,
+     "completion_tokens": 95,
+     "seconds": 5.879,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The share reserve held for Investor with the transfer agent will increase from 7,500,000 Common Shares to 15,000,000 Common Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F09",
+     "type": "factual",
+     "question": "Who signed Amendment #2 on behalf of the Investor and on behalf of the Company?",
+     "answer": "John M Fife signed Amendment #2 on behalf of the Company. [S1] [S2] William Alessi signed Amendment #2 on behalf of the Company. [S1] [S2]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 1, Exhibit 10.3, para 2; [S2] EX-10.3 scanned, pp. 4-5, EXHBITA",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0000",
+      "EX_10_3_scanned:0007"
+     ],
+     "timings": {
+      "retrieval_s": 0.028,
+      "rerank_s": 0.527,
+      "llm_s": 14.524,
+      "total_s": 15.489
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 3,
+     "prompt_tokens": 7739,
+     "completion_tokens": 285,
+     "seconds": 15.489,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M Fife signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M Fife signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 2
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "John M Fife signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        },
+        {
+         "claim": "William Alessi signed Amendment #2 on behalf of the Company.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F10",
+     "type": "factual",
+     "question": "How large is the Organizational Fee paid to AMH under the Patent Monetization Agreement?",
+     "answer": "The Organizational Fee paid to AMH is up to 4% of the total budgeted litigation fees (discounted 50%), and budgeted litigation expenses (100%). [S1] [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 7, EXHBITA; [S2] EX-10.3 scanned, pp. 4-5, EXHBITA",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0011",
+      "EX_10_3_scanned:0007"
+     ],
+     "timings": {
+      "retrieval_s": 0.043,
+      "rerank_s": 0.521,
+      "llm_s": 5.531,
+      "total_s": 6.161
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2747,
+     "completion_tokens": 97,
+     "seconds": 6.161,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Organizational Fee paid to AMH is up to 4% of the total budgeted litigation fees (discounted 50%), and budgeted litigation expenses (100%).",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F11",
+     "type": "factual",
+     "question": "What Management Fee does AMH receive, and for how long?",
+     "answer": "AMH receives a Management Fee of 2.75% per annum of the total budgeted litigation fees and expenses. [S1]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 7, EXHBITA",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0011"
+     ],
+     "timings": {
+      "retrieval_s": 0.028,
+      "rerank_s": 0.51,
+      "llm_s": 5.016,
+      "total_s": 5.618
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2410,
+     "completion_tokens": 86,
+     "seconds": 5.618,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "AMH receives a Management Fee of 2.75% per annum of the total budgeted litigation fees and expenses.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F12",
+     "type": "factual",
+     "question": "How are proceeds from licensing the Patents to a person other than a Defendant shared?",
+     "answer": "Proceeds from licensing the Patents to a person other than a Defendant are shared as follows: [S1] AMH or any of its assigns receive 50.0% of the proceeds. [S2] Owner receives 35.0% of the proceeds. [S2] Litigation Counsel receives 15.0% of the proceeds. [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 8, EXHBITA, para 3; [S2] EX-10.3 scanned, p. 9, EXHBITA, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0015",
+      "EX_10_3_scanned:0016"
+     ],
+     "timings": {
+      "retrieval_s": 0.041,
+      "rerank_s": 0.533,
+      "llm_s": 6.24,
+      "total_s": 7.09
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2239,
+     "completion_tokens": 142,
+     "seconds": 7.09,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 4,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 4,
+       "claims": 4,
+       "checks": [
+        {
+         "claim": "Proceeds from licensing the Patents to a person other than a Defendant are shared as follows:",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "citation corrected: S2 -> S1"
+        },
+        {
+         "claim": "AMH or any of its assigns receive 50.0% of the proceeds.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "Owner receives 35.0% of the proceeds.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        },
+        {
+         "claim": "Litigation Counsel receives 15.0% of the proceeds.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.98)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "recite",
+       "detail": "citation corrected: S2 -> S1 for: Proceeds from licensing the Patents to a person other than a Defendant are share"
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F13",
+     "type": "factual",
+     "question": "How long is the Option Period in which AMH may decide to fund a Subsequent Litigation?",
+     "answer": "The Option Period is sixty (60) days. [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S2] EX-10.3 scanned, p. 9, EXHBITA, para 3",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0017"
+     ],
+     "timings": {
+      "retrieval_s": 0.034,
+      "rerank_s": 0.534,
+      "llm_s": 14.337,
+      "total_s": 14.956
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2573,
+     "completion_tokens": 65,
+     "seconds": 14.956,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The Option Period is sixty (60) days.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "F14",
+     "type": "factual",
+     "question": "Which state's law governs the Patent Monetization Agreement?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.067,
+      "rerank_s": 1.052,
+      "llm_s": 10.242,
+      "total_s": 11.421
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 2,
+     "prompt_tokens": 5374,
+     "completion_tokens": 197,
+     "seconds": 11.421,
+     "retries": 1,
+     "verifier_rejections": 1,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": "The specific state's law governing the agreement."
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The state's law governing the Patent Monetization Agreement is not explicitly stated in the provided sources.",
+         "sources": [
+          1,
+          2,
+          3,
+          4,
+          5
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": false,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ],
+     "citation_precision": null,
+     "evidence_recall": 0.0
+    },
+    {
+     "id": "F15",
+     "type": "factual",
+     "question": "Where are mediation and arbitration proceedings under the Patent Monetization Agreement conducted?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.045,
+      "rerank_s": 0.528,
+      "llm_s": 14.949,
+      "total_s": 16.299
+     },
+     "key_fact_recall": 0.0,
+     "llm_calls": 3,
+     "prompt_tokens": 8506,
+     "completion_tokens": 292,
+     "seconds": 16.299,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Mediation and arbitration proceedings under the Patent Monetization Agreement will be conducted without Washington DC arbitration arising discovery in any out of or related to the Patents.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.02)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Mediation and arbitration proceedings under the Patent Monetization Agreement will be conducted without Washington DC arbitration arising discovery in any out of or related to the Patents.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.02)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Mediation and arbitration proceedings under the Patent Monetization Agreement will be conducted without Washington DC arbitration arising discovery in any out of or related to the Patents.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.02)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ],
+     "citation_precision": null,
+     "evidence_recall": 0.0
+    },
+    {
+     "id": "F16",
+     "type": "factual",
+     "question": "For how long can the option to buy the membership interests in Alpha Modus Ventures be exercised?",
+     "answer": "The term of the Option over which the Option may be exercised shall commence on the Grant Date and terminate five (5) years thereafter. [S1]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 20, EXHIBITB",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0046"
+     ],
+     "timings": {
+      "retrieval_s": 0.036,
+      "rerank_s": 0.533,
+      "llm_s": 5.137,
+      "total_s": 5.755
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2487,
+     "completion_tokens": 83,
+     "seconds": 5.755,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The term of the Option over which the Option may be exercised shall commence on the Grant Date and terminate five (5) years thereafter.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M01",
+     "type": "multihop",
+     "question": "If the Company exercises its option to purchase the membership interests in AMV, what happens to those interests under the amendment, and what is the exercise price of that option?",
+     "answer": "If the Company exercises its option to purchase the membership interests in AMV, those interests will automatically become subject to the security interest granted to Investor pursuant to the Security Agreement dated October 23, 2024. [S1] [S2] The exercise price of the option for the Company to purchase the membership interests in AMV is $300,000, plus the issuance of shares valued at $35,000,000 divided by the closing price of Optionee's common stock immediately prior to the closing, which requires approval by Optionee's shareholders and compliance with Nasdaq listing rules. [S2] [S3]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 3, IN WITNESS WHEREOF, the undersigned have executed this Amendment as of the date set forth above:; [S2] EX-10.3 scanned, p. 20, EXHIBITB; [S3] EX-10.3 scanned, p. 20, EXHIBITB",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0004",
+      "EX_10_3_scanned:0046",
+      "EX_10_3_scanned:0047"
+     ],
+     "timings": {
+      "retrieval_s": 0.127,
+      "rerank_s": 1.594,
+      "llm_s": 11.447,
+      "total_s": 13.372
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 2627,
+     "completion_tokens": 263,
+     "seconds": 13.372,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "What happens to the membership interests in AMV if the Company exercises its option under the amendment?",
+        "What is the exercise price of the option for the Company to purchase the membership interests in AMV under the amendment?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "If the Company exercises its option to purchase the membership interests in AMV, those interests will automatically become subject to the security interest granted to Investor pursuant to the Security Agreement dated October 23, 2024.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The exercise price of the option for the Company to purchase the membership interests in AMV is $300,000, plus the issuance of shares valued at $35,000,000 divided by the closing price of Optionee's common stock immediately prior to the closing, which requires approval by Optionee's shareholders and compliance with Nasdaq listing rules.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M02",
+     "type": "multihop",
+     "question": "Which agreement with Alpha Modus Ventures does the Investor consent to, and what kind of entity is Alpha Modus Ventures?",
+     "answer": "The Investor consents to the Patent Monetization Agreement with Alpha Modus Ventures, LLC. [S1] Alpha Modus Ventures, LLC is a North Carolina limited liability company. [S2] [S3]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2; [S2] EX-10.3 scanned, pp. 4-5, EXHBITA; [S3] EX-10.3 scanned, p. 20, EXHIBITB",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0003",
+      "EX_10_3_scanned:0007",
+      "EX_10_3_scanned:0046"
+     ],
+     "timings": {
+      "retrieval_s": 0.14,
+      "rerank_s": 1.565,
+      "llm_s": 9.218,
+      "total_s": 11.145
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 2,
+     "prompt_tokens": 2961,
+     "completion_tokens": 137,
+     "seconds": 11.145,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "Which agreement with Alpha Modus Ventures does the Investor consent to?",
+        "What kind of entity is Alpha Modus Ventures?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 2,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The Investor consents to the Patent Monetization Agreement with Alpha Modus Ventures, LLC.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "citation corrected: S2 -> S1"
+        },
+        {
+         "claim": "Alpha Modus Ventures, LLC is a North Carolina limited liability company.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 covered"
+      },
+      {
+       "step": 4,
+       "action": "recite",
+       "detail": "citation corrected: S2 -> S1 for: The Investor consents to the Patent Monetization Agreement with Alpha Modus Vent"
+      }
+     ],
+     "citation_precision": 0.6666666666666666,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M03",
+     "type": "multihop",
+     "question": "How are disputes under the Patent Monetization Agreement resolved, and which courts have jurisdiction over actions seeking an injunction?",
+     "answer": "Disputes under the Patent Monetization Agreement are resolved through arbitration, except for actions seeking an injunction. [S1] [S2] The courts with jurisdiction over actions seeking an injunction are the United States District Court, Western District of Texas, or if jurisdiction does not lie in the federal court, the District Court for Travis County, Texas. [S1]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 19, EXHIBITB; [S2] EX-10.3 scanned, pp. 4-5, EXHBITA",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0043",
+      "EX_10_3_scanned:0007"
+     ],
+     "timings": {
+      "retrieval_s": 0.123,
+      "rerank_s": 1.589,
+      "llm_s": 23.47,
+      "total_s": 26.178
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 5,
+     "prompt_tokens": 10224,
+     "completion_tokens": 409,
+     "seconds": 26.178,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "How are disputes under the Patent Monetization Agreement resolved?",
+        "Which courts have jurisdiction over actions seeking an injunction under the Patent Monetization Agreement?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved through arbitration, except for actions seeking an injunction.",
+         "sources": [
+          1,
+          2
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.01)"
+        },
+        {
+         "claim": "The courts with jurisdiction over actions seeking an injunction are the United States District Court, Western District of Texas, or if jurisdiction does not lie in the federal court, the District Court for Travis County, Texas.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved through arbitration, except for actions seeking an injunction.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.02)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved through arbitration, except for actions seeking an injunction.",
+         "sources": [
+          1
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.02)"
+        }
+       ]
+      },
+      {
+       "step": 7,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      },
+      {
+       "step": 8,
+       "action": "coverage",
+       "detail": "part 1 MISSING, part 2 covered"
+      },
+      {
+       "step": 8,
+       "action": "fill_gap",
+       "part": 1,
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "Disputes under the Patent Monetization Agreement are resolved through arbitration.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.5,
+     "evidence_recall": 0.5
+    },
+    {
+     "id": "M04",
+     "type": "multihop",
+     "question": "What deadlines after the Amendment Date does the Company have for the special stockholder meeting, the Form S-1 filing and the increase of the share reserve?",
+     "answer": "The Company has 60 days to hold the special stockholder meeting for issuances of Common Shares under the Note and under the Equity Line in excess of the Cap. [S3] Within ten (10) days of the Amendment Date, the Company must file Form S-1 Registration Statement to register the resale by Investor of all Pre-Delivery Shares and Conversion Shares. [S1] Within three (3) Trading Days of the Amendment Date, the Company must increase the share reserve held for Investor's benefit with its transfer agent from 7,500,000 Common Shares to 15,000,000 Common Shares. [S2]",
+     "badge": "HIGH",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2; [S2] EX-10.3 scanned, p. 3, IN WITNESS WHEREOF, the undersigned have executed this Amendment as of the date set forth above:; [S3] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0003",
+      "EX_10_3_scanned:0004",
+      "EX_10_3_scanned:0002"
+     ],
+     "timings": {
+      "retrieval_s": 0.036,
+      "rerank_s": 0.535,
+      "llm_s": 7.213,
+      "total_s": 7.939
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 1,
+     "prompt_tokens": 2332,
+     "completion_tokens": 197,
+     "seconds": 7.939,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 3,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 3,
+       "claims": 3,
+       "checks": [
+        {
+         "claim": "The Company has 60 days to hold the special stockholder meeting for issuances of Common Shares under the Note and under the Equity Line in excess of the Cap.",
+         "sources": [
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "Within ten (10) days of the Amendment Date, the Company must file Form S-1 Registration Statement to register the resale by Investor of all Pre-Delivery Shares and Conversion Shares.",
+         "sources": [
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "Within three (3) Trading Days of the Amendment Date, the Company must increase the share reserve held for Investor's benefit with its transfer agent from 7,500,000 Common Shares to 15,000,000 Common Shares.",
+         "sources": [
+          2
+         ],
+         "supported": true,
+         "reason": "entailed (p=0.99)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 1.0,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "M05",
+     "type": "multihop",
+     "question": "Who are the members of Alpha Modus Ventures that grant the option, and what right does the option give AMH?",
+     "answer": "The members of Alpha Modus Ventures that grant the option are Janbella Group LLC and Chris Chumas. [S1] [S3] The option gives AMH the right to acquire all of the membership interests of Owner, specifically Janbella Group LLC and Chris Chumas, as stated in Exhibit A, paragraph 6. [S2] [S3] The option gives AMH the right to acquire all of the membership interests of Owner. [S2] [S1]",
+     "badge": "LOW",
+     "abstained": false,
+     "citations": "[S1] EX-10.3 scanned, p. 20, EXHIBITB; [S2] EX-10.3 scanned, p. 16, EXHBITA, para 6; [S3] EX-10.3 scanned, p. 2, Exhibit 10.3, para 2",
+     "cited_chunk_ids": [
+      "EX_10_3_scanned:0046",
+      "EX_10_3_scanned:0036",
+      "EX_10_3_scanned:0003"
+     ],
+     "timings": {
+      "retrieval_s": 0.104,
+      "rerank_s": 1.574,
+      "llm_s": 25.153,
+      "total_s": 27.857
+     },
+     "key_fact_recall": 1.0,
+     "llm_calls": 5,
+     "prompt_tokens": 11451,
+     "completion_tokens": 497,
+     "seconds": 27.857,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": true,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "plan",
+       "sub_questions": [
+        "Who are the members of Alpha Modus Ventures that grant the option?",
+        "What right does the option give AMH?"
+       ]
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 2,
+       "missing": ""
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 1,
+       "claims": 2,
+       "checks": [
+        {
+         "claim": "The members of Alpha Modus Ventures that grant the option are Janbella Group LLC and Chris Chumas.",
+         "sources": [
+          1,
+          3
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        },
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Owner, specifically Janbella Group LLC and Chris Chumas, as stated in Exhibit A, paragraph 6.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.15)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Owner, specifically Janbella Group LLC and Chris Chumas, as stated in Exhibit A, paragraph 6.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.15)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Owner, specifically Janbella Group LLC and Chris Chumas, as stated in Exhibit A, paragraph 6.",
+         "sources": [
+          2,
+          3
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.15)"
+        }
+       ]
+      },
+      {
+       "step": 7,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 50% of claims verified"
+      },
+      {
+       "step": 8,
+       "action": "coverage",
+       "detail": "part 1 covered, part 2 MISSING"
+      },
+      {
+       "step": 8,
+       "action": "fill_gap",
+       "part": 2,
+       "supported": 1,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The option gives AMH the right to acquire all of the membership interests of Owner.",
+         "sources": [
+          2,
+          1
+         ],
+         "supported": true,
+         "reason": "entailed (p=1.00)"
+        }
+       ]
+      }
+     ],
+     "citation_precision": 0.6666666666666666,
+     "evidence_recall": 1.0
+    },
+    {
+     "id": "U01",
+     "type": "unanswerable",
+     "question": "What interest rate does the Secured Convertible Promissory Note carry?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.039,
+      "rerank_s": 0.524,
+      "llm_s": 4.207,
+      "total_s": 4.828
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 1892,
+     "completion_tokens": 67,
+     "seconds": 4.828,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "auto_cite",
+       "detail": "attributed 1 uncited claim(s) by cross-encoder: S1 (0.33)"
+      },
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 1,
+       "missing": "The interest rate is missing from the provided sources."
+      }
+     ]
+    },
+    {
+     "id": "U02",
+     "type": "unanswerable",
+     "question": "What is the maturity date of the Note?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.028,
+      "rerank_s": 0.515,
+      "llm_s": 0.0,
+      "total_s": 0.543
+     },
+     "key_fact_recall": null,
+     "llm_calls": 0,
+     "prompt_tokens": 0,
+     "completion_tokens": 0,
+     "seconds": 0.543,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 0,
+       "action": "abstain_early",
+       "detail": "best passage score 0.037 < 0.05"
+      }
+     ]
+    },
+    {
+     "id": "U03",
+     "type": "unanswerable",
+     "question": "Which patent numbers are listed in Schedule A of the Patent Monetization Agreement?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.029,
+      "rerank_s": 0.509,
+      "llm_s": 4.606,
+      "total_s": 5.145
+     },
+     "key_fact_recall": null,
+     "llm_calls": 1,
+     "prompt_tokens": 2759,
+     "completion_tokens": 59,
+     "seconds": 5.145,
+     "retries": 0,
+     "verifier_rejections": 0,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": false,
+       "claims": 0,
+       "missing": "The patent numbers listed in Schedule A of the Patent Monetization Agreement are not provided in the given sources."
+      }
+     ]
+    },
+    {
+     "id": "U04",
+     "type": "unanswerable",
+     "question": "What is the total Litigation Budget for the initial Identified Litigation?",
+     "answer": "The documents do not contain enough evidence to answer this question. Searched: EX-10.3 scanned (20 pages).",
+     "badge": "INSUFFICIENT EVIDENCE",
+     "abstained": true,
+     "citations": "",
+     "cited_chunk_ids": [],
+     "timings": {
+      "retrieval_s": 0.127,
+      "rerank_s": 1.605,
+      "llm_s": 14.833,
+      "total_s": 17.096
+     },
+     "key_fact_recall": null,
+     "llm_calls": 3,
+     "prompt_tokens": 7637,
+     "completion_tokens": 292,
+     "seconds": 17.096,
+     "retries": 2,
+     "verifier_rejections": 3,
+     "planned": false,
+     "retry_log": [
+      {
+       "step": 1,
+       "action": "draft",
+       "answerable": true,
+       "claims": 1,
+       "missing": "The total amount of the Litigation Budget for the initial Identified Litigation."
+      },
+      {
+       "step": 1,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The total Litigation Budget for the initial Identified Litigation is not explicitly stated in the provided sources.",
+         "sources": [
+          2,
+          4,
+          5
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 2,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The total Litigation Budget for the initial Identified Litigation is not explicitly stated in the provided sources.",
+         "sources": [
+          2,
+          4,
+          5
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "action": "redraft",
+       "answerable": true,
+       "claims": 1
+      },
+      {
+       "step": 3,
+       "action": "verify",
+       "supported": 0,
+       "claims": 1,
+       "checks": [
+        {
+         "claim": "The total Litigation Budget for the initial Identified Litigation is not explicitly stated in the provided sources.",
+         "sources": [
+          2,
+          4,
+          5
+         ],
+         "supported": false,
+         "reason": "cited text does not entail the claim (p=0.00)"
+        }
+       ]
+      },
+      {
+       "step": 6,
+       "action": "keep_best_draft",
+       "detail": "kept the draft with 0% of claims verified"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

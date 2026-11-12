@@ -1,0 +1,219 @@
+{
+ "summary": {
+  "document": "EX-10.3_scanned.pdf",
+  "ground_truth": "EX-10.3_original.pdf",
+  "pages": 20,
+  "detected_as_scanned": 20,
+  "ocr_engines": [
+   "easyocr"
+  ],
+  "mean_char_accuracy": 0.8632,
+  "mean_word_accuracy": 0.7798,
+  "worst_page_word_accuracy": 0.4118,
+  "mean_ocr_confidence": 0.7745,
+  "seconds_per_page": 8.76,
+  "original_chars": 79081
+ },
+ "pages": [
+  {
+   "page": 1,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.78,
+   "char_accuracy": 0.8623,
+   "word_accuracy": 0.7772,
+   "words_original": 359,
+   "words_ocr": 354
+  },
+  {
+   "page": 2,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.786,
+   "char_accuracy": 0.8927,
+   "word_accuracy": 0.8093,
+   "words_original": 645,
+   "words_ocr": 643
+  },
+  {
+   "page": 3,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.77,
+   "char_accuracy": 0.9064,
+   "word_accuracy": 0.8043,
+   "words_original": 603,
+   "words_ocr": 598
+  },
+  {
+   "page": 4,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.755,
+   "char_accuracy": 0.5543,
+   "word_accuracy": 0.4118,
+   "words_original": 51,
+   "words_ocr": 33
+  },
+  {
+   "page": 5,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.815,
+   "char_accuracy": 0.8447,
+   "word_accuracy": 0.7654,
+   "words_original": 422,
+   "words_ocr": 411
+  },
+  {
+   "page": 6,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.788,
+   "char_accuracy": 0.8494,
+   "word_accuracy": 0.7981,
+   "words_original": 634,
+   "words_ocr": 631
+  },
+  {
+   "page": 7,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.794,
+   "char_accuracy": 0.8264,
+   "word_accuracy": 0.726,
+   "words_original": 635,
+   "words_ocr": 627
+  },
+  {
+   "page": 8,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.779,
+   "char_accuracy": 0.8895,
+   "word_accuracy": 0.8163,
+   "words_original": 675,
+   "words_ocr": 676
+  },
+  {
+   "page": 9,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.798,
+   "char_accuracy": 0.8394,
+   "word_accuracy": 0.7496,
+   "words_original": 707,
+   "words_ocr": 709
+  },
+  {
+   "page": 10,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.787,
+   "char_accuracy": 0.8952,
+   "word_accuracy": 0.8336,
+   "words_original": 661,
+   "words_ocr": 658
+  },
+  {
+   "page": 11,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.789,
+   "char_accuracy": 0.9398,
+   "word_accuracy": 0.8827,
+   "words_original": 699,
+   "words_ocr": 694
+  },
+  {
+   "page": 12,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.754,
+   "char_accuracy": 0.9176,
+   "word_accuracy": 0.8309,
+   "words_original": 680,
+   "words_ocr": 679
+  },
+  {
+   "page": 13,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.738,
+   "char_accuracy": 0.9316,
+   "word_accuracy": 0.8564,
+   "words_original": 599,
+   "words_ocr": 599
+  },
+  {
+   "page": 14,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.733,
+   "char_accuracy": 0.8617,
+   "word_accuracy": 0.7885,
+   "words_original": 676,
+   "words_ocr": 672
+  },
+  {
+   "page": 15,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.788,
+   "char_accuracy": 0.9009,
+   "word_accuracy": 0.8242,
+   "words_original": 745,
+   "words_ocr": 742
+  },
+  {
+   "page": 16,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.756,
+   "char_accuracy": 0.8452,
+   "word_accuracy": 0.7684,
+   "words_original": 980,
+   "words_ocr": 983
+  },
+  {
+   "page": 17,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.762,
+   "char_accuracy": 0.8417,
+   "word_accuracy": 0.7746,
+   "words_original": 599,
+   "words_ocr": 602
+  },
+  {
+   "page": 18,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.786,
+   "char_accuracy": 0.9017,
+   "word_accuracy": 0.8077,
+   "words_original": 650,
+   "words_ocr": 642
+  },
+  {
+   "page": 19,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.757,
+   "char_accuracy": 0.9118,
+   "word_accuracy": 0.8236,
+   "words_original": 703,
+   "words_ocr": 696
+  },
+  {
+   "page": 20,
+   "detected_as_scanned": true,
+   "ocr_engine": "easyocr",
+   "ocr_confidence": 0.775,
+   "char_accuracy": 0.8526,
+   "word_accuracy": 0.747,
+   "words_original": 664,
+   "words_ocr": 660
+  }
+ ]
+}

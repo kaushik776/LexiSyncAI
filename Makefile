@@ -30,9 +30,10 @@ install: ## Create .venv and install the pinned packages (requirements.txt)
 model: ## Download the local LLM with Ollama (needs Ollama installed)
 	ollama pull $(MODEL)
 
-index: ## Build the example cases: "default" (data/) and "conflict_demo" (samples/conflict/)
+index: ## Build the example cases: "default" (data/), "conflict_demo" (samples/conflict/), "scanned_pdf" (data/scanned/)
 	$(VENV_PY) -m src.indexer default
 	$(VENV_PY) -m src.indexer conflict_demo samples/conflict/Supply_Agreement_2023.pdf samples/conflict/Supply_Agreement_2024_Amended.pdf
+	$(VENV_PY) -m src.indexer scanned_pdf data/scanned/EX-10.3_original.pdf data/scanned/EX-10.3_scanned.pdf
 
 run: ## Start the app at http://localhost:8501
 	$(VENV_PY) -m streamlit run app.py
@@ -46,9 +47,11 @@ eval-quick: ## Evaluations without the LLM: retrieval recall@k, tables, autoenco
 	$(VENV_PY) -m eval.table_eval
 	$(VENV_PY) -m eval.anomaly_eval
 
-eval: eval-quick ## All evaluations incl. answers, regions, latency (needs Ollama, ~30 min, on mains power)
+eval: eval-quick ## All evaluations incl. answers, regions, OCR, latency (needs Ollama, ~30 min, on mains power)
 	$(VENV_PY) -m eval.answer_eval
 	$(VENV_PY) -m eval.region_eval
+	$(VENV_PY) -m eval.ocr_eval
+	$(VENV_PY) -m eval.scanned_eval
 	$(VENV_PY) -m eval.latency_report
 
 clean: ## Remove Python caches (keeps the indexes and your cases)

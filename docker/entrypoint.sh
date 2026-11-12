@@ -9,6 +9,9 @@ fi
 if [ ! -f index/conflict_demo/manifest.json ]; then
   python -m src.indexer conflict_demo samples/conflict/Supply_Agreement_2023.pdf samples/conflict/Supply_Agreement_2024_Amended.pdf
 fi
+if [ ! -f index/scanned_pdf/manifest.json ]; then
+  python -m src.indexer scanned_pdf data/scanned/EX-10.3_original.pdf data/scanned/EX-10.3_scanned.pdf
+fi
 
 echo "LexiSyncAI is ready at http://localhost:8501"
 exec streamlit run app.py --server.address=0.0.0.0 --server.port=8501 --server.headless=true
