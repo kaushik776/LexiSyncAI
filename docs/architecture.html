@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LexiSyncAI architecture</title>
+<style>
+@font-face {font-family: "PJS"; src: url("../static/fonts/PlusJakartaSans-400.ttf"); font-weight: 400;}
+@font-face {font-family: "PJS"; src: url("../static/fonts/PlusJakartaSans-600.ttf"); font-weight: 600;}
+@font-face {font-family: "PJS"; src: url("../static/fonts/PlusJakartaSans-700.ttf"); font-weight: 700;}
+@page {size: 1700px 850px; margin: 0;}
+:root {
+  --ink: #1b2330; --muted: #5b6676;
+  --idx: #2f6fdf; --idx-bg: #eef4ff;
+  --qry: #0f8a6a; --qry-bg: #eaf8f3;
+  --llm: #8a4bd6; --llm-bg: #f4edff;
+  --chk: #c2410c; --chk-bg: #fff3ea;
+  --ui: #b7791f;  --ui-bg: #fff8e6;
+}
+* {box-sizing: border-box;}
+html, body {margin: 0; background: #fff;}
+body {width: 1700px; height: 850px; position: relative; font-family: "PJS", "Segoe UI", sans-serif; color: var(--ink);}
+svg {position: absolute; left: 0; top: 0;}
+h1 {position: absolute; left: 22px; top: 14px; margin: 0; font-size: 28px;}
+h1 span {font-weight: 400; color: var(--muted); font-size: 18px; margin-left: 10px;}
+.legend {position: absolute; right: 22px; top: 26px; display: flex; gap: 16px; font-size: 13px; color: var(--muted);}
+.legend i {display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px;}
+.lt {position: absolute; font-weight: 700; font-size: 15px;}
+.lt small {font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 6px;}
+.n {position: absolute; border: 1.6px solid; border-radius: 10px; padding: 6px 9px; display: flex; flex-direction: column;
+    justify-content: center; font-size: 12.5px; line-height: 1.3; color: #3b4453;}
+.n b {font-size: 14px; margin-bottom: 2px;}
+.pill {border-radius: 999px; text-align: center; align-items: center; background: #fff; border-color: #8793a3;}
+.pill b {color: var(--ink);}
+.idx {border-color: var(--idx); background: var(--idx-bg);} .idx b {color: var(--idx);}
+.qry {border-color: var(--qry); background: var(--qry-bg);} .qry b {color: var(--qry);}
+.llm {border-color: var(--llm); background: var(--llm-bg);} .llm b {color: var(--llm);}
+.chk {border-color: var(--chk); background: var(--chk-bg);} .chk b {color: var(--chk);}
+.ui  {border-color: var(--ui);  background: var(--ui-bg);}  .ui b  {color: var(--ui);}
+.badge {display: inline-block; white-space: nowrap; padding: 0 5px; border-radius: 99px; font-weight: 700; font-size: 10.5px; margin: 1px 1px 0 0;}
+.foot {position: absolute; top: 792px; height: 42px; border: 1.5px solid #c9d1dc; border-radius: 10px; padding: 0 14px;
+       display: flex; align-items: center; font-size: 13.5px;}
+.k {font-weight: 700;}
+</style>
+</head>
+<body>
+
+<svg width="1700" height="850" xmlns="http://www.w3.org/2000/svg" font-family="PJS, Segoe UI, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7686"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f6fdf"/></marker>
+    <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a4bd6"/></marker>
+  </defs>
+
+  <!-- lanes -->
+  <rect x="20" y="72" width="1660" height="222" rx="14" fill="none" stroke="#c9d1dc" stroke-width="1.5"/>
+  <rect x="20" y="305" width="1660" height="330" rx="14" fill="none" stroke="#c9d1dc" stroke-width="1.5"/>
+  <rect x="20" y="650" width="1660" height="128" rx="14" fill="none" stroke="#c9d1dc" stroke-width="1.5"/>
+
+  <g stroke="#6b7686" stroke-width="1.7" fill="none" marker-end="url(#a)">
+    <!-- lane 1 -->
+    <path d="M155 160 H178"/>
+    <path d="M340 160 H360"/>
+    <path d="M458 160 H483"/>
+    <path d="M410 200 V220"/>
+    <path d="M655 160 H674"/>
+    <path d="M784 160 H808"/>
+    <path d="M730 202 V220"/>
+    <path d="M805 250 H892 V202"/>
+    <path d="M975 160 H998"/>
+    <path d="M1180 160 H1203"/>
+    <path d="M1410 160 H1428"/>
+    <!-- lane 2 -->
+    <path d="M150 395 H173"/>
+    <path d="M345 395 H368"/>
+    <path d="M535 395 H553"/>
+    <path d="M665 395 H688"/>
+    <path d="M800 395 H823"/>
+    <path d="M995 395 H1018"/>
+    <path d="M1190 395 H1203"/>
+    <path d="M1325 395 H1348"/>
+    <path d="M1515 395 H1533"/>
+    <path d="M610 437 V478"/>
+    <path d="M745 437 V478"/>
+    <path d="M845 511 H870 V437"/>
+    <!-- lane 3 -->
+    <path d="M340 727 H363"/>
+    <path d="M665 727 H688"/>
+  </g>
+  <!-- retry loop -->
+  <g stroke="#c2410c" stroke-width="1.7" fill="none">
+    <path d="M1265 442 V478" marker-end="url(#ar)"/>
+    <path d="M1195 512 H950 V437" marker-end="url(#ar)" stroke-dasharray="6 4"/>
+  </g>
+  <!-- answers to the app -->
+  <g stroke="#6b7686" stroke-width="1.7" fill="none">
+    <path d="M1600 435 V600 H470 V688" marker-end="url(#a)"/>
+    <path d="M610 560 V600"/>
+  </g>
+  <circle cx="610" cy="600" r="4" fill="#6b7686"/>
+  <!-- case index links (dashed) -->
+  <g stroke="#2f6fdf" stroke-width="1.6" fill="none" stroke-dasharray="6 4">
+    <path d="M1520 206 V340 H260 V353" marker-end="url(#ab)"/>
+    <path d="M1610 162 H1668 V727 H1642" marker-end="url(#ab)"/>
+  </g>
+  <!-- compare runs the pipeline per document -->
+  <path d="M1165 688 V641" stroke="#8a4bd6" stroke-width="1.6" fill="none" stroke-dasharray="6 4" marker-end="url(#ap)"/>
+
+  <!-- decisions -->
+  <g stroke-width="1.6">
+    <polygon points="410,120 458,160 410,200 362,160" fill="#eef4ff" stroke="#2f6fdf"/>
+    <polygon points="730,118 784,160 730,202 676,160" fill="#eef4ff" stroke="#2f6fdf"/>
+    <polygon points="610,353 665,395 610,437 555,395" fill="#fff3ea" stroke="#c2410c"/>
+    <polygon points="745,353 800,395 745,437 690,395" fill="#f4edff" stroke="#8a4bd6"/>
+    <polygon points="1265,348 1325,395 1265,442 1205,395" fill="#fff3ea" stroke="#c2410c"/>
+  </g>
+  <g font-size="12.5" font-weight="700" text-anchor="middle">
+    <text x="410" y="157" fill="#2f6fdf">Valid</text><text x="410" y="172" fill="#2f6fdf">PDF?</text>
+    <text x="730" y="157" fill="#2f6fdf">Scanned</text><text x="730" y="172" fill="#2f6fdf">page?</text>
+    <text x="610" y="399" fill="#c2410c">Relevant?</text>
+    <text x="745" y="392" fill="#8a4bd6">Multi-part</text><text x="745" y="407" fill="#8a4bd6">question?</text>
+    <text x="1265" y="392" fill="#c2410c">All claims</text><text x="1265" y="407" fill="#c2410c">verified?</text>
+  </g>
+
+  <!-- case index (database) -->
+  <g stroke="#2f6fdf" stroke-width="1.6" fill="#eef4ff">
+    <path d="M1430 130 V194 A90 12 0 0 0 1610 194 V130"/>
+    <ellipse cx="1520" cy="130" rx="90" ry="12"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="1520" y="164" font-size="14" font-weight="700" fill="#2f6fdf">Case index</text>
+    <text x="1520" y="181" font-size="11.5" fill="#3b4453">chunks · clause refs · boxes</text>
+    <text x="1520" y="195" font-size="11.5" fill="#3b4453">embeddings · structure</text>
+  </g>
+
+  <!-- edge labels -->
+  <g font-size="11.5" fill="#5b6676" font-weight="600">
+    <text x="462" y="152">yes</text><text x="416" y="215">no</text>
+    <text x="788" y="152">no</text><text x="736" y="215">yes</text>
+    <text x="669" y="387">yes</text><text x="616" y="458">no</text>
+    <text x="804" y="387">no</text><text x="751" y="458">yes</text>
+    <text x="1329" y="387">yes</text><text x="1271" y="464" fill="#c2410c">no</text>
+    <text x="1000" y="503" fill="#c2410c">max 2 retries</text>
+    <text x="880" y="334" fill="#2f6fdf">search</text>
+    <text x="1655" y="681" fill="#2f6fdf" text-anchor="end">detected structure</text>
+    <text x="1175" y="672" fill="#8a4bd6">runs ② once per document</text>
+    <text x="1000" y="594">cited answer or abstention</text>
+  </g>
+</svg>
+
+<h1>LexiSyncAI <span>Evidence-grounded legal document analyst</span></h1>
+<div class="legend">
+  <span><i style="background:var(--idx)"></i>Indexing</span>
+  <span><i style="background:var(--qry)"></i>Retrieval</span>
+  <span><i style="background:var(--llm)"></i>LLM (Qwen2.5 7B, local)</span>
+  <span><i style="background:var(--chk)"></i>Checks</span>
+  <span><i style="background:var(--ui)"></i>App</span>
+</div>
+
+<!-- ① Indexing -->
+<div class="lt" style="left:36px; top:80px">① Indexing <small>once per case</small></div>
+<div class="n pill" style="left:40px; top:135px; width:115px; height:50px"><b>PDFs / URLs</b>2–5 per case</div>
+<div class="n idx" style="left:180px; top:120px; width:160px; height:80px"><b>Upload &amp; validate</b>legal-document check</div>
+<div class="n chk" style="left:345px; top:222px; width:130px; height:56px"><b>Rejected</b>re-upload asked</div>
+<div class="n idx" style="left:485px; top:120px; width:170px; height:80px"><b>Parse</b>PyMuPDF · reading order · headers / footers removed</div>
+<div class="n idx" style="left:655px; top:222px; width:150px; height:56px"><b>OCR</b>Tesseract / EasyOCR</div>
+<div class="n idx" style="left:810px; top:120px; width:165px; height:80px"><b>Tables</b>cells, merged headers · own chunks</div>
+<div class="n idx" style="left:1000px; top:120px; width:180px; height:80px"><b>Clause-aware chunks</b>by section / Article · page + clause ref</div>
+<div class="n idx" style="left:1205px; top:120px; width:205px; height:80px"><b>Index</b>BM25 · dense embeddings (bge-small) · autoencoder anomalies</div>
+
+<!-- ② Answering -->
+<div class="lt" style="left:36px; top:313px">② Answering a question</div>
+<div class="n pill" style="left:40px; top:370px; width:110px; height:50px"><b>Question</b>from the app</div>
+<div class="n qry" style="left:175px; top:355px; width:170px; height:80px"><b>Hybrid retrieval</b>BM25 + dense + clause refs → RRF fusion</div>
+<div class="n qry" style="left:370px; top:355px; width:165px; height:80px"><b>Rerank</b>cross-encoder (bge-reranker) → top 5 sources</div>
+<div class="n llm" style="left:825px; top:355px; width:170px; height:80px"><b>Draft</b>answer only from sources · every sentence cited [S#]</div>
+<div class="n chk" style="left:1020px; top:355px; width:170px; height:80px"><b>Verifier</b>numbers · calculator · NLI entailment per claim</div>
+<div class="n chk" style="left:1350px; top:355px; width:165px; height:80px"><b>Confidence badge</b>
+  <div><span class="badge" style="background:#dcfce7;color:#166534">HIGH</span><span class="badge" style="background:#fef3c7;color:#92400e">MEDIUM</span><span class="badge" style="background:#ffedd5;color:#9a3412">LOW</span></div></div>
+<div class="n qry" style="left:1535px; top:355px; width:130px; height:80px"><b>Cited answer</b>page + clause per sentence</div>
+<div class="n chk" style="left:528px; top:480px; width:162px; height:80px"><b>Abstain</b><span><span class="badge" style="background:#e2e8f0;color:#334155">INSUFFICIENT EVIDENCE</span><br>+ documents searched</span></div>
+<div class="n llm" style="left:695px; top:480px; width:150px; height:62px"><b>Planner</b>sub-questions, each searched</div>
+<div class="n chk" style="left:1195px; top:480px; width:150px; height:64px"><b>Feedback</b>+ new search → redraft</div>
+
+<!-- ③ App -->
+<div class="lt" style="left:36px; top:657px">③ Streamlit app</div>
+<div class="n ui" style="left:40px; top:688px; width:300px; height:78px"><b>Cases</b>create · upload files or links · add documents</div>
+<div class="n ui" style="left:365px; top:688px; width:300px; height:78px"><b>Ask</b>answer + badge · cited page with highlighted passage</div>
+<div class="n ui" style="left:690px; top:688px; width:300px; height:78px"><b>Verification &amp; sources</b>✅ / ❌ per claim · agent log · time, tokens</div>
+<div class="n llm" style="left:1015px; top:688px; width:300px; height:78px"><b>Compare documents</b>same question per document → conflict detection</div>
+<div class="n ui" style="left:1340px; top:688px; width:300px; height:78px"><b>Documents · Evaluation</b>detected structure · results</div>
+
+<div class="foot" style="left:20px; width:820px"><b>Results</b>&nbsp;(23 questions)&nbsp; recall@5 <span class="k">&nbsp;1.00</span>&nbsp;· key facts <span class="k">&nbsp;0.79</span>&nbsp;vs 0.38 without retrieval · abstention <span class="k">&nbsp;4/4</span>&nbsp;· 12 s / question</div>
+<div class="foot" style="left:860px; width:820px"><b>Run</b>&nbsp;&nbsp;<span class="k">make setup</span>&nbsp;→&nbsp;<span class="k">make run</span>&nbsp;· or&nbsp;<span class="k">docker compose up</span>&nbsp;· pinned dependencies · seed 42</div>
+
+</body>
+</html>
